@@ -276,18 +276,8 @@ document.querySelectorAll('img[data-src]').forEach(img => {
     imageObserver.observe(img);
 });
 
-// Copiar email al portapapeles
-document.querySelectorAll('.contact-method').forEach(method => {
-    method.addEventListener('click', (e) => {
-        const email = method.querySelector('p')?.textContent;
-        if (email && email.includes('@')) {
-            e.preventDefault();
-            navigator.clipboard.writeText(email).then(() => {
-                showNotification('Email copiado al portapapeles', 'success');
-            });
-        }
-    });
-});
+// Copiar email al portapapeles - REMOVIDO porque ahora usa mailto
+// El enlace de email ahora abre directamente el cliente de correo
 
 // Animación mejorada para los enlaces de certificados
 document.querySelectorAll('.cert-link').forEach(link => {
