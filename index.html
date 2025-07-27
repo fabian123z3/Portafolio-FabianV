@@ -462,23 +462,36 @@
             </div>
             
             <div class="projects-grid">
-                <div class="project-card">
+                <!-- Proyecto FuerzaTotal -->
+                <div class="project-card featured">
                     <div class="project-header">
-                        <div class="project-icon">📱</div>
-                        <h3>App Móvil E-Commerce</h3>
+                        <div class="project-icon">💪</div>
+                        <h3>FuerzaTotal - Fitness Tracker</h3>
                     </div>
                     <p class="project-description">
-                        Aplicación móvil multiplataforma desarrollada con Flutter para comercio electrónico
-                        con carrito de compras, pagos integrados y notificaciones push.
+                        Aplicación móvil para seguimiento de progreso en el gimnasio. Incluye seguimiento de ejercicios, 
+                        rutinas personalizadas, gráficos de progreso y respaldo en la nube mediante Google Drive.
                     </p>
+                    <div class="project-features">
+                        <div class="feature-badge">📊 Gráficos de Progreso</div>
+                        <div class="feature-badge">☁️ Sincronización con Google Drive</div>
+                        <div class="feature-badge">🔐 Autenticación Segura</div>
+                        <div class="feature-badge">📱 Interfaz Intuitiva</div>
+                    </div>
                     <div class="project-tech">
                         <span>Flutter</span>
-                        <span>Firebase</span>
-                        <span>Stripe API</span>
+                        <span>Dart</span>
+                        <span>Google APIs</span>
+                        <span>SQLite</span>
+                        <span>Firebase Auth</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Ver Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                        <button class="project-link btn-demo" onclick="openProjectModal('fuerzatotal')">
+                            <span>👁️</span> Ver Demo
+                        </button>
+                        <a href="https://github.com/fabian123z3/fuerzatotal" class="project-link" target="_blank">
+                            <span>💻</span> GitHub
+                        </a>
                     </div>
                 </div>
                 
@@ -524,6 +537,93 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal para proyectos -->
+    <div id="projectModal" class="project-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProjectModal()">&times;</span>
+            
+            <div class="modal-header">
+                <h2 id="modalProjectName">FuerzaTotal</h2>
+                <p id="modalProjectTagline">Tu compañero personal de entrenamiento</p>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Carrusel de imágenes -->
+                <div class="carousel-container">
+                    <div class="carousel-main">
+                        <img id="mainImage" src="" alt="Screenshot principal">
+                        <button class="carousel-btn prev" onclick="changeImage(-1)">‹</button>
+                        <button class="carousel-btn next" onclick="changeImage(1)">›</button>
+                    </div>
+                    <div class="carousel-thumbnails" id="thumbnailContainer">
+                        <!-- Thumbnails se generan dinámicamente -->
+                    </div>
+                </div>
+                
+                <!-- Información del proyecto -->
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h3>📋 Descripción</h3>
+                        <p id="modalProjectDescription">
+                            FuerzaTotal es una aplicación móvil diseñada para ayudarte a llevar un registro completo 
+                            de tu progreso en el gimnasio. Con una interfaz intuitiva y características potentes, 
+                            podrás maximizar tus resultados y mantener la motivación.
+                        </p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>✨ Características Principales</h3>
+                        <ul id="modalProjectFeatures">
+                            <li><strong>Seguimiento de Ejercicios:</strong> Registra series, repeticiones y peso utilizado</li>
+                            <li><strong>Rutinas Personalizadas:</strong> Crea y gestiona tus propias rutinas de entrenamiento</li>
+                            <li><strong>Gráficos de Progreso:</strong> Visualiza tu evolución con gráficos detallados</li>
+                            <li><strong>Respaldo en la Nube:</strong> Sincronización automática con Google Drive</li>
+                            <li><strong>Historial Completo:</strong> Accede a todo tu historial de entrenamientos</li>
+                            <li><strong>Interfaz Moderna:</strong> Diseño Material Design con modo oscuro</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🛠️ Stack Tecnológico</h3>
+                        <div class="tech-grid" id="modalProjectTech">
+                            <div class="tech-item">
+                                <strong>Frontend:</strong> Flutter, Dart
+                            </div>
+                            <div class="tech-item">
+                                <strong>Backend:</strong> Firebase
+                            </div>
+                            <div class="tech-item">
+                                <strong>Base de Datos:</strong> SQLite (local), Firestore (cloud)
+                            </div>
+                            <div class="tech-item">
+                                <strong>APIs:</strong> Google Drive API, Firebase Auth
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🎯 Problemas Resueltos</h3>
+                        <ul id="modalProjectProblems">
+                            <li>Pérdida de datos de entrenamiento al cambiar de dispositivo</li>
+                            <li>Dificultad para visualizar el progreso a largo plazo</li>
+                            <li>Falta de motivación por no ver resultados claros</li>
+                            <li>Complejidad en el seguimiento manual de rutinas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <a href="https://github.com/fabian123z3/fuerzatotal" target="_blank" class="btn btn-primary">
+                            <span>💻</span> Ver Código en GitHub
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <span>📱</span> Descargar APK
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Sección de Contacto -->
     <section id="contacto" class="contact">
