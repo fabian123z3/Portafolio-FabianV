@@ -358,14 +358,25 @@ function switchImage(projectId, imageSrc, index) {
 // Precargar imágenes para mejor rendimiento
 function preloadImages() {
     // Precargar logo de FuerzaTotal
-    const logo = new Image();
-    logo.src = 'fuerzatotal/logo.png';
+    const logoFuerza = new Image();
+    logoFuerza.src = 'fuerzatotal/logo.png';
     
     // Precargar screenshots de FuerzaTotal
-    const screenshotsToLoad = [1, 2, 3, 5, 6, 7, 8];
-    screenshotsToLoad.forEach(num => {
+    const screenshotsFuerza = [1, 2, 3, 5, 6, 7, 8];
+    screenshotsFuerza.forEach(num => {
         const img = new Image();
         img.src = `fuerzatotal/${num}.jpeg`;
+    });
+    
+    // Precargar logo de Carnicero de Bolsillo
+    const logoCarnicero = new Image();
+    logoCarnicero.src = 'carnicero/logo.jpg';
+    
+    // Precargar screenshots de Carnicero de Bolsillo
+    const screenshotsCarnicero = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    screenshotsCarnicero.forEach(num => {
+        const img = new Image();
+        img.src = `carnicero/${num}.jpeg`;
     });
 }
 

@@ -632,6 +632,147 @@
                     <div class="project-layout">
                         <div class="project-left">
                             <div class="project-header">
+                                <img src="carnicero/logo.jpg" alt="Carnicero de Bolsillo Logo" class="project-logo">
+                                <div>
+                                    <h3>Carnicero de Bolsillo</h3>
+                                    <span class="project-category">Aplicación Móvil</span>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                Asistente virtual especializado en cortes de vacuno con IA. Información detallada, 
+                                recetas y respuestas por voz usando ChatGPT y ElevenLabs.
+                            </p>
+                            <div class="tech-stack-row">
+                                <div class="tech-logo" title="Flutter">
+                                    <svg viewBox="0 0 256 317" width="20" height="20">
+                                        <path d="M157.666 0L0 157.667l48.8 48.8L206.467 48.8z" fill="#02569B"/>
+                                        <path d="M156.567 145.397L72.15 229.815l48.984 49.716 48.71-48.71 85.425-85.424z" fill="#02569B"/>
+                                        <path d="M121.133 279.531l37.082 37.082h97.052l-85.425-85.792z" fill="#02569B"/>
+                                        <path d="M71.6 230.364l48.801-48.801 49.441 49.258-48.71 48.71z" fill="#45D1FD"/>
+                                    </svg>
+                                    <span>Flutter</span>
+                                </div>
+                                <div class="tech-logo" title="ChatGPT">
+                                    <span style="font-size: 1.2rem;">🤖</span>
+                                    <span>ChatGPT API</span>
+                                </div>
+                                <div class="tech-logo" title="ElevenLabs">
+                                    <span style="font-size: 1.2rem;">🎤</span>
+                                    <span>ElevenLabs</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-right">
+                            <button class="btn-details" onclick="toggleProjectDetails('carnicero')">
+                                <span>Ver proyecto</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Detalles expandibles -->
+                    <div id="carnicero-details" class="project-expanded">
+                        <div class="expanded-content">
+                            <div class="gallery-section">
+                                <div class="main-preview">
+                                    <img id="main-carnicero" src="carnicero/1.jpeg" alt="Carnicero de Bolsillo App">
+                                </div>
+                                <div class="thumb-grid">
+                                    <img src="carnicero/1.jpeg" class="thumb-img active" onclick="switchImage('carnicero', 'carnicero/1.jpeg', 0)" alt="1">
+                                    <img src="carnicero/2.jpeg" class="thumb-img" onclick="switchImage('carnicero', 'carnicero/2.jpeg', 1)" alt="2">
+                                    <img src="carnicero/3.jpeg" class="thumb-img" onclick="switchImage('carnicero', 'carnicero/3.jpeg', 2)" alt="3">
+                                    <img src="carnicero/4.jpeg" class="thumb-img" onclick="switchImage('carnicero', 'carnicero/4.jpeg', 3)" alt="4">
+                                    <img src="carnicero/5.jpeg" class="thumb-img" onclick="switchImage('carnicero', 'carnicero/5.jpeg', 4)" alt="5">
+                                    <img src="carnicero/6.jpeg" class="thumb-img" onclick="switchImage('carnicero', 'carnicero/6.jpeg', 5)" alt="6">
+                                    <img src="carnicero/7.jpeg" class="thumb-img" onclick="switchImage('carnicero', 'carnicero/7.jpeg', 6)" alt="7">
+                                    <img src="carnicero/8.jpeg" class="thumb-img" onclick="switchImage('carnicero', 'carnicero/8.jpeg', 7)" alt="8">
+                                    <img src="carnicero/9.jpeg" class="thumb-img" onclick="switchImage('carnicero', 'carnicero/9.jpeg', 8)" alt="9">
+                                </div>
+                            </div>
+                            
+                            <div class="details-info">
+                                <div class="features-grid">
+                                    <div class="feature-box">
+                                        <span class="feature-icon">🥩</span>
+                                        <div>
+                                            <strong>Cortes de Vacuno</strong>
+                                            <p>Información detallada de cada corte</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">📖</span>
+                                        <div>
+                                            <strong>Recetas</strong>
+                                            <p>Preparaciones para cada corte</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">🤖</span>
+                                        <div>
+                                            <strong>Asistente IA</strong>
+                                            <p>Respuestas con ChatGPT</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">🎙️</span>
+                                        <div>
+                                            <strong>Respuestas por Voz</strong>
+                                            <p>Síntesis de voz con ElevenLabs</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">📱</span>
+                                        <div>
+                                            <strong>Interfaz Intuitiva</strong>
+                                            <p>Fácil de usar para todos</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">💡</span>
+                                        <div>
+                                            <strong>Tips de Experto</strong>
+                                            <p>Consejos profesionales</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tech-details">
+                                    <h4>🛠️ Herramientas Utilizadas</h4>
+                                    <div class="tech-pills">
+                                        <span class="pill-flutter">
+                                            <svg viewBox="0 0 256 317" width="16" height="16">
+                                                <path d="M157.666 0L0 157.667l48.8 48.8L206.467 48.8z" fill="#02569B"/>
+                                                <path d="M156.567 145.397L72.15 229.815l48.984 49.716 48.71-48.71 85.425-85.424z" fill="#02569B"/>
+                                                <path d="M121.133 279.531l37.082 37.082h97.052l-85.425-85.792z" fill="#02569B"/>
+                                                <path d="M71.6 230.364l48.801-48.801 49.441 49.258-48.71 48.71z" fill="#45D1FD"/>
+                                            </svg>
+                                            Flutter
+                                        </span>
+                                        <span class="pill-chatgpt">
+                                            ChatGPT API
+                                        </span>
+                                        <span class="pill-elevenlabs">
+                                            ElevenLabs
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <a href="https://play.google.com/store/apps/details?id=com.carnicerodebolsillo.app" target="_blank" class="btn-play-store">
+                                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Disponible en Google Play" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sistema de Gestión -->
+                <div class="project-card">
+                    <div class="project-layout">
+                        <div class="project-left">
+                            <div class="project-header">
                                 <span class="project-icon">🌐</span>
                                 <div>
                                     <h3>Sistema de Gestión</h3>
