@@ -433,7 +433,7 @@ additionalStyles.textContent = `
         animation: spin 1s linear infinite;
     }
     
-    #main-fuerzatotal {
+    #main-fuerzatotal, #main-carnicero {
         transition: opacity 0.3s ease;
     }
     
