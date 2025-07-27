@@ -138,7 +138,7 @@ function showNotification(message, type = 'info') {
         position: fixed;
         top: 100px;
         right: 20px;
-        background: ${type === 'success' ? 'var(--success-color)' : 'var(--primary-color)'};
+        background: ${type === 'success' ? '#10b981' : '#6366f1'};
         color: white;
         padding: 1rem 2rem;
         border-radius: 8px;
@@ -171,7 +171,7 @@ function createParticles() {
             position: absolute;
             width: ${Math.random() * 4 + 1}px;
             height: ${Math.random() * 4 + 1}px;
-            background: var(--primary-color);
+            background: #6366f1;
             border-radius: 50%;
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
@@ -342,6 +342,45 @@ window.addEventListener('error', (e) => {
         e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzMzNDE1NSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5NGEzYjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZW4gbm8gZGlzcG9uaWJsZTwvdGV4dD48L3N2Zz4=';
     }
 }, true);
+
+// Ajustes para mejorar la experiencia móvil
+function checkMobile() {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Reducir número de partículas en móvil
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach((particle, index) => {
+            if (index > 20) {
+                particle.remove();
+            }
+        });
+    }
+}
+
+// Verificar si es móvil al cargar y al cambiar el tamaño
+window.addEventListener('load', checkMobile);
+window.addEventListener('resize', checkMobile);
+
+// Mejorar rendimiento con debounce
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Aplicar debounce a funciones de scroll
+const debouncedScroll = debounce(() => {
+    highlightActiveSection();
+}, 100);
+
+window.addEventListener('scroll', debouncedScroll);
 
 console.log('✨ Portafolio de Fabian Villablanca cargado exitosamente!');
 console.log('🚀 Desarrollado con pasión y mucho código');
