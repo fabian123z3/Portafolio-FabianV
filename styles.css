@@ -1040,10 +1040,7 @@ section {
     filter: brightness(1.1);
 }
 
-/* Botón de descarga antiguo (eliminado) */
-.btn-download {
-    display: none;
-}
+
 
 /* Contact Section */
 .contact {

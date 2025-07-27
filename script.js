@@ -385,40 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Función para el botón de descarga
-    const downloadBtns = document.querySelectorAll('.btn-download');
-    downloadBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Animación de descarga
-            const originalContent = btn.innerHTML;
-            btn.innerHTML = `
-                <svg width="16" height="16" class="animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2v6m0 4v6m0 4v2M8 16l4 4 4-4"/>
-                </svg>
-                Preparando...
-            `;
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                btn.innerHTML = `
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                    ¡Listo!
-                `;
-                showNotification('Descarga iniciada...', 'success');
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalContent;
-                    btn.disabled = false;
-                }, 2000);
-            }, 1500);
-            
-            // Aquí agregar lógica real de descarga
-            // window.location.href = 'path/to/fuerzatotal.apk';
-        });
-    });
-    
     // Efecto parallax suave en las tarjetas
     const projectCards = document.querySelectorAll('.project-card');
     
