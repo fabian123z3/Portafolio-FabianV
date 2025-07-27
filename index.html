@@ -465,199 +465,136 @@
                 <!-- Proyecto FuerzaTotal -->
                 <div class="project-card featured">
                     <div class="featured-ribbon">DESTACADO</div>
-                    <div class="project-header">
-                        <div class="project-icon">💪</div>
-                        <h3>FuerzaTotal</h3>
-                    </div>
-                    <p class="project-description">
-                        App móvil completa para el gimnasio: mide tu progreso, calcula tu 1RM, convierte kg/lbs, 
-                        tracking de creatina, comparador de fotos e IMC. Todo sincronizado en la nube.
-                    </p>
-                    <div class="project-features-compact">
-                        <span>📊 Progreso</span>
-                        <span>🔄 Conversiones</span>
-                        <span>💊 Creatina</span>
-                        <span>📸 Fotos</span>
-                        <span>☁️ Cloud</span>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Google Drive</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn-view-project" onclick="openProjectModal('fuerzatotal')">
-                            <span class="btn-icon">👁️</span>
-                            <span class="btn-text">Ver Detalles</span>
+                    <div class="project-compact">
+                        <div class="project-header">
+                            <div class="project-icon">💪</div>
+                            <div>
+                                <h3>FuerzaTotal</h3>
+                                <p class="project-subtitle">App de gimnasio completa</p>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Tracking completo: progreso, 1RM, conversiones kg/lbs, creatina, fotos e IMC.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Google Drive</span>
+                        </div>
+                        <button class="btn-expand" onclick="toggleProjectDetails('fuerzatotal')">
+                            <span>Ver detalles</span>
+                            <span class="arrow">▼</span>
                         </button>
+                    </div>
+                    
+                    <!-- Sección expandible -->
+                    <div id="fuerzatotal-details" class="project-details">
+                        <div class="details-content">
+                            <!-- Mini galería -->
+                            <div class="mini-gallery">
+                                <div class="gallery-main">
+                                    <img id="gallery-main-fuerzatotal" src="1.jpeg" alt="Screenshot principal">
+                                </div>
+                                <div class="gallery-thumbs">
+                                    <img src="1.jpeg" alt="Screen 1" class="thumb active" onclick="changeGalleryImage('fuerzatotal', '1.jpeg', 0)">
+                                    <img src="2.jpeg" alt="Screen 2" class="thumb" onclick="changeGalleryImage('fuerzatotal', '2.jpeg', 1)">
+                                    <img src="3.jpeg" alt="Screen 3" class="thumb" onclick="changeGalleryImage('fuerzatotal', '3.jpeg', 2)">
+                                    <img src="4.jpeg" alt="Screen 4" class="thumb" onclick="changeGalleryImage('fuerzatotal', '4.jpeg', 3)">
+                                    <img src="5.jpeg" alt="Screen 5" class="thumb" onclick="changeGalleryImage('fuerzatotal', '5.jpeg', 4)">
+                                    <img src="6.jpeg" alt="Screen 6" class="thumb" onclick="changeGalleryImage('fuerzatotal', '6.jpeg', 5)">
+                                    <img src="7.jpeg" alt="Screen 7" class="thumb" onclick="changeGalleryImage('fuerzatotal', '7.jpeg', 6)">
+                                    <img src="8.jpeg" alt="Screen 8" class="thumb" onclick="changeGalleryImage('fuerzatotal', '8.jpeg', 7)">
+                                </div>
+                            </div>
+                            
+                            <!-- Info del proyecto -->
+                            <div class="project-info-compact">
+                                <div class="info-section">
+                                    <h4>📱 Funcionalidades</h4>
+                                    <div class="features-list">
+                                        <span>📊 Tracking de progreso</span>
+                                        <span>🔄 Conversor kg/lbs</span>
+                                        <span>💪 Calculadora 1RM</span>
+                                        <span>💊 Tracking creatina</span>
+                                        <span>📸 Comparador fotos</span>
+                                        <span>⚖️ Calculadora IMC</span>
+                                        <span>☁️ Backup automático</span>
+                                        <span>🔐 Login seguro</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-section">
+                                    <h4>🛠️ Stack Técnico</h4>
+                                    <p>Flutter • Dart • Firebase Auth • Google Drive API • SQLite</p>
+                                </div>
+                                
+                                <div class="info-section">
+                                    <h4>📋 Descripción</h4>
+                                    <p>
+                                        FuerzaTotal es tu compañero ideal para el gimnasio. Registra tus entrenamientos, 
+                                        calcula tu peso máximo, convierte unidades, lleva control de suplementos y 
+                                        visualiza tu progreso con fotos. Todo sincronizado en la nube.
+                                    </p>
+                                </div>
+                                
+                                <button class="btn-download-compact">
+                                    <span>📱</span>
+                                    <span>Descargar APK</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Otros proyectos -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🌐</div>
-                        <h3>Sistema de Gestión</h3>
-                    </div>
-                    <p class="project-description">
-                        Plataforma web para gestión de inventarios con dashboard analítico y reportes.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn-view-project secondary" disabled>
-                            <span class="btn-text">Próximamente</span>
+                    <div class="project-compact">
+                        <div class="project-header">
+                            <div class="project-icon">🌐</div>
+                            <div>
+                                <h3>Sistema de Gestión</h3>
+                                <p class="project-subtitle">Dashboard analítico</p>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Plataforma web para inventarios con reportes automatizados.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                        <button class="btn-expand disabled" disabled>
+                            <span>Próximamente</span>
                         </button>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🤖</div>
-                        <h3>API REST</h3>
-                    </div>
-                    <p class="project-description">
-                        Microservicios con Spring Boot, JWT y documentación Swagger.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Spring</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn-view-project secondary" disabled>
-                            <span class="btn-text">Próximamente</span>
+                    <div class="project-compact">
+                        <div class="project-header">
+                            <div class="project-icon">🤖</div>
+                            <div>
+                                <h3>API REST</h3>
+                                <p class="project-subtitle">Microservicios</p>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Arquitectura con Spring Boot, JWT y Swagger.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <button class="btn-expand disabled" disabled>
+                            <span>Próximamente</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Modal para proyecto FuerzaTotal -->
-    <div id="projectModal" class="project-modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeProjectModal()" aria-label="Cerrar modal">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 6L6 18M6 6l12 12"/>
-                </svg>
-            </button>
-            
-            <div class="modal-header">
-                <div class="modal-icon">💪</div>
-                <h2>FuerzaTotal</h2>
-                <p>Tu compañero de gimnasio inteligente</p>
-            </div>
-            
-            <div class="modal-body">
-                <!-- Carrusel de imágenes -->
-                <div class="carousel-section">
-                    <div class="carousel-container">
-                        <div class="carousel-main">
-                            <img id="mainImage" src="" alt="Screenshot principal">
-                            <button class="carousel-btn prev" onclick="changeImage(-1)" aria-label="Imagen anterior">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="15 18 9 12 15 6"></polyline>
-                                </svg>
-                            </button>
-                            <button class="carousel-btn next" onclick="changeImage(1)" aria-label="Siguiente imagen">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </button>
-                            <div class="image-counter">
-                                <span id="currentImageNumber">1</span> / <span id="totalImages">8</span>
-                            </div>
-                        </div>
-                        <div class="carousel-thumbnails" id="thumbnailContainer">
-                            <!-- Thumbnails se generan dinámicamente -->
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Información del proyecto -->
-                <div class="project-info">
-                    <div class="info-grid compact">
-                        <div class="info-card">
-                            <div class="info-header">
-                                <span class="info-icon">📱</span>
-                                <h3>Sobre la App</h3>
-                            </div>
-                            <p>
-                                FuerzaTotal es tu asistente personal para el gimnasio. Registra tus entrenamientos, 
-                                mide tu progreso y alcanza tus metas fitness con herramientas profesionales.
-                            </p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <div class="info-header">
-                                <span class="info-icon">✨</span>
-                                <h3>Funcionalidades</h3>
-                            </div>
-                            <div class="features-grid">
-                                <div class="feature-item">
-                                    <span class="feature-emoji">📊</span>
-                                    <span>Tracking de progreso</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-emoji">🔄</span>
-                                    <span>Conversor kg ⟷ lbs</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-emoji">💪</span>
-                                    <span>Calculadora 1RM</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-emoji">💊</span>
-                                    <span>Recordatorio creatina</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-emoji">📸</span>
-                                    <span>Comparador de fotos</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-emoji">⚖️</span>
-                                    <span>Calculadora IMC</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-emoji">☁️</span>
-                                    <span>Backup automático</span>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-emoji">🔐</span>
-                                    <span>Login seguro</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-card">
-                            <div class="info-header">
-                                <span class="info-icon">🛠️</span>
-                                <h3>Tecnologías</h3>
-                            </div>
-                            <div class="tech-list">
-                                <span class="tech-pill">Flutter</span>
-                                <span class="tech-pill">Dart</span>
-                                <span class="tech-pill">Firebase Auth</span>
-                                <span class="tech-pill">Google Drive API</span>
-                                <span class="tech-pill">SQLite</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <button class="btn-download">
-                            <span class="download-icon">📱</span>
-                            <span>Descargar APK</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Sección de Contacto -->
     <section id="contacto" class="contact">

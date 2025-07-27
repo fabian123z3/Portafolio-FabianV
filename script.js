@@ -311,221 +311,63 @@ window.addEventListener('error', (e) => {
     }
 }, true);
 
-// ===== FUNCIONALIDAD DEL MODAL DE PROYECTOS =====
-let currentImageIndex = 0;
-const projectImages = {
-    fuerzatotal: [
-        '1.jpeg',
-        '2.jpeg',
-        '3.jpeg',
-        '4.jpeg',
-        '5.jpeg',
-        '6.jpeg',
-        '7.jpeg',
-        '8.jpeg'
-    ]
-};
-
-function openProjectModal(projectId) {
-    const modal = document.getElementById('projectModal');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+// ===== FUNCIONALIDAD DE PROYECTOS EXPANDIBLES =====
+function toggleProjectDetails(projectId) {
+    const details = document.getElementById(`${projectId}-details`);
+    const button = event.currentTarget;
+    const arrow = button.querySelector('.arrow');
     
-    // Initialize carousel
-    currentImageIndex = 0;
-    initializeCarousel(projectId);
+    details.classList.toggle('active');
+    button.classList.toggle('active');
     
-    // Update project information based on projectId
-    updateProjectInfo(projectId);
+    // Cambiar texto del botón
+    const btnText = button.querySelector('span:first-child');
+    if (details.classList.contains('active')) {
+        btnText.textContent = 'Ocultar detalles';
+        // Scroll suave hacia los detalles
+        setTimeout(() => {
+            details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    } else {
+        btnText.textContent = 'Ver detalles';
+    }
 }
 
-function closeProjectModal() {
-    const modal = document.getElementById('projectModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-    const modal = document.getElementById('projectModal');
-    if (e.target === modal) {
-        closeProjectModal();
-    }
-});
-
-// Close modal with Escape key
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeProjectModal();
-    }
-});
-
-function initializeCarousel(projectId) {
-    const images = projectImages[projectId] || [];
-    const mainImage = document.getElementById('mainImage');
-    const thumbnailContainer = document.getElementById('thumbnailContainer');
+// Función para cambiar imagen en la galería
+function changeGalleryImage(projectId, imageSrc, index) {
+    const mainImage = document.getElementById(`gallery-main-${projectId}`);
+    mainImage.src = imageSrc;
     
-    // Clear thumbnails
-    thumbnailContainer.innerHTML = '';
-    
-    // Set initial main image
-    if (images.length > 0) {
-        mainImage.src = images[0];
-        mainImage.alt = `Screenshot 1 de ${projectId}`;
-        
-        // Update counter
-        document.getElementById('currentImageNumber').textContent = '1';
-        document.getElementById('totalImages').textContent = images.length.toString();
-    }
-    
-    // Create thumbnails
-    images.forEach((image, index) => {
-        const thumbnail = document.createElement('div');
-        thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
-        thumbnail.onclick = () => selectImage(index);
-        
-        const img = document.createElement('img');
-        img.src = image;
-        img.alt = `Thumbnail ${index + 1}`;
-        
-        thumbnail.appendChild(img);
-        thumbnailContainer.appendChild(thumbnail);
-    });
-}
-
-function selectImage(index) {
-    const images = projectImages.fuerzatotal;
-    currentImageIndex = index;
-    
-    // Update main image
-    const mainImage = document.getElementById('mainImage');
-    mainImage.src = images[index];
-    mainImage.alt = `Screenshot ${index + 1} de FuerzaTotal`;
-    
-    // Update counter
-    document.getElementById('currentImageNumber').textContent = (index + 1).toString();
-    
-    // Update active thumbnail
-    const thumbnails = document.querySelectorAll('.thumbnail');
-    thumbnails.forEach((thumb, i) => {
+    // Actualizar thumbnails activos
+    const thumbs = document.querySelectorAll(`#${projectId}-details .thumb`);
+    thumbs.forEach((thumb, i) => {
         thumb.classList.toggle('active', i === index);
     });
-    
-    // Scroll thumbnail into view
-    thumbnails[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 }
 
-function changeImage(direction) {
-    const images = projectImages.fuerzatotal;
-    currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-    selectImage(currentImageIndex);
-}
-
-// Keyboard navigation for carousel
-window.addEventListener('keydown', (e) => {
-    const modal = document.getElementById('projectModal');
-    if (modal.classList.contains('active')) {
-        if (e.key === 'ArrowLeft') {
-            changeImage(-1);
-        } else if (e.key === 'ArrowRight') {
-            changeImage(1);
-        }
-    }
-});
-
-function updateProjectInfo(projectId) {
-    // This function can be expanded to handle multiple projects
-    if (projectId === 'fuerzatotal') {
-        // The information is already set in the HTML for FuerzaTotal
-        // In a real application, you might fetch this data from an API or a data structure
-    }
-}
-
-// Touch swipe support for mobile
-let touchStartX = null;
-let touchEndX = null;
-
+// Función para el botón de descarga
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel-main');
-    if (carousel) {
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, false);
-
-        carousel.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, false);
-    }
-});
-
-function handleSwipe() {
-    if (!touchStartX || !touchEndX) return;
-    
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-            // Swipe left - next image
-            changeImage(1);
-        } else {
-            // Swipe right - previous image
-            changeImage(-1);
-        }
-    }
-    
-    touchStartX = null;
-    touchEndX = null;
-}
-
-// Ajustes para mejorar la experiencia móvil
-function checkMobile() {
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isMobile) {
-        // Reducir número de partículas en móvil
-        const particles = document.querySelectorAll('.particle');
-        particles.forEach((particle, index) => {
-            if (index > 20) {
-                particle.remove();
-            }
-        });
-    }
-}
-
-// Verificar si es móvil al cargar y al cambiar el tamaño
-window.addEventListener('load', checkMobile);
-window.addEventListener('resize', checkMobile);
-
-// Mejorar rendimiento con debounce
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Aplicar debounce a funciones de scroll
-const debouncedScroll = debounce(() => {
-    highlightActiveSection();
-}, 100);
-
-window.addEventListener('scroll', debouncedScroll);
-
-// Función para el botón de descarga (puedes personalizarla)
-document.addEventListener('DOMContentLoaded', () => {
-    const downloadBtn = document.querySelector('.btn-download');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', () => {
+    const downloadBtns = document.querySelectorAll('.btn-download-compact');
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             showNotification('La descarga comenzará pronto...', 'success');
             // Aquí puedes agregar la lógica para descargar el APK
             // window.location.href = 'path/to/your/app.apk';
+        });
+    });
+});
+
+// Cerrar detalles al hacer clic fuera (opcional)
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.project-card') && !e.target.closest('.btn-expand')) {
+        document.querySelectorAll('.project-details.active').forEach(detail => {
+            detail.classList.remove('active');
+            const projectId = detail.id.replace('-details', '');
+            const button = document.querySelector(`[onclick="toggleProjectDetails('${projectId}')"]`);
+            if (button) {
+                button.classList.remove('active');
+                button.querySelector('span:first-child').textContent = 'Ver detalles';
+            }
         });
     }
 });
