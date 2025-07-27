@@ -289,6 +289,17 @@ document.querySelectorAll('.contact-method').forEach(method => {
     });
 });
 
+// Animación mejorada para los enlaces de certificados
+document.querySelectorAll('.cert-link').forEach(link => {
+    link.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px) scale(1.02)';
+    });
+    
+    link.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
 // Animación de entrada al cargar la página
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
