@@ -276,9 +276,6 @@ document.querySelectorAll('img[data-src]').forEach(img => {
     imageObserver.observe(img);
 });
 
-// Copiar email al portapapeles - REMOVIDO porque ahora usa mailto
-// El enlace de email ahora abre directamente el cliente de correo
-
 // Animación mejorada para los enlaces de certificados
 document.querySelectorAll('.cert-link').forEach(link => {
     link.addEventListener('mouseenter', function() {
@@ -313,6 +310,174 @@ window.addEventListener('error', (e) => {
         e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzMzNDE1NSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5NGEzYjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZW4gbm8gZGlzcG9uaWJsZTwvdGV4dD48L3N2Zz4=';
     }
 }, true);
+
+// ===== FUNCIONALIDAD DEL MODAL DE PROYECTOS =====
+let currentImageIndex = 0;
+const projectImages = {
+    fuerzatotal: [
+        'images/fuerzatotal/1.jpeg',
+        'images/fuerzatotal/2.jpeg',
+        'images/fuerzatotal/3.jpeg',
+        'images/fuerzatotal/4.jpeg',
+        'images/fuerzatotal/5.jpeg',
+        'images/fuerzatotal/6.jpeg',
+        'images/fuerzatotal/7.jpeg',
+        'images/fuerzatotal/8.jpeg'
+    ]
+};
+
+function openProjectModal(projectId) {
+    const modal = document.getElementById('projectModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Initialize carousel
+    currentImageIndex = 0;
+    initializeCarousel(projectId);
+    
+    // Update project information based on projectId
+    updateProjectInfo(projectId);
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    const modal = document.getElementById('projectModal');
+    if (e.target === modal) {
+        closeProjectModal();
+    }
+});
+
+// Close modal with Escape key
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeProjectModal();
+    }
+});
+
+function initializeCarousel(projectId) {
+    const images = projectImages[projectId] || [];
+    const mainImage = document.getElementById('mainImage');
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+    
+    // Clear thumbnails
+    thumbnailContainer.innerHTML = '';
+    
+    // Set initial main image
+    if (images.length > 0) {
+        mainImage.src = images[0];
+        mainImage.alt = `Screenshot 1 de ${projectId}`;
+        
+        // Update counter
+        document.getElementById('currentImageNumber').textContent = '1';
+        document.getElementById('totalImages').textContent = images.length.toString();
+    }
+    
+    // Create thumbnails
+    images.forEach((image, index) => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+        thumbnail.onclick = () => selectImage(index);
+        
+        const img = document.createElement('img');
+        img.src = image;
+        img.alt = `Thumbnail ${index + 1}`;
+        
+        thumbnail.appendChild(img);
+        thumbnailContainer.appendChild(thumbnail);
+    });
+}
+
+function selectImage(index) {
+    const images = projectImages.fuerzatotal;
+    currentImageIndex = index;
+    
+    // Update main image
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = images[index];
+    mainImage.alt = `Screenshot ${index + 1} de FuerzaTotal`;
+    
+    // Update counter
+    document.getElementById('currentImageNumber').textContent = (index + 1).toString();
+    
+    // Update active thumbnail
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+    });
+    
+    // Scroll thumbnail into view
+    thumbnails[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+}
+
+function changeImage(direction) {
+    const images = projectImages.fuerzatotal;
+    currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+    selectImage(currentImageIndex);
+}
+
+// Keyboard navigation for carousel
+window.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('projectModal');
+    if (modal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') {
+            changeImage(-1);
+        } else if (e.key === 'ArrowRight') {
+            changeImage(1);
+        }
+    }
+});
+
+function updateProjectInfo(projectId) {
+    // This function can be expanded to handle multiple projects
+    if (projectId === 'fuerzatotal') {
+        // The information is already set in the HTML for FuerzaTotal
+        // In a real application, you might fetch this data from an API or a data structure
+    }
+}
+
+// Touch swipe support for mobile
+let touchStartX = null;
+let touchEndX = null;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel-main');
+    if (carousel) {
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+    }
+});
+
+function handleSwipe() {
+    if (!touchStartX || !touchEndX) return;
+    
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swipe left - next image
+            changeImage(1);
+        } else {
+            // Swipe right - previous image
+            changeImage(-1);
+        }
+    }
+    
+    touchStartX = null;
+    touchEndX = null;
+}
 
 // Ajustes para mejorar la experiencia móvil
 function checkMobile() {
@@ -352,6 +517,18 @@ const debouncedScroll = debounce(() => {
 }, 100);
 
 window.addEventListener('scroll', debouncedScroll);
+
+// Función para el botón de descarga (puedes personalizarla)
+document.addEventListener('DOMContentLoaded', () => {
+    const downloadBtn = document.querySelector('.btn-download');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            showNotification('La descarga comenzará pronto...', 'success');
+            // Aquí puedes agregar la lógica para descargar el APK
+            // window.location.href = 'path/to/your/app.apk';
+        });
+    }
+});
 
 console.log('✨ Portafolio de Fabian Villablanca Vega cargado exitosamente!');
 console.log('🚀 Desarrollado con pasión y mucho código');
