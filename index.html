@@ -466,130 +466,120 @@
                 <div class="project-card featured">
                     <div class="featured-ribbon">DESTACADO</div>
                     <div class="project-compact">
-                        <div class="project-header">
+                        <div class="project-main">
                             <div class="project-icon">💪</div>
-                            <div>
-                                <h3>FuerzaTotal</h3>
-                                <p class="project-subtitle">App de gimnasio completa</p>
+                            <div class="project-content">
+                                <h3>FuerzaTotal <span class="project-type">App Móvil</span></h3>
+                                <p class="project-mini-desc">Tracking completo: progreso, 1RM, kg/lbs, creatina, fotos e IMC</p>
+                                <div class="project-tags">
+                                    <span>Flutter</span>
+                                    <span>Firebase</span>
+                                    <span>Google Drive</span>
+                                </div>
                             </div>
+                            <button class="btn-expand-animated" onclick="toggleProjectDetails('fuerzatotal')">
+                                <span class="btn-text">Ver detalles</span>
+                                <div class="btn-icon-animated">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </button>
                         </div>
-                        <p class="project-description">
-                            Tracking completo: progreso, 1RM, conversiones kg/lbs, creatina, fotos e IMC.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Google Drive</span>
-                        </div>
-                        <button class="btn-expand" onclick="toggleProjectDetails('fuerzatotal')">
-                            <span>Ver detalles</span>
-                            <span class="arrow">▼</span>
-                        </button>
                     </div>
                     
-                    <!-- Sección expandible -->
-                    <div id="fuerzatotal-details" class="project-details">
-                        <div class="details-content">
-                            <!-- Mini galería -->
-                            <div class="mini-gallery">
-                                <div class="gallery-main">
-                                    <img id="gallery-main-fuerzatotal" src="1.jpeg" alt="Screenshot principal">
+                    <!-- Sección expandible ultra compacta -->
+                    <div id="fuerzatotal-details" class="project-details-compact">
+                        <div class="details-grid">
+                            <!-- Galería compacta -->
+                            <div class="compact-gallery">
+                                <div class="gallery-viewer">
+                                    <img id="main-img-fuerzatotal" src="1.jpeg" alt="FuerzaTotal">
                                 </div>
-                                <div class="gallery-thumbs">
-                                    <img src="1.jpeg" alt="Screen 1" class="thumb active" onclick="changeGalleryImage('fuerzatotal', '1.jpeg', 0)">
-                                    <img src="2.jpeg" alt="Screen 2" class="thumb" onclick="changeGalleryImage('fuerzatotal', '2.jpeg', 1)">
-                                    <img src="3.jpeg" alt="Screen 3" class="thumb" onclick="changeGalleryImage('fuerzatotal', '3.jpeg', 2)">
-                                    <img src="4.jpeg" alt="Screen 4" class="thumb" onclick="changeGalleryImage('fuerzatotal', '4.jpeg', 3)">
-                                    <img src="5.jpeg" alt="Screen 5" class="thumb" onclick="changeGalleryImage('fuerzatotal', '5.jpeg', 4)">
-                                    <img src="6.jpeg" alt="Screen 6" class="thumb" onclick="changeGalleryImage('fuerzatotal', '6.jpeg', 5)">
-                                    <img src="7.jpeg" alt="Screen 7" class="thumb" onclick="changeGalleryImage('fuerzatotal', '7.jpeg', 6)">
-                                    <img src="8.jpeg" alt="Screen 8" class="thumb" onclick="changeGalleryImage('fuerzatotal', '8.jpeg', 7)">
+                                <div class="gallery-strip">
+                                    <img src="1.jpeg" class="strip-thumb active" onclick="changeCompactImage('fuerzatotal', '1.jpeg', 0)" alt="1">
+                                    <img src="2.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '2.jpeg', 1)" alt="2">
+                                    <img src="3.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '3.jpeg', 2)" alt="3">
+                                    <img src="4.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '4.jpeg', 3)" alt="4">
+                                    <img src="5.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '5.jpeg', 4)" alt="5">
+                                    <img src="6.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '6.jpeg', 5)" alt="6">
+                                    <img src="7.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '7.jpeg', 6)" alt="7">
+                                    <img src="8.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '8.jpeg', 7)" alt="8">
                                 </div>
                             </div>
                             
-                            <!-- Info del proyecto -->
-                            <div class="project-info-compact">
-                                <div class="info-section">
-                                    <h4>📱 Funcionalidades</h4>
-                                    <div class="features-list">
-                                        <span>📊 Tracking de progreso</span>
-                                        <span>🔄 Conversor kg/lbs</span>
-                                        <span>💪 Calculadora 1RM</span>
-                                        <span>💊 Tracking creatina</span>
-                                        <span>📸 Comparador fotos</span>
-                                        <span>⚖️ Calculadora IMC</span>
-                                        <span>☁️ Backup automático</span>
-                                        <span>🔐 Login seguro</span>
+                            <!-- Info ultra compacta -->
+                            <div class="compact-info">
+                                <div class="info-row">
+                                    <h4>🚀 Funciones</h4>
+                                    <div class="mini-features">
+                                        <span title="Tracking de progreso">📊 Progreso</span>
+                                        <span title="Conversor kg/lbs">🔄 kg⟷lbs</span>
+                                        <span title="Calculadora 1RM">💪 1RM</span>
+                                        <span title="Tracking creatina">💊 Creatina</span>
+                                        <span title="Comparador fotos">📸 Fotos</span>
+                                        <span title="Calculadora IMC">⚖️ IMC</span>
+                                        <span title="Backup automático">☁️ Backup</span>
+                                        <span title="Login seguro">🔐 Login</span>
                                     </div>
                                 </div>
                                 
-                                <div class="info-section">
-                                    <h4>🛠️ Stack Técnico</h4>
-                                    <p>Flutter • Dart • Firebase Auth • Google Drive API • SQLite</p>
+                                <div class="info-row">
+                                    <h4>💡 Descripción</h4>
+                                    <p>App completa para gimnasio: registra entrenamientos, calcula tu peso máximo, convierte unidades, tracking de suplementos y progreso visual.</p>
                                 </div>
                                 
-                                <div class="info-section">
-                                    <h4>📋 Descripción</h4>
-                                    <p>
-                                        FuerzaTotal es tu compañero ideal para el gimnasio. Registra tus entrenamientos, 
-                                        calcula tu peso máximo, convierte unidades, lleva control de suplementos y 
-                                        visualiza tu progreso con fotos. Todo sincronizado en la nube.
-                                    </p>
+                                <div class="info-row">
+                                    <h4>🛠️ Stack</h4>
+                                    <p>Flutter • Dart • Firebase Auth • Google Drive API</p>
                                 </div>
                                 
-                                <button class="btn-download-compact">
-                                    <span>📱</span>
-                                    <span>Descargar APK</span>
+                                <button class="btn-download-mini">
+                                    📱 Descargar APK
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Otros proyectos -->
+                <!-- Otros proyectos más compactos -->
                 <div class="project-card">
                     <div class="project-compact">
-                        <div class="project-header">
+                        <div class="project-main">
                             <div class="project-icon">🌐</div>
-                            <div>
+                            <div class="project-content">
                                 <h3>Sistema de Gestión</h3>
-                                <p class="project-subtitle">Dashboard analítico</p>
+                                <p class="project-mini-desc">Dashboard analítico con reportes automatizados</p>
+                                <div class="project-tags">
+                                    <span>Python</span>
+                                    <span>Django</span>
+                                    <span>PostgreSQL</span>
+                                </div>
                             </div>
+                            <button class="btn-expand-animated disabled" disabled>
+                                <span class="btn-text">Próximamente</span>
+                            </button>
                         </div>
-                        <p class="project-description">
-                            Plataforma web para inventarios con reportes automatizados.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                        <button class="btn-expand disabled" disabled>
-                            <span>Próximamente</span>
-                        </button>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-compact">
-                        <div class="project-header">
+                        <div class="project-main">
                             <div class="project-icon">🤖</div>
-                            <div>
+                            <div class="project-content">
                                 <h3>API REST</h3>
-                                <p class="project-subtitle">Microservicios</p>
+                                <p class="project-mini-desc">Microservicios con JWT y Swagger</p>
+                                <div class="project-tags">
+                                    <span>Java</span>
+                                    <span>Spring</span>
+                                    <span>Docker</span>
+                                </div>
                             </div>
+                            <button class="btn-expand-animated disabled" disabled>
+                                <span class="btn-text">Próximamente</span>
+                            </button>
                         </div>
-                        <p class="project-description">
-                            Arquitectura con Spring Boot, JWT y Swagger.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Spring</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <button class="btn-expand disabled" disabled>
-                            <span>Próximamente</span>
-                        </button>
                     </div>
                 </div>
             </div>

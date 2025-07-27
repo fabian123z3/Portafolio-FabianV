@@ -311,17 +311,16 @@ window.addEventListener('error', (e) => {
     }
 }, true);
 
-// ===== FUNCIONALIDAD DE PROYECTOS EXPANDIBLES =====
+// ===== FUNCIONALIDAD DE PROYECTOS EXPANDIBLES MEJORADA =====
 function toggleProjectDetails(projectId) {
     const details = document.getElementById(`${projectId}-details`);
     const button = event.currentTarget;
-    const arrow = button.querySelector('.arrow');
     
     details.classList.toggle('active');
     button.classList.toggle('active');
     
-    // Cambiar texto del botón
-    const btnText = button.querySelector('span:first-child');
+    // Cambiar texto del botón con animación
+    const btnText = button.querySelector('.btn-text');
     if (details.classList.contains('active')) {
         btnText.textContent = 'Ocultar detalles';
         // Scroll suave hacia los detalles
@@ -333,44 +332,121 @@ function toggleProjectDetails(projectId) {
     }
 }
 
-// Función para cambiar imagen en la galería
-function changeGalleryImage(projectId, imageSrc, index) {
-    const mainImage = document.getElementById(`gallery-main-${projectId}`);
+// Función para cambiar imagen en la galería compacta
+function changeCompactImage(projectId, imageSrc, index) {
+    const mainImage = document.getElementById(`main-img-${projectId}`);
     mainImage.src = imageSrc;
     
+    // Animar el cambio
+    mainImage.style.opacity = '0';
+    setTimeout(() => {
+        mainImage.style.opacity = '1';
+    }, 50);
+    
     // Actualizar thumbnails activos
-    const thumbs = document.querySelectorAll(`#${projectId}-details .thumb`);
+    const thumbs = document.querySelectorAll(`#${projectId}-details .strip-thumb`);
     thumbs.forEach((thumb, i) => {
         thumb.classList.toggle('active', i === index);
     });
 }
 
-// Función para el botón de descarga
+// Animación del botón al hacer hover
 document.addEventListener('DOMContentLoaded', () => {
-    const downloadBtns = document.querySelectorAll('.btn-download-compact');
+    // Animación ripple para botones
+    const animatedButtons = document.querySelectorAll('.btn-expand-animated:not(.disabled)');
+    
+    animatedButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+    
+    // Función para el botón de descarga
+    const downloadBtns = document.querySelectorAll('.btn-download-mini');
     downloadBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            showNotification('La descarga comenzará pronto...', 'success');
-            // Aquí puedes agregar la lógica para descargar el APK
+            // Animación de descarga
+            btn.innerHTML = '⏳ Preparando...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '✅ ¡Listo!';
+                showNotification('La descarga comenzará en breve...', 'success');
+                
+                setTimeout(() => {
+                    btn.innerHTML = '📱 Descargar APK';
+                    btn.disabled = false;
+                }, 2000);
+            }, 1500);
+            
+            // Aquí puedes agregar la lógica real de descarga
             // window.location.href = 'path/to/your/app.apk';
         });
     });
 });
 
-// Cerrar detalles al hacer clic fuera (opcional)
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.project-card') && !e.target.closest('.btn-expand')) {
-        document.querySelectorAll('.project-details.active').forEach(detail => {
-            detail.classList.remove('active');
-            const projectId = detail.id.replace('-details', '');
-            const button = document.querySelector(`[onclick="toggleProjectDetails('${projectId}')"]`);
-            if (button) {
-                button.classList.remove('active');
-                button.querySelector('span:first-child').textContent = 'Ver detalles';
-            }
-        });
-    }
+// Efecto parallax suave en las imágenes del proyecto
+document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        
+        const icon = card.querySelector('.project-icon');
+        if (icon) {
+            icon.style.transform = `translate(${x * 2}px, ${y * 2}px)`;
+        }
+    });
 });
+
+// CSS para el efecto ripple
+const rippleStyles = document.createElement('style');
+rippleStyles.textContent = `
+    .btn-expand-animated {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+    }
+    
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+    
+    #main-img-fuerzatotal {
+        transition: opacity 0.3s ease;
+    }
+    
+    .project-icon {
+        transition: transform 0.3s ease;
+    }
+`;
+document.head.appendChild(rippleStyles);
 
 console.log('✨ Portafolio de Fabian Villablanca Vega cargado exitosamente!');
 console.log('🚀 Desarrollado con pasión y mucho código');
