@@ -315,14 +315,14 @@ window.addEventListener('error', (e) => {
 let currentImageIndex = 0;
 const projectImages = {
     fuerzatotal: [
-        'images/fuerzatotal/1.jpeg',
-        'images/fuerzatotal/2.jpeg',
-        'images/fuerzatotal/3.jpeg',
-        'images/fuerzatotal/4.jpeg',
-        'images/fuerzatotal/5.jpeg',
-        'images/fuerzatotal/6.jpeg',
-        'images/fuerzatotal/7.jpeg',
-        'images/fuerzatotal/8.jpeg'
+        '1.jpeg',
+        '2.jpeg',
+        '3.jpeg',
+        '4.jpeg',
+        '5.jpeg',
+        '6.jpeg',
+        '7.jpeg',
+        '8.jpeg'
     ]
 };
 
