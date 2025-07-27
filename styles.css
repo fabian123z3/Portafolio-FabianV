@@ -860,6 +860,7 @@ section {
 .method-content {
     flex: 1;
     text-align: left;
+    min-width: 0;
 }
 
 .contact-method h4 {
@@ -874,9 +875,11 @@ section {
 .contact-method p {
     margin: 0;
     font-size: 1.05rem;
-    word-break: break-word;
     color: var(--text-color);
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Footer */
@@ -1160,7 +1163,9 @@ section {
     }
 
     .contact-method p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        white-space: normal;
+        word-break: break-all;
     }
 
     .cert-link {
