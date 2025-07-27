@@ -745,32 +745,46 @@ section {
     text-decoration: underline;
 }
 
-/* Contact Section - Mejorado y más simétrico */
+/* Contact Section - Rediseñado para mejor aprovechamiento del espacio */
 .contact {
     background: var(--bg-secondary);
 }
 
 .contact-wrapper {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.contact-info-grid {
+.contact-intro {
     text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-intro h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.contact-intro p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-methods {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .contact-method {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
     padding: 1.8rem;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -778,13 +792,14 @@ section {
     text-decoration: none;
     color: var(--text-color);
     transition: all 0.3s ease;
-    min-height: 120px;
+    min-height: 100px;
 }
 
 .contact-method:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px var(--shadow-color);
     border-color: var(--primary-color);
+    background: var(--card-hover);
 }
 
 .method-icon {
@@ -792,17 +807,23 @@ section {
     background: rgba(99, 102, 241, 0.1);
     padding: 1rem;
     border-radius: 12px;
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover .method-icon {
+    background: rgba(99, 102, 241, 0.2);
+    transform: scale(1.1);
 }
 
 .method-icon svg {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     fill: var(--primary-color);
 }
 
@@ -812,18 +833,20 @@ section {
 }
 
 .contact-method h4 {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     margin-bottom: 0.3rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
 .contact-method p {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     word-break: break-word;
     color: var(--text-color);
+    font-weight: 600;
 }
 
 /* Footer */
@@ -913,8 +936,8 @@ section {
     }
 
     .contact-methods {
-        grid-template-columns: 1fr;
-        max-width: 500px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
     }
 }
 
@@ -1011,21 +1034,11 @@ section {
 
     .contact-methods {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .contact-method {
         padding: 1.5rem;
-        min-height: auto;
-    }
-
-    .method-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 1.5rem;
-    }
-
-    .contact-method p {
-        font-size: 1rem;
     }
 }
 
@@ -1092,23 +1105,37 @@ section {
     }
 
     .contact-method {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
         gap: 1rem;
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
 
     .method-icon {
-        margin: 0 auto;
+        width: 50px;
+        height: 50px;
+        padding: 0.8rem;
     }
 
-    .method-content {
-        text-align: center;
+    .method-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact-method h4 {
+        font-size: 0.75rem;
+    }
+
+    .contact-method p {
+        font-size: 0.95rem;
     }
 
     .cert-link {
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
+    }
+
+    .contact-intro p {
+        font-size: 1rem;
     }
 }
 
