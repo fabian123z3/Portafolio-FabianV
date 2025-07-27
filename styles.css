@@ -378,7 +378,7 @@ section {
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -551,38 +551,40 @@ section {
     background: var(--primary-color);
     color: white;
     padding: 0.5rem 1rem;
-    border-radius: 25px;font-weight: 600;
-   font-size: 0.9rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .cert-card {
-   background: var(--card-bg);
-   border: 1px solid var(--border-color);
-   border-radius: 12px;
-   padding: 2rem;
-   display: flex;
-   gap: 2rem;
-   transition: all 0.3s ease;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    transition: all 0.3s ease;
 }
 
 .cert-card:hover {
-   transform: translateX(10px);
-   box-shadow: 0 10px 30px var(--shadow-color);
-   border-color: var(--primary-color);
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border-color: var(--primary-color);
 }
 
 .cert-icon {
-   flex-shrink: 0;
-   width: 60px;
-   height: 60px;
-   background: rgba(99, 102, 241, 0.1);
-   border-radius: 12px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cert-content {
+    flex:css.cert-content {
    flex: 1;
 }
 
@@ -697,24 +699,28 @@ section {
    text-decoration: underline;
 }
 
-/* Contact Section */
+/* Contact Section - Optimizado */
 .contact {
    background: var(--bg-secondary);
 }
 
-.contact-content {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 4rem;
+.contact-wrapper {
+   max-width: 800px;
+   margin: 0 auto;
 }
 
-.contact-info h3 {
+.contact-info-grid {
+   text-align: center;
+   margin-bottom: 3rem;
+}
+
+.contact-info-grid h3 {
    font-size: 1.8rem;
    margin-bottom: 1rem;
    color: var(--text-color);
 }
 
-.contact-info p {
+.contact-info-grid p {
    color: var(--text-secondary);
    margin-bottom: 2rem;
    line-height: 1.6;
@@ -722,123 +728,52 @@ section {
 
 .contact-methods {
    display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 1rem;
-   margin-bottom: 2rem;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   gap: 1.5rem;
+   max-width: 800px;
+   margin: 0 auto;
 }
 
 .contact-method {
    display: flex;
    align-items: center;
-   gap: 1rem;
-   padding: 1rem;
+   gap: 1.5rem;
+   padding: 1.5rem;
    background: var(--card-bg);
    border: 1px solid var(--border-color);
-   border-radius: 8px;
+   border-radius: 12px;
    text-decoration: none;
    color: var(--text-color);
    transition: all 0.3s ease;
 }
 
 .contact-method:hover {
-   transform: translateY(-3px);
+   transform: translateY(-5px);
    box-shadow: 0 10px 20px var(--shadow-color);
    border-color: var(--primary-color);
 }
 
 .method-icon {
-   font-size: 1.5rem;
+   font-size: 2rem;
    background: rgba(99, 102, 241, 0.1);
-   padding: 0.5rem;
-   border-radius: 8px;
+   padding: 0.8rem;
+   border-radius: 12px;
+   min-width: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .contact-method h4 {
-   font-size: 0.9rem;
+   font-size: 1rem;
    color: var(--text-secondary);
    margin-bottom: 0.25rem;
 }
 
 .contact-method p {
    margin: 0;
-   font-size: 0.95rem;
-}
-
-/* Contact Form */
-.contact-form {
-   background: var(--card-bg);
-   padding: 2rem;
-   border-radius: 12px;
-   border: 1px solid var(--border-color);
-}
-
-.contact-form h3 {
-   font-size: 1.5rem;
-   margin-bottom: 2rem;
-   color: var(--text-color);
-}
-
-.form-group {
-   position: relative;
-   margin-bottom: 2rem;
-}
-
-.form-group input,
-.form-group textarea {
-   width: 100%;
-   padding: 1rem;
-   background: var(--bg-secondary);
-   border: 2px solid var(--border-color);
-   border-radius: 8px;
-   font-size: 1rem;
-   color: var(--text-color);
-   transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-   outline: none;
-   border-color: var(--primary-color);
-   background: var(--bg-color);
-}
-
-.form-group label {
-   position: absolute;
-   left: 1rem;
-   top: 1rem;
-   color: var(--text-secondary);
-   transition: all 0.3s ease;
-   pointer-events: none;
-   background: var(--card-bg);
-   padding: 0 0.5rem;
-}
-
-.form-group input:focus + label,
-.form-group input:valid + label,
-.form-group textarea:focus + label,
-.form-group textarea:valid + label {
-   top: -10px;
-   left: 0.5rem;
-   font-size: 0.875rem;
-   color: var(--primary-color);
-}
-
-.btn-submit {
-   width: 100%;
-   position: relative;
-   overflow: hidden;
-}
-
-.btn-loading {
-   display: none;
-}
-
-.btn-submit.loading .btn-loading {
-   display: inline;
-}
-
-.btn-submit.loading span:first-child {
-   display: none;
+   font-size: 1.1rem;
+   word-break: break-word;
 }
 
 /* Footer */
@@ -910,12 +845,6 @@ section {
 
 /* Responsive - Tablet */
 @media (max-width: 1024px) {
-   .about-content,
-   .contact-content {
-       grid-template-columns: 1fr;
-       gap: 3rem;
-   }
-
    .skills-grid {
        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
    }
@@ -930,9 +859,12 @@ section {
    }
 
    .about-highlights {
+       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   }
+
+   .contact-methods {
        grid-template-columns: 1fr;
        max-width: 500px;
-       margin: 3rem auto 0;
    }
 }
 
@@ -1008,10 +940,6 @@ section {
        height: 50px;
    }
    
-   .contact-methods {
-       grid-template-columns: 1fr;
-   }
-   
    .projects-grid {
        grid-template-columns: 1fr;
    }
@@ -1029,6 +957,23 @@ section {
 
    .code-content {
        font-size: 0.8rem;
+   }
+
+   .contact-methods {
+       grid-template-columns: 1fr;
+   }
+
+   .contact-method {
+       padding: 1.2rem;
+   }
+
+   .method-icon {
+       min-width: 50px;
+       font-size: 1.5rem;
+   }
+
+   .contact-method p {
+       font-size: 0.95rem;
    }
 }
 
@@ -1085,16 +1030,23 @@ section {
        padding: 1.5rem;
    }
 
-   .contact-form {
-       padding: 1.5rem;
-   }
-
    .about-highlights {
        gap: 1rem;
+       grid-template-columns: 1fr;
    }
 
    section {
        padding: 60px 0;
+   }
+
+   .contact-method {
+       flex-direction: column;
+       text-align: center;
+       gap: 1rem;
+   }
+
+   .method-icon {
+       margin: 0 auto;
    }
 }
 
@@ -1105,4 +1057,4 @@ section {
        animation-iteration-count: 1 !important;
        transition-duration: 0.01ms !important;
    }
-}
+}}

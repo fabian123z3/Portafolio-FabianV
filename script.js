@@ -100,36 +100,6 @@ document.querySelectorAll('.skill-card, .cert-card, .project-card, .about-highli
     observer.observe(el);
 });
 
-// Formulario de contacto
-const contactForm = document.getElementById('contact-form');
-const submitBtn = contactForm.querySelector('.btn-submit');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Obtener datos del formulario
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
-    
-    // Simular envío
-    submitBtn.classList.add('loading');
-    
-    // Aquí podrías integrar con un servicio real de email como EmailJS o Formspree
-    setTimeout(() => {
-        submitBtn.classList.remove('loading');
-        
-        // Mostrar mensaje de éxito
-        showNotification('¡Mensaje enviado correctamente! Te responderé lo antes posible.', 'success');
-        
-        // Limpiar formulario
-        contactForm.reset();
-    }, 2000);
-});
-
 // Sistema de notificaciones
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
@@ -138,7 +108,7 @@ function showNotification(message, type = 'info') {
         position: fixed;
         top: 100px;
         right: 20px;
-        background: ${type === 'success' ? 'var(--success-color)' : 'var(--primary-color)'};
+        background: ${type === 'success' ? '#10b981' : '#6366f1'};
         color: white;
         padding: 1rem 2rem;
         border-radius: 8px;
@@ -171,7 +141,7 @@ function createParticles() {
             position: absolute;
             width: ${Math.random() * 4 + 1}px;
             height: ${Math.random() * 4 + 1}px;
-            background: var(--primary-color);
+            background: #6366f1;
             border-radius: 50%;
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
@@ -343,6 +313,45 @@ window.addEventListener('error', (e) => {
     }
 }, true);
 
-console.log('✨ Portafolio de Fabian Villablanca cargado exitosamente!');
+// Ajustes para mejorar la experiencia móvil
+function checkMobile() {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Reducir número de partículas en móvil
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach((particle, index) => {
+            if (index > 20) {
+                particle.remove();
+            }
+        });
+    }
+}
+
+// Verificar si es móvil al cargar y al cambiar el tamaño
+window.addEventListener('load', checkMobile);
+window.addEventListener('resize', checkMobile);
+
+// Mejorar rendimiento con debounce
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Aplicar debounce a funciones de scroll
+const debouncedScroll = debounce(() => {
+    highlightActiveSection();
+}, 100);
+
+window.addEventListener('scroll', debouncedScroll);
+
+console.log('✨ Portafolio de Fabian Villablanca Vega cargado exitosamente!');
 console.log('🚀 Desarrollado con pasión y mucho código');
 console.log('💼 ¿Interesado en trabajar juntos? ¡Contáctame!');
