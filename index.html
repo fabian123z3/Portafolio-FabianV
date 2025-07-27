@@ -464,120 +464,234 @@
             <div class="projects-grid">
                 <!-- Proyecto FuerzaTotal -->
                 <div class="project-card featured">
-                    <div class="featured-ribbon">DESTACADO</div>
-                    <div class="project-compact">
-                        <div class="project-main">
-                            <div class="project-icon">💪</div>
-                            <div class="project-content">
-                                <h3>FuerzaTotal <span class="project-type">App Móvil</span></h3>
-                                <p class="project-mini-desc">Tracking completo: progreso, 1RM, kg/lbs, creatina, fotos e IMC</p>
-                                <div class="project-tags">
-                                    <span>Flutter</span>
-                                    <span>Firebase</span>
-                                    <span>Google Drive</span>
+                    <div class="project-layout">
+                        <div class="project-left">
+                            <div class="project-header">
+                                <span class="project-icon">💪</span>
+                                <div>
+                                    <h3>FuerzaTotal</h3>
+                                    <span class="project-category">Aplicación Móvil</span>
                                 </div>
                             </div>
-                            <button class="btn-expand-animated" onclick="toggleProjectDetails('fuerzatotal')">
-                                <span class="btn-text">Ver detalles</span>
-                                <div class="btn-icon-animated">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
+                            <p class="project-desc">
+                                App completa para gimnasio: tracking de progreso, calculadora 1RM, 
+                                conversor kg/lbs, seguimiento de creatina, comparador de fotos e IMC.
+                            </p>
+                            <div class="tech-stack-row">
+                                <div class="tech-logo" title="Flutter">
+                                    <svg viewBox="0 0 256 317" width="20" height="20">
+                                        <path d="M157.666 0L0 157.667l48.8 48.8L206.467 48.8z" fill="#02569B"/>
+                                        <path d="M156.567 145.397L72.15 229.815l48.984 49.716 48.71-48.71 85.425-85.424z" fill="#02569B"/>
+                                        <path d="M121.133 279.531l37.082 37.082h97.052l-85.425-85.792z" fill="#02569B"/>
+                                        <path d="M71.6 230.364l48.801-48.801 49.441 49.258-48.71 48.71z" fill="#45D1FD"/>
                                     </svg>
+                                    <span>Flutter</span>
                                 </div>
+                                <div class="tech-logo" title="Firebase">
+                                    <svg viewBox="0 0 256 351" width="20" height="20">
+                                        <path d="M0 282.998l2.123-2.973L102.527 89.512l.212-2.017L58.479 0z" fill="#FFC24A"/>
+                                        <path d="M135.005 150.38l32.955-33.751-32.964-62.93c-3.13-5.957-11.867-5.974-14.963 0L102.42 87.287z" fill="#F4BD62"/>
+                                        <path d="M0 282.998l.962-.968 3.496-1.421 128.478-128L102.527 89.512z" fill="#FFA712"/>
+                                        <path d="m139.121 347.551 116.275-64.848-33.204-204.495c-1.039-6.398-8.888-8.928-13.468-4.34L0 282.998l115.608 64.549c7.341 4.099 16.136 4.099 23.513.004" fill="#FFA50E"/>
+                                    </svg>
+                                    <span>Firebase</span>
+                                </div>
+                                <div class="tech-logo" title="Google Drive">
+                                    <svg viewBox="0 0 256 222" width="20" height="20">
+                                        <path d="M166.23 0H89.77L0 147.691h76.46z" fill="#0066DA"/>
+                                        <path d="M256 147.691H128l-38.23 73.846h128z" fill="#00AC47"/>
+                                        <path d="M89.77 0l-50.54 97.691 38.23 73.846L166.23 0z" fill="#EA4335"/>
+                                        <path d="M256 147.691l-50.54-97.691h-77.46l50.54 97.691z" fill="#00832D"/>
+                                        <path d="M128 147.691H50.54L89.77 221.537z" fill="#2684FC"/>
+                                        <path d="M166.23 73.846L128 147.691h77.46z" fill="#FFBA00"/>
+                                    </svg>
+                                    <span>Drive API</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-right">
+                            <button class="btn-details" onclick="toggleProjectDetails('fuerzatotal')">
+                                <span>Ver proyecto</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
                             </button>
                         </div>
                     </div>
                     
-                    <!-- Sección expandible ultra compacta -->
-                    <div id="fuerzatotal-details" class="project-details-compact">
-                        <div class="details-grid">
-                            <!-- Galería compacta -->
-                            <div class="compact-gallery">
-                                <div class="gallery-viewer">
-                                    <img id="main-img-fuerzatotal" src="1.jpeg" alt="FuerzaTotal">
+                    <!-- Detalles expandibles -->
+                    <div id="fuerzatotal-details" class="project-expanded">
+                        <div class="expanded-content">
+                            <div class="gallery-section">
+                                <div class="main-preview">
+                                    <img id="main-fuerzatotal" src="1.jpeg" alt="FuerzaTotal App">
                                 </div>
-                                <div class="gallery-strip">
-                                    <img src="1.jpeg" class="strip-thumb active" onclick="changeCompactImage('fuerzatotal', '1.jpeg', 0)" alt="1">
-                                    <img src="2.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '2.jpeg', 1)" alt="2">
-                                    <img src="3.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '3.jpeg', 2)" alt="3">
-                                    <img src="4.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '4.jpeg', 3)" alt="4">
-                                    <img src="5.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '5.jpeg', 4)" alt="5">
-                                    <img src="6.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '6.jpeg', 5)" alt="6">
-                                    <img src="7.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '7.jpeg', 6)" alt="7">
-                                    <img src="8.jpeg" class="strip-thumb" onclick="changeCompactImage('fuerzatotal', '8.jpeg', 7)" alt="8">
+                                <div class="thumb-grid">
+                                    <img src="1.jpeg" class="thumb-img active" onclick="switchImage('fuerzatotal', '1.jpeg', 0)" alt="1">
+                                    <img src="2.jpeg" class="thumb-img" onclick="switchImage('fuerzatotal', '2.jpeg', 1)" alt="2">
+                                    <img src="3.jpeg" class="thumb-img" onclick="switchImage('fuerzatotal', '3.jpeg', 2)" alt="3">
+                                    <img src="4.jpeg" class="thumb-img" onclick="switchImage('fuerzatotal', '4.jpeg', 3)" alt="4">
+                                    <img src="5.jpeg" class="thumb-img" onclick="switchImage('fuerzatotal', '5.jpeg', 4)" alt="5">
+                                    <img src="6.jpeg" class="thumb-img" onclick="switchImage('fuerzatotal', '6.jpeg', 5)" alt="6">
+                                    <img src="7.jpeg" class="thumb-img" onclick="switchImage('fuerzatotal', '7.jpeg', 6)" alt="7">
+                                    <img src="8.jpeg" class="thumb-img" onclick="switchImage('fuerzatotal', '8.jpeg', 7)" alt="8">
                                 </div>
                             </div>
                             
-                            <!-- Info ultra compacta -->
-                            <div class="compact-info">
-                                <div class="info-row">
-                                    <h4>🚀 Funciones</h4>
-                                    <div class="mini-features">
-                                        <span title="Tracking de progreso">📊 Progreso</span>
-                                        <span title="Conversor kg/lbs">🔄 kg⟷lbs</span>
-                                        <span title="Calculadora 1RM">💪 1RM</span>
-                                        <span title="Tracking creatina">💊 Creatina</span>
-                                        <span title="Comparador fotos">📸 Fotos</span>
-                                        <span title="Calculadora IMC">⚖️ IMC</span>
-                                        <span title="Backup automático">☁️ Backup</span>
-                                        <span title="Login seguro">🔐 Login</span>
+                            <div class="details-info">
+                                <div class="features-grid">
+                                    <div class="feature-box">
+                                        <span class="feature-icon">📊</span>
+                                        <div>
+                                            <strong>Tracking Completo</strong>
+                                            <p>Registra series, reps y peso</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">🔄</span>
+                                        <div>
+                                            <strong>Conversor</strong>
+                                            <p>Kg ⟷ Lbs al instante</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">💪</span>
+                                        <div>
+                                            <strong>Calculadora 1RM</strong>
+                                            <p>Tu peso máximo en press</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">💊</span>
+                                        <div>
+                                            <strong>Creatina</strong>
+                                            <p>Recordatorio diario</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">📸</span>
+                                        <div>
+                                            <strong>Progreso Visual</strong>
+                                            <p>Compara fotos antes/después</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">⚖️</span>
+                                        <div>
+                                            <strong>IMC</strong>
+                                            <p>Calcula tu índice corporal</p>
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <div class="info-row">
-                                    <h4>💡 Descripción</h4>
-                                    <p>App completa para gimnasio: registra entrenamientos, calcula tu peso máximo, convierte unidades, tracking de suplementos y progreso visual.</p>
+                                <div class="tech-details">
+                                    <h4>Stack Tecnológico</h4>
+                                    <p>Flutter/Dart • Firebase Authentication • Google Drive API para backups • 
+                                    Diseño Material 3 • Gráficos con FL Chart</p>
                                 </div>
                                 
-                                <div class="info-row">
-                                    <h4>🛠️ Stack</h4>
-                                    <p>Flutter • Dart • Firebase Auth • Google Drive API</p>
-                                </div>
-                                
-                                <button class="btn-download-mini">
-                                    📱 Descargar APK
+                                <button class="btn-download">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                                    </svg>
+                                    Descargar APK
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Otros proyectos más compactos -->
+                <!-- Sistema de Gestión -->
                 <div class="project-card">
-                    <div class="project-compact">
-                        <div class="project-main">
-                            <div class="project-icon">🌐</div>
-                            <div class="project-content">
-                                <h3>Sistema de Gestión</h3>
-                                <p class="project-mini-desc">Dashboard analítico con reportes automatizados</p>
-                                <div class="project-tags">
+                    <div class="project-layout">
+                        <div class="project-left">
+                            <div class="project-header">
+                                <span class="project-icon">🌐</span>
+                                <div>
+                                    <h3>Sistema de Gestión</h3>
+                                    <span class="project-category">Aplicación Web</span>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                Dashboard analítico para gestión de inventarios con reportes automatizados 
+                                y sistema de roles de usuario.
+                            </p>
+                            <div class="tech-stack-row">
+                                <div class="tech-logo" title="Python">
+                                    <svg viewBox="0 0 256 255" width="20" height="20">
+                                        <path d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0111.13 11.13 11.12 11.12 0 01-11.13 11.13 11.12 11.12 0 01-11.13-11.13 11.12 11.12 0 0111.13-11.13z" fill="#3776AB"/>
+                                        <path d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 01-11.13-11.13 11.12 11.12 0 0111.13-11.131 11.12 11.12 0 0111.13 11.13 11.12 11.12 0 01-11.13 11.13z" fill="#FFD43B"/>
+                                    </svg>
                                     <span>Python</span>
+                                </div>
+                                <div class="tech-logo" title="Django">
+                                    <svg viewBox="0 0 256 326" width="20" height="20">
+                                        <path d="M114.784 0h53.278v244.191c-27.29 5.162-47.38 7.193-69.117 7.193C33.873 251.384 0 222.628 0 166.366c0-54.815 36.653-90.456 93.564-90.456 8.837 0 15.549.69 23.699 2.759V0zm26.639 124.85c-6.377-2.07-14.754-2.897-23.009-2.897-34.523 0-54.468 21.225-54.468 58.398 0 36.484 19.116 56.543 54.124 56.543 8.006 0 14.619-.517 23.353-1.724V124.85z" fill="#092E20"/>
+                                        <path d="M255.187 84.26v122.263c0 42.255-3.154 62.543-12.359 79.984-8.698 17.096-20.205 27.902-43.915 39.845l-49.766-23.701c23.701-11.122 35.173-20.895 42.367-35.863 7.534-15.314 9.909-32.926 9.909-79.293V84.26h53.764zM196.975 0h53.772v55.315h-53.772V0z" fill="#092E20"/>
+                                    </svg>
                                     <span>Django</span>
+                                </div>
+                                <div class="tech-logo" title="PostgreSQL">
+                                    <svg viewBox="0 0 256 264" width="20" height="20">
+                                        <path d="M255.007 158.085c-1.535-4.649-5.556-7.887-10.756-8.664-2.452-.366-5.26-.21-8.583.475-5.792 1.195-10.089 1.65-13.225 1.738 11.837-19.985 21.462-42.775 27.003-64.228 8.96-34.689 4.172-50.492-1.423-57.64C233.217 10.847 211.614.683 185.552.372c-13.903-.166-26.108 2.575-32.475 4.549-5.928-1.046-12.302-1.63-18.99-1.63-12.537 0-23.943 2.144-31.776 5.993-5.837-1.706-13.698-3.567-22.65-4.387-21.59-1.98-36.412 3.216-44.079 15.446C28.571 31.369 26.001 44.951 29.402 64.02c1.089 6.109 2.945 13.144 6.14 23.326-2.36 5.72-4.083 12.077-5.098 18.958-3.64 24.666 3.113 40.679 20.074 47.586 2.766 1.126 5.738 1.787 8.822 2.013 6.413.47 12.612-1.399 18.363-4.355 10.665 11.812 23.125 20.835 36.992 26.765 15.812 6.757 31.721 9.626 47.16 8.479 18.501-1.375 34.214-8.596 46.716-21.465 16.472-16.972 22.901-39.185 18.08-62.552-.62-3.005-1.394-5.97-2.3-8.878 1.882-1.088 3.73-2.268 5.525-3.552 12.917-9.248 20.43-22.038 21.696-36.975.642-7.579-.797-14.543-4.05-19.605zM63.274 97.192c5.456-12.18 12.016-18.526 19.489-18.865h.003c2.087-.096 3.94.396 6.179 1.64 1.006.559 6.612 4.534 4.748 15.636-1.912 11.394-10.16 29.564-22.403 49.465-16.464-3.436-25.585-9.222-27.872-17.708-1.3-4.82-.943-10.379.7-16.524 1.528-5.714 3.982-10.96 7.285-15.584.092-.077.22-.074.298.027.078.1.063.256-.048.334-3.205 4.465-5.625 9.659-7.122 15.264-1.582 5.923-1.916 11.288-.659 15.916 2.104 7.752 10.567 13.369 25.933 16.73-3.865 5.777-8.035 11.437-12.473 16.841-11.672-1.585-18.051-5.463-20.082-12.231-3.923-13.08 1.226-38.454 17.024-52.731zM92.3 139.278c9.792-14.788 17.473-30.035 21.125-41.65 7.147.596 14.318.601 21.373.016 3.672 11.588 11.373 26.776 21.191 41.487-3.884 3.667-8.145 7.068-12.732 10.127a106.906 106.906 0 01-19.169 9.925 107.717 107.717 0 01-19.133-9.849c-4.601-3.046-8.876-6.438-12.775-10.098.04.014.08.028.12.042zm95.662-89.459c3.032 0 6.053.132 8.957.466 25.064 2.88 39.857 18.295 32.984 34.379-5.374 12.578-21.906 22.68-46.474 26.544-4.253-17.476-6.462-29.104-7.147-37.539-.826-10.173.609-17.218 4.263-20.935 2.397-2.438 4.725-2.915 7.417-2.915zm10.283 58.658c19.961-3.792 33.9-12.784 37.94-22.249 3.913-9.17-2.658-19.387-16.901-23.484 1.856 14.5-.447 33.246-8.189 45.733h-.85zm10.501 54.157a83.8 83.8 0 01-19.067 21.891c-1.554-2.648-3.255-5.296-5.095-7.926 4.668-5.842 8.774-11.951 12.278-18.156 3.09.745 6.205 1.571 9.318 2.497.879.537 1.756 1.107 2.566 1.694zm26.261-33.141c-2.37 3.36-5.616 6.446-9.694 9.193a84.006 84.006 0 00-6.092-1.633c4.147-7.763 7.375-15.704 9.598-23.491a64.289 64.289 0 003.294 7.385c.865 3.138 1.208 6.057.894 8.546h2zm-146.9 17.7c-3.095-.83-6.208-1.758-9.319-2.797-1.038-.638-2.045-1.318-3.007-2.035a83.982 83.982 0 0119.209-22.05c1.594 2.705 3.345 5.414 5.245 8.109-4.691 5.9-8.812 12.072-12.319 18.438.063.112.126.223.19.334v.001zm16.281 2.884c3.334-5.935 7.213-11.79 11.582-17.413a167.246 167.246 0 0015.369 14.175c4.85 3.926 9.907 7.468 15.051 10.533-10.455 7.927-26.457 13.398-44.458 12.69a99.05 99.05 0 002.456-19.985zm-51.405 7.425c2.002 5.498 6.362 10.123 12.973 13.705 5.374 2.911 11.705 4.903 17.996 5.744-6.57 5.476-13.695 8.493-21.124 8.941-2.504.151-4.93-.094-7.202-.744-12.906-3.688-19.327-15.366-15.682-31.668a66.15 66.15 0 016.81 1.973c2.012.762 4.051 1.444 6.078 2.038.051.004.102.007.151.01v.001zm-21.429 32.489c-4.515 2.071-11.334 3.669-16.148 2.341-10.732-2.959-13.935-14.213-9.526-33.493 3.14-13.738 8.816-25.361 13.539-30.882-.024.167-.036.335-.036.502 0 8.548 5.618 29.945 26.367 39.794-5.018 9.116-9.879 17.023-14.196 21.738zm39.887 10.957c10.003-.745 19.576-5.788 27.941-14.681 8.689 6.096 17.998 10.601 27.601 13.298-8.832 8.682-20.518 13.655-34.717 14.71-11.848.88-24.36-1.16-37.164-6.04a84.956 84.956 0 0016.339-7.287zm100.465 1.076c12.319 17.364 7.061 32.676-12.815 37.246-15.541 3.573-35.017-1.538-50.591-12.903a99.954 99.954 0 007.195-1.934c10.783-3.332 20.879-8.489 29.988-15.312 9.398 3.327 18.531 2.062 26.223-7.097zm15.814-31.655c-2.604 4.226-7.085 8.244-13.321 11.933-1.966 1.164-4.023 2.23-6.128 3.21-1.844-7.386-5.22-14.599-10.072-21.415 5.322-8.925 9.497-18.18 12.472-27.33 10.056 10.59 19.859 23.207 17.049 33.602z" fill="#336791"/>
+                                    </svg>
                                     <span>PostgreSQL</span>
                                 </div>
                             </div>
-                            <button class="btn-expand-animated disabled" disabled>
-                                <span class="btn-text">Próximamente</span>
+                        </div>
+                        
+                        <div class="project-right">
+                            <button class="btn-details disabled" disabled>
+                                <span>Próximamente</span>
                             </button>
                         </div>
                     </div>
                 </div>
                 
+                <!-- API REST -->
                 <div class="project-card">
-                    <div class="project-compact">
-                        <div class="project-main">
-                            <div class="project-icon">🤖</div>
-                            <div class="project-content">
-                                <h3>API REST</h3>
-                                <p class="project-mini-desc">Microservicios con JWT y Swagger</p>
-                                <div class="project-tags">
+                    <div class="project-layout">
+                        <div class="project-left">
+                            <div class="project-header">
+                                <span class="project-icon">🤖</span>
+                                <div>
+                                    <h3>API REST</h3>
+                                    <span class="project-category">Microservicios</span>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                Arquitectura de microservicios con autenticación JWT, documentación 
+                                Swagger y contenedores Docker.
+                            </p>
+                            <div class="tech-stack-row">
+                                <div class="tech-logo" title="Java">
+                                    <svg viewBox="0 0 256 346" width="20" height="20">
+                                        <path d="M82.554 267.473s-13.198 7.675 9.393 10.272c27.369 3.122 41.356 2.675 71.517-3.034 0 0 7.93 4.972 19.003 9.279-67.611 28.977-153.019-1.679-99.913-16.517M74.292 229.659s-14.803 10.958 7.805 13.296c29.236 3.016 52.324 3.263 92.276-4.43 0 0 5.526 5.602 14.215 8.666-81.747 23.904-172.798 1.885-114.296-17.532" fill="#5382A1"/>
+                                        <path d="M143.942 165.515c16.66 19.18-4.377 36.44-4.377 36.44s42.301-21.837 22.874-49.183c-18.144-25.5-32.059-38.172 43.268-81.858 0 0-118.238 29.53-61.765 94.6" fill="#E76F00"/>
+                                        <path d="M233.364 295.442s9.767 8.047-10.757 14.273c-39.026 11.823-162.432 15.393-196.714.471-12.323-5.36 10.787-12.8 18.056-14.362 7.581-1.644 11.914-1.337 11.914-1.337-13.705-9.655-88.583 18.957-38.034 27.15 137.853 22.356 251.292-10.066 215.535-26.195M88.9 190.48s-62.771 14.91-22.228 20.323c17.118 2.292 51.243 1.774 83.03-.89 25.978-2.19 52.063-6.85 52.063-6.85s-9.16 3.923-15.787 8.448c-63.744 16.765-186.886 8.966-151.435-8.183 29.981-14.492 54.358-12.848 54.358-12.848M201.506 253.422c64.8-33.672 34.839-66.03 13.927-61.67-5.126 1.066-7.411 1.99-7.411 1.99s1.903-2.98 5.537-4.27c41.37-14.545 73.187 42.897-13.355 65.647 0-.001 1.003-.895 1.302-1.697" fill="#5382A1"/>
+                                    </svg>
                                     <span>Java</span>
+                                </div>
+                                <div class="tech-logo" title="Spring">
+                                    <svg viewBox="0 0 256 257" width="20" height="20">
+                                        <path d="M38.186 189.498c33.458 52.852 104.297 69.249 158.173 36.643 2.337-1.415 4.604-2.895 6.802-4.434-43.264 43.901-111.23 51.409-163.516 15.163-62.8-43.519-69.876-133.028-15.789-199.938 41.205-50.96 106.413-67.643 158.996-40.032-40.39-15.812-88.235-13.093-128.172 11.464C.605 42.906-15.794 110.873 14.513 165.859a127.36 127.36 0 0023.673 23.639z" fill="#6CB33E"/>
+                                        <path d="M231.228 52.125c6.802 0 12.312-5.592 12.312-12.481 0-6.89-5.51-12.473-12.312-12.473-6.802 0-12.304 5.592-12.304 12.473 0 6.889 5.502 12.481 12.304 12.481m0-22.253c5.246 0 9.499 4.343 9.499 9.78 0 5.429-4.253 9.78-9.499 9.78-5.246 0-9.491-4.343-9.491-9.78-.008-5.437 4.237-9.78 9.491-9.78m2.516 16.539l2.984-4.254c1.549-.179 2.761-.597 2.761-2.402 0-2.05-1.362-3.085-4.077-3.085H229.6v10.37h2.486v-4.206l2.745 4.206h2.883v-.637l.03.008zm-2.537-6.09h2.672c.906 0 1.96.12 1.96 1.197 0 1.197-1.054 1.317-1.96 1.317h-2.672v-2.514z" fill="#6CB33E"/>
+                                    </svg>
                                     <span>Spring</span>
+                                </div>
+                                <div class="tech-logo" title="Docker">
+                                    <svg viewBox="0 0 256 185" width="20" height="20">
+                                        <path d="M250.716 70.497c-5.765-3.976-19.093-5.407-29.317-3.307-1.341-9.763-6.849-18.236-16.842-25.881l-5.765-3.976-3.835 5.835c-4.845 7.378-7.294 17.529-6.511 27.569.282 3.551.989 9.904 4.259 15.458-2.961 1.636-8.868 3.976-16.701 3.835H.282c-.564 3.976-.423 16.397 2.396 25.881 2.256 7.519 5.906 14.049 10.893 19.462C19.76 141.084 29.612 144.5 41.344 144.5c36.893 0 64.127-17.104 76.999-48.014 5.06.141 15.994.141 21.618-10.779.141-.282.564-1.131 1.835-3.693l.706-1.414-3.976-2.678l-.141-.424zm-172.155-28.7h17.247v17.387H78.561V41.797zm0-21.477h17.247v17.388H78.561V20.32zm20.77 21.336h17.247v17.387H99.331V41.656zm20.77 0h17.247v17.387h-17.247V41.656zM99.331 20.32h17.247v17.388H99.331V20.32zm20.77 0h17.247v17.388h-17.247V20.32zm20.91 0h17.106v17.388h-17.247V20.32l.141.141zm20.77 21.195h17.247v17.387h-17.247V41.515zm20.769 0h17.247v17.387h-17.247V41.515z" fill="#2396ED"/>
+                                    </svg>
                                     <span>Docker</span>
                                 </div>
                             </div>
-                            <button class="btn-expand-animated disabled" disabled>
-                                <span class="btn-text">Próximamente</span>
+                        </div>
+                        
+                        <div class="project-right">
+                            <button class="btn-details disabled" disabled>
+                                <span>Próximamente</span>
                             </button>
                         </div>
                     </div>

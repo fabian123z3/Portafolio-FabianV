@@ -311,142 +311,163 @@ window.addEventListener('error', (e) => {
     }
 }, true);
 
-// ===== FUNCIONALIDAD DE PROYECTOS EXPANDIBLES MEJORADA =====
+// ===== FUNCIONALIDAD DE PROYECTOS MEJORADA =====
 function toggleProjectDetails(projectId) {
     const details = document.getElementById(`${projectId}-details`);
     const button = event.currentTarget;
     
     details.classList.toggle('active');
-    button.classList.toggle('active');
     
-    // Cambiar texto del botón con animación
-    const btnText = button.querySelector('.btn-text');
+    // Cambiar texto e icono del botón
+    const btnText = button.querySelector('span');
+    const svg = button.querySelector('svg');
+    
     if (details.classList.contains('active')) {
-        btnText.textContent = 'Ocultar detalles';
+        btnText.textContent = 'Ocultar proyecto';
+        svg.innerHTML = '<path d="M5 12h14M12 19l7-7-7-7"/>';
+        svg.style.transform = 'rotate(90deg)';
         // Scroll suave hacia los detalles
         setTimeout(() => {
             details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 100);
     } else {
-        btnText.textContent = 'Ver detalles';
+        btnText.textContent = 'Ver proyecto';
+        svg.innerHTML = '<path d="M5 12h14M12 5l7 7-7 7"/>';
+        svg.style.transform = 'rotate(0deg)';
     }
 }
 
-// Función para cambiar imagen en la galería compacta
-function changeCompactImage(projectId, imageSrc, index) {
-    const mainImage = document.getElementById(`main-img-${projectId}`);
-    mainImage.src = imageSrc;
+// Función para cambiar imagen en la galería
+function switchImage(projectId, imageSrc, index) {
+    const mainImage = document.getElementById(`main-${projectId}`);
     
-    // Animar el cambio
+    // Efecto fade
     mainImage.style.opacity = '0';
     setTimeout(() => {
+        mainImage.src = imageSrc;
         mainImage.style.opacity = '1';
-    }, 50);
+    }, 150);
     
     // Actualizar thumbnails activos
-    const thumbs = document.querySelectorAll(`#${projectId}-details .strip-thumb`);
+    const thumbs = document.querySelectorAll(`#${projectId}-details .thumb-img`);
     thumbs.forEach((thumb, i) => {
         thumb.classList.toggle('active', i === index);
     });
 }
 
-// Animación del botón al hacer hover
+// Precargar imágenes para mejor rendimiento
+function preloadImages() {
+    const imageUrls = ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg', '6.jpeg', '7.jpeg', '8.jpeg'];
+    imageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+    });
+}
+
+// Animaciones y efectos
 document.addEventListener('DOMContentLoaded', () => {
-    // Animación ripple para botones
-    const animatedButtons = document.querySelectorAll('.btn-expand-animated:not(.disabled)');
+    // Precargar imágenes
+    preloadImages();
     
-    animatedButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-            
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            ripple.classList.add('ripple');
-            
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
+    // Animación hover en logos tech
+    const techLogos = document.querySelectorAll('.tech-logo');
+    techLogos.forEach(logo => {
+        logo.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        
+        logo.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
     
     // Función para el botón de descarga
-    const downloadBtns = document.querySelectorAll('.btn-download-mini');
+    const downloadBtns = document.querySelectorAll('.btn-download');
     downloadBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // Animación de descarga
-            btn.innerHTML = '⏳ Preparando...';
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = `
+                <svg width="16" height="16" class="animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v6m0 4v6m0 4v2M8 16l4 4 4-4"/>
+                </svg>
+                Preparando...
+            `;
             btn.disabled = true;
             
             setTimeout(() => {
-                btn.innerHTML = '✅ ¡Listo!';
-                showNotification('La descarga comenzará en breve...', 'success');
+                btn.innerHTML = `
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                    ¡Listo!
+                `;
+                showNotification('Descarga iniciada...', 'success');
                 
                 setTimeout(() => {
-                    btn.innerHTML = '📱 Descargar APK';
+                    btn.innerHTML = originalContent;
                     btn.disabled = false;
                 }, 2000);
             }, 1500);
             
-            // Aquí puedes agregar la lógica real de descarga
-            // window.location.href = 'path/to/your/app.apk';
+            // Aquí agregar lógica real de descarga
+            // window.location.href = 'path/to/fuerzatotal.apk';
+        });
+    });
+    
+    // Efecto parallax suave en las tarjetas
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+            
+            const icon = card.querySelector('.project-icon');
+            if (icon) {
+                icon.style.transform = `translate(${x * 3}px, ${y * 3}px)`;
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            const icon = card.querySelector('.project-icon');
+            if (icon) {
+                icon.style.transform = 'translate(0, 0)';
+            }
         });
     });
 });
 
-// Efecto parallax suave en las imágenes del proyecto
-document.addEventListener('mousemove', (e) => {
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width;
-        const y = (e.clientY - rect.top) / rect.height;
-        
-        const icon = card.querySelector('.project-icon');
-        if (icon) {
-            icon.style.transform = `translate(${x * 2}px, ${y * 2}px)`;
-        }
-    });
-});
-
-// CSS para el efecto ripple
-const rippleStyles = document.createElement('style');
-rippleStyles.textContent = `
-    .btn-expand-animated {
-        position: relative;
-        overflow: hidden;
+// CSS adicional para animaciones
+const additionalStyles = document.createElement('style');
+additionalStyles.textContent = `
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
     }
     
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        transform: scale(0);
-        animation: ripple-animation 0.6s ease-out;
+    .animate-spin {
+        animation: spin 1s linear infinite;
     }
     
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-    
-    #main-img-fuerzatotal {
+    #main-fuerzatotal {
         transition: opacity 0.3s ease;
     }
     
     .project-icon {
         transition: transform 0.3s ease;
     }
+    
+    .tech-logo {
+        transition: all 0.3s ease;
+    }
+    
+    .btn-details svg {
+        transition: transform 0.3s ease;
+    }
 `;
-document.head.appendChild(rippleStyles);
+document.head.appendChild(additionalStyles);
 
 console.log('✨ Portafolio de Fabian Villablanca Vega cargado exitosamente!');
 console.log('🚀 Desarrollado con pasión y mucho código');
