@@ -357,11 +357,15 @@ function switchImage(projectId, imageSrc, index) {
 
 // Precargar imágenes para mejor rendimiento
 function preloadImages() {
-    const imageUrls = ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg', '6.jpeg', '7.jpeg', '8.jpeg'];
-    imageUrls.forEach(url => {
+    // Precargar logo
+    const logo = new Image();
+    logo.src = 'FUERZATOTAL.png';
+    
+    // Precargar screenshots
+    for (let i = 1; i <= 8; i++) {
         const img = new Image();
-        img.src = url;
-    });
+        img.src = `${i}.jpeg`;
+    }
 }
 
 // Animaciones y efectos
