@@ -966,16 +966,20 @@ section {
 }
 
 .pill-flutter {
-    background: rgba(69, 209, 253, 0.3);
-    color: #0175C2;
-    border: 1px solid rgba(69, 209, 253, 0.5);
+    background: #45D1FD;
+    color: #FFFFFF;
+    border: 1px solid #02569B;
     font-weight: 600;
 }
 
 .pill-flutter:hover {
-    background: rgba(69, 209, 253, 0.4);
+    background: #02569B;
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(69, 209, 253, 0.3);
+    box-shadow: 0 2px 8px rgba(69, 209, 253, 0.4);
+}
+
+.pill-flutter svg path {
+    fill: #FFFFFF !important;
 }
 
 .pill-firebase {
