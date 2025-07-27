@@ -1026,6 +1026,42 @@ section {
     transform: translateY(-1px);
 }
 
+.pill-chatgpt {
+    background: rgba(116, 170, 156, 0.15);
+    color: #74AA9C;
+    border: 1px solid rgba(116, 170, 156, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pill-chatgpt:hover {
+    background: rgba(116, 170, 156, 0.25);
+    transform: translateY(-1px);
+}
+
+.pill-chatgpt svg {
+    fill: #74AA9C;
+}
+
+.pill-elevenlabs {
+    background: rgba(0, 0, 0, 0.08);
+    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pill-elevenlabs:hover {
+    background: rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.pill-elevenlabs svg {
+    fill: #000000;
+}
+
 /* Botón de Google Play Store */
 .btn-play-store {
     display: inline-block;
