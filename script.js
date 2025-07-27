@@ -357,15 +357,16 @@ function switchImage(projectId, imageSrc, index) {
 
 // Precargar imágenes para mejor rendimiento
 function preloadImages() {
-    // Precargar logo
+    // Precargar logo de FuerzaTotal
     const logo = new Image();
-    logo.src = 'FUERZATOTAL.png';
+    logo.src = 'fuerzatotal/logo.png';
     
-    // Precargar screenshots
-    for (let i = 1; i <= 8; i++) {
+    // Precargar screenshots de FuerzaTotal
+    const screenshotsToLoad = [1, 2, 3, 5, 6, 7, 8];
+    screenshotsToLoad.forEach(num => {
         const img = new Image();
-        img.src = `${i}.jpeg`;
-    }
+        img.src = `fuerzatotal/${num}.jpeg`;
+    });
 }
 
 // Animaciones y efectos
