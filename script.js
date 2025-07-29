@@ -355,6 +355,62 @@ function switchImage(projectId, imageSrc, index) {
     });
 }
 
+// Auto-slideshow para las galerías de proyectos
+function startAutoSlideshow(projectId) {
+    const thumbs = document.querySelectorAll(`#${projectId}-details .thumb-img`);
+    let currentIndex = 0;
+    
+    // Función para cambiar a la siguiente imagen
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % thumbs.length;
+        const nextThumb = thumbs[currentIndex];
+        const imageSrc = nextThumb.src;
+        switchImage(projectId, imageSrc, currentIndex);
+    }
+    
+    // Cambiar imagen cada 3 segundos
+    return setInterval(nextImage, 3000);
+}
+
+// Almacenar los intervalos para poder detenerlos si es necesario
+const slideshowIntervals = {};
+
+// Modificar la función toggleProjectDetails para incluir el auto-slideshow
+function toggleProjectDetails(projectId) {
+    const details = document.getElementById(`${projectId}-details`);
+    const button = event.currentTarget;
+    
+    details.classList.toggle('active');
+    
+    // Cambiar texto e icono del botón
+    const btnText = button.querySelector('span');
+    const svg = button.querySelector('svg');
+    
+    if (details.classList.contains('active')) {
+        btnText.textContent = 'Ocultar proyecto';
+        svg.innerHTML = '<path d="M5 12h14M12 19l7-7-7-7"/>';
+        svg.style.transform = 'rotate(90deg)';
+        
+        // Iniciar slideshow automático
+        slideshowIntervals[projectId] = startAutoSlideshow(projectId);
+        
+        // Scroll suave hacia los detalles
+        setTimeout(() => {
+            details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    } else {
+        btnText.textContent = 'Ver proyecto';
+        svg.innerHTML = '<path d="M5 12h14M12 5l7 7-7 7"/>';
+        svg.style.transform = 'rotate(0deg)';
+        
+        // Detener slideshow cuando se cierra
+        if (slideshowIntervals[projectId]) {
+            clearInterval(slideshowIntervals[projectId]);
+            delete slideshowIntervals[projectId];
+        }
+    }
+}
+
 // Precargar imágenes para mejor rendimiento
 function preloadImages() {
     // Precargar logo de FuerzaTotal
@@ -419,9 +475,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    // Pausar slideshow cuando el usuario hace hover sobre la imagen principal
+    document.querySelectorAll('.main-preview').forEach(preview => {
+        preview.addEventListener('mouseenter', function() {
+            const projectId = this.id.replace('main-', '').replace('-preview', '');
+            if (slideshowIntervals[projectId]) {
+                clearInterval(slideshowIntervals[projectId]);
+            }
+        });
+        
+        preview.addEventListener('mouseleave', function() {
+            const projectId = this.id.replace('main-', '').replace('-preview', '');
+            const details = document.getElementById(`${projectId}-details`);
+            if (details && details.classList.contains('active')) {
+                slideshowIntervals[projectId] = startAutoSlideshow(projectId);
+            }
+        });
+    });
 });
 
-// CSS adicional para animaciones
+// CSS adicional para animaciones y mejoras
 const additionalStyles = document.createElement('style');
 additionalStyles.textContent = `
     @keyframes spin {
@@ -435,6 +509,7 @@ additionalStyles.textContent = `
     
     #main-fuerzatotal, #main-carnicero {
         transition: opacity 0.3s ease;
+        cursor: pointer;
     }
     
     .project-icon {
@@ -447,6 +522,78 @@ additionalStyles.textContent = `
     
     .btn-details svg {
         transition: transform 0.3s ease;
+    }
+    
+    /* Indicador de slideshow activo */
+    .main-preview {
+        position: relative;
+    }
+    
+    .main-preview::after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+    }
+    
+    .project-expanded.active .main-preview::before {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 10%;
+        height: 3px;
+        background: var(--primary-color);
+        border-radius: 3px;
+        animation: slideProgress 3s linear infinite;
+        z-index: 1;
+    }
+    
+    @keyframes slideProgress {
+        from { width: 0; }
+        to { width: 80%; }
+    }
+    
+    /* Mejorar responsividad del código */
+    @media (max-width: 768px) {
+        .code-preview {
+            font-size: 0.8rem;
+        }
+        
+        .code-content {
+            padding: 1rem;
+            font-size: 0.75rem;
+            line-height: 1.6;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-visual {
+            padding: 0 1rem;
+        }
+        
+        .code-preview {
+            transform: scale(0.95);
+        }
+        
+        .code-content {
+            padding: 0.8rem;
+            font-size: 0.7rem;
+            line-height: 1.5;
+        }
+        
+        .code-header {
+            padding: 0.5rem 0.8rem;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+        }
     }
 `;
 document.head.appendChild(additionalStyles);

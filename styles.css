@@ -293,6 +293,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .code-preview {
@@ -302,6 +304,8 @@ body {
     overflow: hidden;
     box-shadow: 0 20px 40px var(--shadow-color);
     animation: float 6s ease-in-out infinite;
+    width: 100%;
+    max-width: 450px;
 }
 
 @keyframes float {
@@ -332,6 +336,9 @@ body {
     font-size: 0.9rem;
     line-height: 1.8;
     color: var(--text-secondary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: hidden;
 }
 
 .keyword { color: #c678dd; }
@@ -1392,11 +1399,14 @@ section {
 
     .code-preview {
         max-width: 100%;
-        overflow-x: auto;
+        overflow: hidden;
     }
 
     .code-content {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        padding: 1rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
     }
 
     .contact-methods {
@@ -1509,7 +1519,14 @@ section {
     }
     
     .code-preview {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+        padding: 0.8rem;
+    }
+    
+    .code-content {
+        font-size: 0.65rem;
+        padding: 0.8rem;
+        line-height: 1.4;
     }
     
     .certificate-item {
