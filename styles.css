@@ -17,6 +17,24 @@
     --shadow-color: rgba(0, 0, 0, 0.3);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     --gradient-reverse: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    /* Ajustes para el proyecto del portafolio en móviles */
+    .portfolio-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .browser-url {
+        font-size: 0.7rem;
+        margin: 0 1rem;
+    }
+    
+    .browser-content {
+        padding: 1.5rem;
+    }
+    
+    .badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+    }
 }
 
 /* Reset y estilos base */
@@ -1084,6 +1102,147 @@ section {
 .btn-play-store:hover img {
     transform: scale(1.05);
     filter: brightness(1.1);
+}
+
+/* Estilos para el proyecto del portafolio */
+.portfolio-preview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.browser-mockup {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.browser-header {
+    background: var(--bg-tertiary);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.browser-url {
+    flex: 1;
+    text-align: center;
+    background: var(--bg-secondary);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0 2rem;
+}
+
+.browser-content {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    min-height: 200px;
+}
+
+.portfolio-hero {
+    text-align: center;
+}
+
+.portfolio-hero h1 {
+    font-size: 2rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-hero p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-badges {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Botón de GitHub */
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #24292e;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn-github:hover {
+    background: #1a1e22;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-github svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Pills adicionales */
+.pill-html {
+    background: rgba(227, 76, 38, 0.1);
+    color: #E34C26;
+    border: 1px solid rgba(227, 76, 38, 0.2);
+}
+
+.pill-html:hover {
+    background: rgba(227, 76, 38, 0.2);
+    transform: translateY(-1px);
+}
+
+.pill-css {
+    background: rgba(21, 114, 182, 0.1);
+    color: #1572B6;
+    border: 1px solid rgba(21, 114, 182, 0.2);
+}
+
+.pill-css:hover {
+    background: rgba(21, 114, 182, 0.2);
+    transform: translateY(-1px);
+}
+
+.pill-js {
+    background: rgba(247, 223, 30, 0.1);
+    color: #F7DF1E;
+    border: 1px solid rgba(247, 223, 30, 0.2);
+}
+
+.pill-js:hover {
+    background: rgba(247, 223, 30, 0.2);
+    transform: translateY(-1px);
+}
+
+.pill-js svg rect {
+    fill: transparent !important;
 }
 
 /* Contact Section */
