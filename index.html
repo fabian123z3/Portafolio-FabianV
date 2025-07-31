@@ -923,31 +923,18 @@
                                             <div class="terminal-title">reconocimiento_facial.py</div>
                                         </div>
                                         <div class="terminal-content">
-                                            <pre><code><span class="keyword">import</span> cv2
-<span class="keyword">import</span> face_recognition
-<span class="keyword">import</span> numpy <span class="keyword">as</span> np
-<span class="keyword">import</span> csv
-<span class="keyword">from</span> datetime <span class="keyword">import</span> datetime
+    <pre><code><span class="comment"># Sistema de Reconocimiento Facial</span>
 
-<span class="comment"># Inicializar cámara</span>
-video_capture = cv2.VideoCapture(<span class="number">0</span>)
+<span class="string">[INFO]</span> Iniciando sistema...
+<span class="string">[INFO]</span> Cámara activada ✓
+<span class="string">[INFO]</span> Base de datos cargada: 12 empleados
 
-<span class="comment"># Cargar imágenes de empleados</span>
-empleados = cargar_empleados(<span class="string">'Empleados/'</span>)
+<span class="string">[DETECCIÓN]</span> Rostro detectado
+<span class="string">[RECONOCIDO]</span> Juan Pérez - ID: 1045
+<span class="string">[REGISTRO]</span> Entrada: 08:32:15 AM
 
-<span class="comment"># Detectar y reconocer rostros</span>
-<span class="keyword">while</span> <span class="boolean">True</span>:
-    ret, frame = video_capture.read()
-    
-    <span class="keyword">if</span> detectar_rostro(frame):
-        nombre = reconocer_empleado(frame)
-        <span class="keyword">if</span> nombre:
-            registrar_ingreso(nombre)
-            mostrar_mensaje(<span class="string">f"¡Bienvenido {nombre}!"</span>)</code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<span class="keyword">></span> ¡Bienvenido Juan Pérez! ✓</code></pre>
+</div>
                             
                             <div class="details-info">
                                 <div class="features-grid">
