@@ -860,7 +860,185 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- Sistema de Reconocimiento Facial -->
+                <div class="project-card">
+                    <div class="project-layout">
+                        <div class="project-left">
+                            <div class="project-header">
+                                <div class="project-icon" style="background: rgba(55, 118, 171, 0.1);">
+                                    <span style="font-size: 2.5rem;">📸</span>
+                                </div>
+                                <div>
+                                    <h3>Sistema de Reconocimiento Facial</h3>
+                                    <span class="project-category">Aplicación de Escritorio</span>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                Sistema de reconocimiento facial de empleados con registro automático de ingresos. 
+                                Detecta rostros desde la cámara web y registra la asistencia en tiempo real.
+                            </p>
+                            <div class="tech-stack-row">
+                                <div class="tech-logo" title="Python">
+                                    <svg viewBox="0 0 256 255" width="20" height="20" fill="none">
+                                        <path d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z" fill="#3776AB"/>
+                                        <path d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z" fill="#FFD43B"/>
+                                    </svg>
+                                    <span>Python</span>
+                                </div>
+                                <div class="tech-logo" title="OpenCV">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="#5C3EE8">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    <span>OpenCV</span>
+                                </div>
+                                <div class="tech-logo" title="NumPy">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="#013243">
+                                        <path d="M10.7 13.4l-7.2-3.1v6.7l7.2 3.1m0-13.6v6.8l-7.2-3V5.6m7.2 0L3.5 2.5v17l7.2 3.1l7.2-3.1v-17l-7.2 3.1z"/>
+                                    </svg>
+                                    <span>NumPy</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-right">
+                            <button class="btn-details" onclick="toggleProjectDetails('facial')">
+                                <span>Ver proyecto</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Detalles expandibles -->
+                    <div id="facial-details" class="project-expanded">
+                        <div class="expanded-content">
+                            <div class="gallery-section">
+                                <div class="facial-preview">
+                                    <div class="terminal-mockup">
+                                        <div class="terminal-header">
+                                            <span class="dot red"></span>
+                                            <span class="dot yellow"></span>
+                                            <span class="dot green"></span>
+                                            <div class="terminal-title">reconocimiento_facial.py</div>
+                                        </div>
+                                        <div class="terminal-content">
+                                            <pre><code><span class="keyword">import</span> cv2
+<span class="keyword">import</span> face_recognition
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">import</span> csv
+<span class="keyword">from</span> datetime <span class="keyword">import</span> datetime
+
+<span class="comment"># Inicializar cámara</span>
+video_capture = cv2.VideoCapture(<span class="number">0</span>)
+
+<span class="comment"># Cargar imágenes de empleados</span>
+empleados = cargar_empleados(<span class="string">'Empleados/'</span>)
+
+<span class="comment"># Detectar y reconocer rostros</span>
+<span class="keyword">while</span> <span class="boolean">True</span>:
+    ret, frame = video_capture.read()
+    
+    <span class="keyword">if</span> detectar_rostro(frame):
+        nombre = reconocer_empleado(frame)
+        <span class="keyword">if</span> nombre:
+            registrar_ingreso(nombre)
+            mostrar_mensaje(<span class="string">f"¡Bienvenido {nombre}!"</span>)</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="details-info">
+                                <div class="features-grid">
+                                    <div class="feature-box">
+                                        <span class="feature-icon">🔍</span>
+                                        <div>
+                                            <strong>Detección en Tiempo Real</strong>
+                                            <p>Identifica rostros al instante</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">👥</span>
+                                        <div>
+                                            <strong>Base de Datos de Empleados</strong>
+                                            <p>Gestión completa del personal</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">📝</span>
+                                        <div>
+                                            <strong>Registro Automático</strong>
+                                            <p>CSV con hora de entrada/salida</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">🎯</span>
+                                        <div>
+                                            <strong>Alta Precisión</strong>
+                                            <p>Algoritmos de deep learning</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">⚡</span>
+                                        <div>
+                                            <strong>Procesamiento Rápido</strong>
+                                            <p>Optimizado con NumPy</p>
+                                        </div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <span class="feature-icon">🔐</span>
+                                        <div>
+                                            <strong>Control de Acceso</strong>
+                                            <p>Seguridad empresarial</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tech-details">
+                                    <h4>🛠️ Tecnologías Utilizadas</h4>
+                                    <div class="tech-pills">
+                                        <span class="pill-python">
+                                            <svg viewBox="0 0 256 255" width="16" height="16" fill="none">
+                                                <path d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z" fill="#3776AB"/>
+                                                <path d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z" fill="#FFD43B"/>
+                                            </svg>
+                                            Python
+                                        </span>
+                                        <span class="pill-opencv">
+                                            OpenCV
+                                        </span>
+                                        <span class="pill-face-recognition">
+                                            face_recognition
+                                        </span>
+                                        <span class="pill-numpy">
+                                            NumPy
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-highlights">
+                                    <h4>💡 Características Técnicas</h4>
+                                    <ul>
+                                        <li>Detección de rostros mediante cascadas de Haar</li>
+                                        <li>Encoding facial con redes neuronales profundas</li>
+                                        <li>Comparación de características faciales en tiempo real</li>
+                                        <li>Exportación de datos a CSV para análisis</li>
+                                        <li>Interfaz gráfica con OpenCV</li>
+                                        <li>Manejo eficiente de memoria con NumPy arrays</li>
+                                    </ul>
+                                </div>
+                                
+                                <a href="https://github.com/fabian123z3/ReconocimientoFacial/blob/master/ReconocimientoFacial.py" target="_blank" class="btn-github">
+                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span>Ver Código en GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Portafolio Web -->
                 <div class="project-card">
                     <div class="project-layout">
@@ -1020,6 +1198,7 @@
                 
             </div>
         </div>
+
     </section>
 
     <!-- Sección de Contacto -->
