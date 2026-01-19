@@ -28,8 +28,14 @@ export function Boton({
   const estilosCombinados = `${estilosBase} ${variantes[variante]} ${className}`;
 
   if (href) {
+    const esEnlaceInterno = href.startsWith('#');
     return (
-      <a href={href} className={estilosCombinados} target="_blank" rel="noopener noreferrer">
+      <a 
+        href={href} 
+        className={estilosCombinados} 
+        target={esEnlaceInterno ? undefined : '_blank'} 
+        rel={esEnlaceInterno ? undefined : 'noopener noreferrer'}
+      >
         {children}
       </a>
     );

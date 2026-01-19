@@ -3,7 +3,7 @@ import type { DatosPersonales, Proyecto, Habilidad, Experiencia } from '../tipos
 export const datosPersonales: DatosPersonales = {
   nombre: 'Fabian Alexis Villablanca Vega',
   titulo: 'Desarrollador Full Stack',
-  subtitulo: 'Creando experiencias digitales excepcionales',
+  subtitulo: 'Programando Experiencias',
   descripcion: 'Desarrollador apasionado por crear soluciones tecnologicas innovadoras. Me especializo en el desarrollo de aplicaciones web modernas, combinando un diseno atractivo con una arquitectura solida y escalable.',
   contacto: {
     email: 'fabianvillablanca97@gmail.com',

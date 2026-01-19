@@ -1,10 +1,16 @@
 import { useState } from 'react';
-import { Mail, MapPin, Send } from 'lucide-react';
-import { Contenedor, TituloSeccion, Boton } from '../ui';
+import { Mail, MapPin, Send, Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
+import { Contenedor, TituloSeccion } from '../ui';
 import { datosPersonales } from '../../datos/datosPersonales';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 
 export function SeccionContacto() {
   const { contacto } = datosPersonales;
+  const [enviando, setEnviando] = useState(false);
   const [formulario, setFormulario] = useState({
     nombre: '',
     email: '',
@@ -18,14 +24,50 @@ export function SeccionContacto() {
     });
   };
 
-  const manejarEnvio = (e: React.FormEvent) => {
+  const manejarEnvio = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui iria la logica de envio
-    console.log('Formulario enviado:', formulario);
+    
+    // Validaciones
+    if (!formulario.nombre.trim()) {
+      toast.error('Por favor ingresa tu nombre');
+      return;
+    }
+    if (!formulario.email.trim()) {
+      toast.error('Por favor ingresa tu email');
+      return;
+    }
+    if (!formulario.mensaje.trim()) {
+      toast.error('Por favor ingresa un mensaje');
+      return;
+    }
+
+    setEnviando(true);
+    
+    try {
+      // Simulacion de envio (reemplazar con API real)
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      toast.success('Mensaje enviado correctamente', {
+        description: 'Te respondere lo antes posible. Gracias por contactarme.',
+      });
+      
+      // Limpiar formulario
+      setFormulario({
+        nombre: '',
+        email: '',
+        mensaje: '',
+      });
+    } catch {
+      toast.error('Error al enviar el mensaje', {
+        description: 'Por favor intenta nuevamente.',
+      });
+    } finally {
+      setEnviando(false);
+    }
   };
 
   return (
-    <section id="contacto" className="py-24 bg-gray-900/50">
+    <section id="contacto" className="py-24 bg-card/50">
       <Contenedor>
         <TituloSeccion
           titulo="Contacto"
@@ -35,34 +77,34 @@ export function SeccionContacto() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Informacion de contacto */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-2xl font-bold text-foreground mb-6">
               Hablemos
             </h3>
-            <p className="text-gray-400 mb-8">
+            <p className="text-muted-foreground mb-8">
               Estoy disponible para proyectos freelance, oportunidades laborales 
               o simplemente para conversar sobre tecnologia.
             </p>
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-violet-500/10 rounded-lg">
-                  <Mail className="text-violet-400" size={24} />
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <Mail className="text-primary" size={24} />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">Email</p>
-                  <a href={`mailto:${contacto.email}`} className="text-white hover:text-violet-400 transition-colors">
+                  <p className="text-muted-foreground text-sm">Email</p>
+                  <a href={`mailto:${contacto.email}`} className="text-foreground hover:text-primary transition-colors">
                     {contacto.email}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-violet-500/10 rounded-lg">
-                  <MapPin className="text-violet-400" size={24} />
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <MapPin className="text-primary" size={24} />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">Ubicacion</p>
-                  <span className="text-white">{contacto.ubicacion}</span>
+                  <p className="text-muted-foreground text-sm">Ubicacion</p>
+                  <span className="text-foreground">{contacto.ubicacion}</span>
                 </div>
               </div>
             </div>
@@ -70,58 +112,58 @@ export function SeccionContacto() {
 
           {/* Formulario */}
           <form onSubmit={manejarEnvio} className="space-y-6">
-            <div>
-              <label htmlFor="nombre" className="block text-gray-300 mb-2 font-medium">
-                Nombre
-              </label>
-              <input
+            <div className="space-y-2">
+              <Label htmlFor="nombre">Nombre</Label>
+              <Input
                 type="text"
                 id="nombre"
                 name="nombre"
                 value={formulario.nombre}
                 onChange={manejarCambio}
-                required
-                className="w-full px-4 py-3 bg-gray-800/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-violet-500 transition-colors"
                 placeholder="Tu nombre"
+                disabled={enviando}
               />
             </div>
 
-            <div>
-              <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">
-                Email
-              </label>
-              <input
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
                 type="email"
                 id="email"
                 name="email"
                 value={formulario.email}
                 onChange={manejarCambio}
-                required
-                className="w-full px-4 py-3 bg-gray-800/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-violet-500 transition-colors"
                 placeholder="tu@email.com"
+                disabled={enviando}
               />
             </div>
 
-            <div>
-              <label htmlFor="mensaje" className="block text-gray-300 mb-2 font-medium">
-                Mensaje
-              </label>
-              <textarea
+            <div className="space-y-2">
+              <Label htmlFor="mensaje">Mensaje</Label>
+              <Textarea
                 id="mensaje"
                 name="mensaje"
                 value={formulario.mensaje}
                 onChange={manejarCambio}
-                required
-                rows={5}
-                className="w-full px-4 py-3 bg-gray-800/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-violet-500 transition-colors resize-none"
                 placeholder="Cuentame sobre tu proyecto..."
+                rows={5}
+                disabled={enviando}
               />
             </div>
 
-            <Boton tipo="submit" variante="primario" className="w-full">
-              <Send size={18} />
-              Enviar Mensaje
-            </Boton>
+            <Button type="submit" className="w-full" disabled={enviando}>
+              {enviando ? (
+                <>
+                  <Loader2 className="animate-spin" size={18} />
+                  Enviando...
+                </>
+              ) : (
+                <>
+                  <Send size={18} />
+                  Enviar Mensaje
+                </>
+              )}
+            </Button>
           </form>
         </div>
       </Contenedor>
