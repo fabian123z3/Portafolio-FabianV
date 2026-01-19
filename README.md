@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# Portafolio Personal - Fabian Villablanca 👨‍💻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Vercel](https://vercelbadge.vercel.app/api/[tu-usuario-vercel]/[nombre-repo])
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 
-Currently, two official plugins are available:
+Este repositorio contiene el código fuente de mi portafolio personal. Es una Single Page Application (SPA) diseñada para mostrar mis proyectos, experiencia y enlaces de contacto de manera rápida y eficiente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 **Demo en vivo:** [https://tu-proyecto.vercel.app](https://tu-proyecto.vercel.app)
 
-## React Compiler
+## 🛠️ Tecnologías Usadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React:** Biblioteca principal para la interfaz de usuario.
+* **Vite:** Entorno de desarrollo y empaquetador (Build tool) para una carga ultrarrápida.
+* **CSS / Tailwind / Sass:** [Especifica aquí qué usaste para los estilos].
+* **Vercel:** Plataforma de despliegue y hosting.
 
-## Expanding the ESLint configuration
+## ✨ Características
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* ⚡ **Rendimiento optimizado:** Carga instantánea gracias a Vite.
+* 📱 **Diseño Responsivo:** Adaptado a móviles y escritorio.
+* 📄 **Descarga de CV:** Acceso directo a mi currículum en PDF.
+* 🔗 **Redes Sociales:** Integración con LinkedIn y GitHub.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📂 Estructura del Proyecto
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+El proyecto sigue la estructura estándar de Vite, con un detalle importante para los archivos estáticos:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+├── public/
+│   ├── mi-cv.pdf      # Archivo del currículum (accesible desde la raíz)
+│   └── favicon.svg
+├── src/
+│   ├── components/    # Componentes reutilizables
+│   ├── assets/        # Imágenes e iconos
+│   ├── App.jsx        # Componente principal
+│   └── main.jsx       # Punto de entrada
+└── index.html
