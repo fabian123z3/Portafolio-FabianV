@@ -35,6 +35,7 @@ export interface InfoContacto {
   ubicacion: string;
   linkedin?: string;
   github?: string;
+  tiktok?: string;
 }
 
 // Tipos para datos personales

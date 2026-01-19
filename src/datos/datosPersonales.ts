@@ -10,6 +10,7 @@ export const datosPersonales: DatosPersonales = {
     ubicacion: 'Chile',
     linkedin: 'https://www.linkedin.com/in/fabian-villablanca-29717b38a/',
     github: 'https://github.com/fabian123z3',
+    tiktok: 'https://www.tiktok.com/@soluciones.informaticasf',
   },
 };
 
