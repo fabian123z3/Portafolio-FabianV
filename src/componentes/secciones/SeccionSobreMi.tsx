@@ -34,9 +34,8 @@ export function SeccionSobreMi() {
           <div className="relative mb-12">
             <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-500 to-indigo-500 rounded-full" />
             <blockquote className="pl-8 text-xl md:text-2xl text-gray-300 leading-relaxed font-light italic">
-              "Soy Fabian, desarrollador full stack con ganas de hacer las cosas bien. 
-              Me motivan los desafios, soy perseverante cuando algo no sale a la primera 
-              y me gusta compartir lo que aprendo en mi TikTok sobre programacion."
+              Soy Fabián, desarrollador enfocado en hacer las cosas bien y seguir mejorando constantemente.
+Me motivan los desafíos, soy perseverante al enfrentar problemas y comparto lo que aprendo sobre programación en TikTok.
             </blockquote>
           </div>
 
