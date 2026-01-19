@@ -5,7 +5,6 @@ import {
   SeccionAlianzas,
   SeccionHabilidades,
   SeccionProyectos,
-  SeccionExperiencia,
   SeccionContacto,
   PiePagina,
 } from './componentes/secciones';
@@ -21,7 +20,6 @@ function App() {
         <SeccionAlianzas />
         <SeccionHabilidades />
         <SeccionProyectos />
-        <SeccionExperiencia />
         <SeccionContacto />
       </main>
       <PiePagina />

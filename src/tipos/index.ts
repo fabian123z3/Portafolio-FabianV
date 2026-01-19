@@ -1,12 +1,14 @@
 // Tipos para proyectos del portafolio
 export interface Proyecto {
-  id: number;
+  id: string | number;
   titulo: string;
   descripcion: string;
   tecnologias: string[];
+  icono?: string;
   imagenUrl?: string;
   demoUrl?: string;
   repoUrl?: string;
+  playStoreUrl?: string;
   destacado?: boolean;
 }
 
@@ -19,7 +21,7 @@ export interface Habilidad {
 
 // Tipos para experiencia laboral
 export interface Experiencia {
-  id: number;
+  id: string | number;
   empresa: string;
   cargo: string;
   fechaInicio: string;
