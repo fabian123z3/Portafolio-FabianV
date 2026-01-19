@@ -6,10 +6,10 @@ export const datosPersonales: DatosPersonales = {
   subtitulo: 'Creando experiencias digitales excepcionales',
   descripcion: 'Desarrollador apasionado por crear soluciones tecnologicas innovadoras. Me especializo en el desarrollo de aplicaciones web modernas, combinando un diseno atractivo con una arquitectura solida y escalable.',
   contacto: {
-    email: 'contacto@fabianvillablanca.dev',
+    email: 'fabianvillablanca97@gmail.com',
     ubicacion: 'Chile',
-    linkedin: 'https://linkedin.com/in/fabianvillablanca',
-    github: 'https://github.com/fabianvillablanca',
+    linkedin: 'https://www.linkedin.com/in/fabian-villablanca-29717b38a/',
+    github: 'https://github.com/fabian123z3',
   },
 };
 
