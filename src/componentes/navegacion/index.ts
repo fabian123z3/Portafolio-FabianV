@@ -1,0 +1,1 @@
+export { BarraNavegacion } from './BarraNavegacion';

@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+/* Estilos base personalizados */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgb(139 92 246 / 0.3);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(17 24 39);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(139 92 246 / 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(139 92 246 / 0.7);
+  }
+}
+
+/* Animaciones personalizadas */
+@layer utilities {
+  .animate-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
