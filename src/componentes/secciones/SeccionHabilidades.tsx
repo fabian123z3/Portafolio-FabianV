@@ -1,58 +1,97 @@
 import { Contenedor, TituloSeccion } from '../ui';
-import { habilidades } from '../../datos/datosPersonales';
 
-const categoriasNombres = {
-  frontend: 'Frontend',
-  backend: 'Backend',
-  herramientas: 'Herramientas',
-  otros: 'Otros',
-};
+const tecnologias = [
+  {
+    nombre: 'React / React Native',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+  },
+  {
+    nombre: 'TypeScript',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+  },
+  {
+    nombre: 'JavaScript',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+  },
+  {
+    nombre: 'Python',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+  },
+  {
+    nombre: 'Django',
+    icono: 'https://img.icons8.com/color/96/django.png',
+  },
+  {
+    nombre: 'FastAPI',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+  },
+  {
+    nombre: 'Docker',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+  },
+  {
+    nombre: 'Git',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+  },
+  {
+    nombre: 'MySQL',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+  },
+  {
+    nombre: 'Notion',
+    icono: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png',
+  },
+  {
+    nombre: 'Make',
+    icono: 'https://cdn.simpleicons.org/make/6D00CC',
+  },
+  {
+    nombre: 'shadcn/ui',
+    icono: 'https://ui.shadcn.com/apple-touch-icon.png',
+  },
+  {
+    nombre: 'GitHub',
+    icono: 'https://cdn.simpleicons.org/github/white',
+  },
+  {
+    nombre: 'n8n',
+    icono: 'https://cdn.simpleicons.org/n8n/EA4B71',
+  },
+  {
+    nombre: 'TanStack',
+    icono: 'https://avatars.githubusercontent.com/u/72518640?s=200&v=4',
+  },
+];
 
 export function SeccionHabilidades() {
-  const categorias = ['frontend', 'backend', 'herramientas'] as const;
-
   return (
     <section id="habilidades" className="py-16 sm:py-20 md:py-24">
       <Contenedor>
         <TituloSeccion
-          titulo="Habilidades"
-          subtitulo="Tecnologias y herramientas con las que trabajo"
+          titulo="Tecnologias"
+          subtitulo="Herramientas y tecnologias con las que trabajo"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {categorias.map((categoria) => {
-            const habilidadesCategoria = habilidades.filter(
-              (h) => h.categoria === categoria
-            );
-
-            return (
-              <div key={categoria} className="bg-gray-800/30 rounded-xl sm:rounded-2xl p-5 sm:p-6 border border-white/5">
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 text-center">
-                  {categoriasNombres[categoria]}
-                </h3>
-                <div className="space-y-3 sm:space-y-4">
-                  {habilidadesCategoria.map((habilidad) => (
-                    <div key={habilidad.nombre}>
-                      <div className="flex justify-between mb-1.5 sm:mb-2">
-                        <span className="text-gray-300 font-medium text-sm sm:text-base">
-                          {habilidad.nombre}
-                        </span>
-                        <span className="text-violet-400 text-xs sm:text-sm">
-                          {habilidad.nivel}%
-                        </span>
-                      </div>
-                      <div className="h-1.5 sm:h-2 bg-gray-700 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-violet-500 to-indigo-500 rounded-full transition-all duration-1000"
-                          style={{ width: `${habilidad.nivel}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 gap-4 sm:gap-5 justify-items-center">
+            {tecnologias.map((tech) => (
+              <div
+                key={tech.nombre}
+                className="group flex flex-col items-center gap-2 p-4 bg-gray-800/50 rounded-xl border border-white/10 hover:border-violet-500/50 transition-all duration-300"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                  <img
+                    src={tech.icono}
+                    alt={tech.nombre}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
+                <span className="text-gray-300 text-[10px] sm:text-xs text-center font-medium">
+                  {tech.nombre}
+                </span>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </Contenedor>
     </section>
