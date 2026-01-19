@@ -9,7 +9,7 @@ export const datosPersonales: DatosPersonales = {
     email: 'fabianvillablanca97@gmail.com',
     ubicacion: 'Chile',
     github: 'https://github.com/fabian123z3',
-    linkedin: 'https://www.linkedin.com/in/fabián-villablanca-8b0b5b1b3/',
+    linkedin: 'https://www.linkedin.com/in/fabian-villablanca-29717b38a/',
     tiktok: 'https://www.tiktok.com/@soluciones.informaticasf',
   },
 };
