@@ -1,64 +1,57 @@
-import { Code, Coffee, Lightbulb, Users } from 'lucide-react';
+import { Code, Flame, Video, Target } from 'lucide-react';
 import { Contenedor, TituloSeccion } from '../ui';
-import { datosPersonales } from '../../datos/datosPersonales';
 
-const caracteristicas = [
+const rasgos = [
   {
-    icono: Code,
-    titulo: 'Codigo Limpio',
-    descripcion: 'Escribo codigo mantenible, escalable y bien documentado.',
+    icono: Flame,
+    titulo: 'Apasionado',
+    descripcion: 'Disfruto cada linea de codigo',
   },
   {
-    icono: Lightbulb,
-    titulo: 'Solucion Creativa',
-    descripcion: 'Encuentro soluciones innovadoras a problemas complejos.',
+    icono: Target,
+    titulo: 'Perseverante',
+    descripcion: 'No paro hasta lograr el objetivo',
   },
   {
-    icono: Users,
-    titulo: 'Trabajo en Equipo',
-    descripcion: 'Colaboro eficientemente con equipos multidisciplinarios.',
-  },
-  {
-    icono: Coffee,
-    titulo: 'Aprendizaje Continuo',
-    descripcion: 'Siempre actualizado con las ultimas tecnologias.',
+    icono: Video,
+    titulo: 'Creador',
+    descripcion: 'Comparto en TikTok lo que aprendo',
   },
 ];
 
 export function SeccionSobreMi() {
-  const { descripcion } = datosPersonales;
-
   return (
-    <section id="sobre-mi" className="py-24 bg-gray-900/50">
-      <Contenedor>
-        <TituloSeccion
-          titulo="Sobre Mi"
-          subtitulo="Conoce un poco mas sobre quien soy y lo que hago"
-        />
+    <section id="sobre-mi" className="py-24 bg-card/30 relative overflow-hidden">
+      {/* Decoracion de fondo */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl" />
+      
+      <Contenedor className="relative z-10">
+        <TituloSeccion titulo="Sobre Mi" />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Contenido texto */}
-          <div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              {descripcion}
-            </p>
-            <p className="text-gray-400 leading-relaxed">
-              Con experiencia en el desarrollo de aplicaciones web y moviles, 
-              me enfoco en crear productos digitales que no solo funcionen bien, 
-              sino que tambien ofrezcan una experiencia de usuario excepcional.
-            </p>
+        <div className="max-w-4xl mx-auto">
+          {/* Texto principal con diseño destacado */}
+          <div className="relative mb-12">
+            <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-500 to-indigo-500 rounded-full" />
+            <blockquote className="pl-8 text-xl md:text-2xl text-gray-300 leading-relaxed font-light italic">
+              "Soy Fabian, desarrollador full stack con ganas de hacer las cosas bien. 
+              Me motivan los desafios, soy perseverante cuando algo no sale a la primera 
+              y me gusta compartir lo que aprendo en mi TikTok sobre programacion."
+            </blockquote>
           </div>
 
-          {/* Tarjetas de caracteristicas */}
-          <div className="grid grid-cols-2 gap-4">
-            {caracteristicas.map((item) => (
+          {/* Tarjetas de rasgos */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {rasgos.map((rasgo) => (
               <div
-                key={item.titulo}
-                className="p-6 bg-gray-800/50 rounded-xl border border-white/5 hover:border-violet-500/50 transition-all duration-300 group"
+                key={rasgo.titulo}
+                className="group p-6 bg-gradient-to-br from-white/5 to-white/0 rounded-2xl border border-white/10 hover:border-violet-500/50 transition-all duration-300 text-center"
               >
-                <item.icono className="text-violet-400 mb-4 group-hover:scale-110 transition-transform" size={32} />
-                <h3 className="text-white font-semibold mb-2">{item.titulo}</h3>
-                <p className="text-gray-400 text-sm">{item.descripcion}</p>
+                <div className="inline-flex p-4 bg-violet-500/10 rounded-xl mb-4 group-hover:bg-violet-500/20 transition-colors">
+                  <rasgo.icono className="text-violet-400" size={28} />
+                </div>
+                <h3 className="text-white font-semibold text-lg mb-2">{rasgo.titulo}</h3>
+                <p className="text-gray-400 text-sm">{rasgo.descripcion}</p>
               </div>
             ))}
           </div>
