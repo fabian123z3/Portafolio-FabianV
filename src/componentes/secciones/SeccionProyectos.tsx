@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Smartphone, X, ChevronRight, Star, Cpu } from 'lucide-react';
+import { ExternalLink, Smartphone, X, ChevronRight, Star, Cpu, Target, Lightbulb, TrendingUp, MessageSquare } from 'lucide-react';
 import { Contenedor, TituloSeccion } from '../ui';
 import { proyectos } from '../../datos/datosPersonales';
 
@@ -161,11 +161,43 @@ export function SeccionProyectos() {
             {/* Contenido Scrollable */}
             <div className="p-6 overflow-y-auto custom-scrollbar">
               
-              <div className="text-gray-300 leading-relaxed mb-8 whitespace-pre-line">
+              <div className="text-gray-300 leading-relaxed mb-8 whitespace-pre-line text-lg">
                 {proyectoSeleccionado.descripcion}
               </div>
 
-              {/* Grid de secciones */}
+              {/* Sección Case Study si existen los datos */}
+              {(proyectoSeleccionado.desafio || proyectoSeleccionado.solucion || proyectoSeleccionado.impacto) && (
+                <div className="space-y-6 mb-8">
+                  {proyectoSeleccionado.desafio && (
+                    <div className="bg-white/5 p-4 rounded-xl border-l-4 border-red-500">
+                      <h4 className="flex items-center gap-2 text-red-400 font-bold mb-2">
+                        <Target size={20} /> El Desafío
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">{proyectoSeleccionado.desafio}</p>
+                    </div>
+                  )}
+                  
+                  {proyectoSeleccionado.solucion && (
+                    <div className="bg-white/5 p-4 rounded-xl border-l-4 border-yellow-500">
+                      <h4 className="flex items-center gap-2 text-yellow-400 font-bold mb-2">
+                        <Lightbulb size={20} /> La Solución
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">{proyectoSeleccionado.solucion}</p>
+                    </div>
+                  )}
+
+                  {proyectoSeleccionado.impacto && (
+                    <div className="bg-white/5 p-4 rounded-xl border-l-4 border-green-500">
+                      <h4 className="flex items-center gap-2 text-green-400 font-bold mb-2">
+                        <TrendingUp size={20} /> Impacto & Resultados
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">{proyectoSeleccionado.impacto}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Grid de secciones Tecnicas */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                 {/* Tecnologías */}
                 <div>
@@ -184,7 +216,7 @@ export function SeccionProyectos() {
                   </div>
                 </div>
 
-                {/* Machine Learning (si existe) */}
+                {/* Librerias/ML */}
                 {proyectoSeleccionado.libreriasML && (
                   <div>
                     <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
@@ -204,6 +236,23 @@ export function SeccionProyectos() {
                   </div>
                 )}
               </div>
+
+              {/* Testimonios */}
+              {proyectoSeleccionado.testimonios && proyectoSeleccionado.testimonios.length > 0 && (
+                <div className="mb-8">
+                  <h4 className="flex items-center gap-2 text-white font-bold mb-4">
+                    <MessageSquare size={18} className="text-violet-400" />
+                    Lo que dicen los usuarios
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {proyectoSeleccionado.testimonios.map((img, idx) => (
+                      <div key={idx} className="rounded-lg overflow-hidden border border-white/10 shadow-lg cursor-pointer hover:scale-[1.02] transition-transform">
+                        <img src={img} alt={`Testimonio ${idx + 1}`} className="w-full h-auto" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Botones de acción */}
               <div className="flex flex-wrap gap-3 pt-6 border-t border-white/5">

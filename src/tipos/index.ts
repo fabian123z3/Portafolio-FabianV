@@ -11,6 +11,11 @@ export interface Proyecto {
   repoUrl?: string;
   playStoreUrl?: string;
   destacado?: boolean;
+  // Campos para Case Study
+  desafio?: string;
+  solucion?: string;
+  impacto?: string;
+  testimonios?: string[];
 }
 
 // Tipos para habilidades tecnicas

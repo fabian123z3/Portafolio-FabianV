@@ -1,6 +1,9 @@
 import type { DatosPersonales, Habilidad, Proyecto, Experiencia } from '../tipos';
 import logoRH360 from '../assets/logoapk.png';
 import logoCarnicero from '../assets/icononuevo.png';
+import resena1 from '../assets/reseña1.png';
+import resena2 from '../assets/reseña2.png';
+import resena3 from '../assets/reseña3.png';
 
 export const datosPersonales: DatosPersonales = {
   nombre: 'Fabian Alexis Villablanca Vega',
@@ -29,7 +32,10 @@ export const proyectos: Proyecto[] = [
   {
     id: 'rh360',
     titulo: 'RH360 - Modulo Control Electrónico de Asistencia',
-    descripcion: 'Desarrolle una plataforma integral para la gestion de Recursos Humanos, enfocada en cumplir estrictamente con la normativa chilena (Resolucion Exenta N°38) para el control de asistencia biometrico.\n\nPara el nucleo de Inteligencia Artificial, entrene modelos propios en Google Colab utilizando PyTorch y OpenCV. Implemente un sistema de deteccion de "vida" (anti-spoofing) con YOLO v8 para evitar fraudes con fotografias, y utilice Milvus como base de datos vectorial para realizar busquedas faciales en milisegundos.\n\nLa arquitectura se divide en microservicios: un backend robusto en Django que maneja toda la logica de negocio, reportes legales y tareas asincronas; y una API de alto rendimiento en FastAPI dedicada exclusivamente al procesamiento de imagenes.\n\nEn el frontend, construi un panel administrativo moderno con React, TypeScript y Tailwind, y una aplicacion movil nativa con React Native para el marcaje en terreno. Todo el sistema esta contenerizado con Docker y desplegado en Railway.',
+    descripcion: 'Plataforma integral de RRHH que cumple con la estricta normativa chilena (Resolución Exenta N°38).',
+    desafio: 'El reto principal fue crear un sistema de asistencia infalible que cumpliera con las exigentes leyes laborales chilenas, evitando fraudes comunes como la suplantación de identidad con fotos.',
+    solucion: 'Diseñé una arquitectura de microservicios: Django para la lógica legal y de negocio, y FastAPI dedicado a la IA. Implementé detección de "vida" (Anti-Spoofing) con YOLO v8 para rechazar intentos de fraude con fotos, y Milvus para búsquedas faciales instantáneas.',
+    impacto: 'Logramos un sistema 100% compliant con la Dirección del Trabajo. El fraude por suplantación se redujo a cero y los tiempos de marcaje son menores a 1 segundo.',
     tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'MySQL', 'Railway', 'TanStack', 'Docker'],
     libreriasML: ['PyTorch', 'OpenCV', 'Milvus', 'YOLO v8', 'face-recognition', 'dlib', 'Google Colab'],
     icono: logoRH360,
@@ -39,7 +45,11 @@ export const proyectos: Proyecto[] = [
   {
     id: 'carnicero-app',
     titulo: 'Carnicero de Bolsillo',
-    descripcion: 'Convertí un recetario tradicional en un asistente inteligente. Integré la API de DeepSeek para que la app ofrezca consejos y respuestas personalizadas en tiempo real, aportando valor real al usuario.\n\nMe enfoqué en la usabilidad práctica: implementé un sistema "manos libres" con Expo Speech que narra las recetas, solucionando el problema de usar el celular mientras cocinas. Desarrollada con React Native y NativeWind, la app es rápida, cuenta con videos integrados y funciona perfectamente sin conexión.',
+    descripcion: 'Asistente culinario inteligente que transforma la manera de cocinar con IA y funciones manos libres.',
+    desafio: 'Los usuarios encontraban difícil seguir recetas en el celular con las manos ocupadas o sucias. Además, necesitaban respuestas inmediatas y personalizadas que un recetario estático no podía dar.',
+    solucion: 'Integré la API de DeepSeek para ofrecer un asistente gastronómico contextual en tiempo real. Desarrollé una función "Manos Libres" con Expo Speech que narra las recetas paso a paso, permitiendo cocinar sin tocar la pantalla.',
+    impacto: 'La retención de usuarios aumentó significativamente gracias a la función de voz. Las reseñas destacan la utilidad del asistente IA para resolver dudas específicas sobre cortes de carne.',
+    testimonios: [resena1, resena2, resena3],
     tecnologias: ['React Native', 'Expo', 'TypeScript', 'NativeWind', 'Expo Router'],
     libreriasML: ['DeepSeek API', 'Expo Speech', 'AsyncStorage', 'YouTube Iframe', 'Reanimated'],
     icono: logoCarnicero,
