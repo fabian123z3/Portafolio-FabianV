@@ -50,14 +50,14 @@ export function SeccionProyectos() {
                   {/* Header de la tarjeta */}
                   <div className="flex justify-between items-start mb-4 gap-4">
                     <div className={`
-                      w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden shadow-lg
+                      w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden shadow-lg
                       ${esPrincipal ? 'bg-violet-600 shadow-violet-900/30' : 'bg-gray-800 border border-white/10'}
                     `}>
                       {proyecto.icono ? (
                         <img 
                           src={proyecto.icono} 
                           alt={proyecto.titulo}
-                          className="w-7 h-7 object-contain"
+                          className="w-full h-full object-cover rounded-xl"
                         />
                       ) : (
                         <span className="text-xl font-bold text-white">
@@ -130,12 +130,12 @@ export function SeccionProyectos() {
             {/* Header del Modal */}
             <div className="flex items-center justify-between p-6 border-b border-white/10 bg-gray-900/50">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center p-2 border border-white/5">
+                <div className="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center overflow-hidden border border-white/5">
                   {proyectoSeleccionado.icono && (
                     <img 
                       src={proyectoSeleccionado.icono} 
                       alt={proyectoSeleccionado.titulo}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   )}
                 </div>
@@ -189,7 +189,7 @@ export function SeccionProyectos() {
                   <div>
                     <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
                       <Cpu size={16} className="text-orange-400" />
-                      IA & ML
+                      Librerías & APIs
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {proyectoSeleccionado.libreriasML.map((lib) => (

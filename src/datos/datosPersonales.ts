@@ -1,4 +1,6 @@
 import type { DatosPersonales, Habilidad, Proyecto, Experiencia } from '../tipos';
+import logoRH360 from '../assets/logoapk.png';
+import logoCarnicero from '../assets/icononuevo.png';
 
 export const datosPersonales: DatosPersonales = {
   nombre: 'Fabian Alexis Villablanca Vega',
@@ -30,16 +32,17 @@ export const proyectos: Proyecto[] = [
     descripcion: 'Desarrolle una plataforma integral para la gestion de Recursos Humanos, enfocada en cumplir estrictamente con la normativa chilena (Resolucion Exenta N°38) para el control de asistencia biometrico.\n\nPara el nucleo de Inteligencia Artificial, entrene modelos propios en Google Colab utilizando PyTorch y OpenCV. Implemente un sistema de deteccion de "vida" (anti-spoofing) con YOLO v8 para evitar fraudes con fotografias, y utilice Milvus como base de datos vectorial para realizar busquedas faciales en milisegundos.\n\nLa arquitectura se divide en microservicios: un backend robusto en Django que maneja toda la logica de negocio, reportes legales y tareas asincronas; y una API de alto rendimiento en FastAPI dedicada exclusivamente al procesamiento de imagenes.\n\nEn el frontend, construi un panel administrativo moderno con React, TypeScript y Tailwind, y una aplicacion movil nativa con React Native para el marcaje en terreno. Todo el sistema esta contenerizado con Docker y desplegado en Railway.',
     tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'MySQL', 'Railway', 'TanStack', 'Docker'],
     libreriasML: ['PyTorch', 'OpenCV', 'Milvus', 'YOLO v8', 'face-recognition', 'dlib', 'Google Colab'],
-    icono: 'https://cdn-icons-png.flaticon.com/512/4727/4727424.png',
+    icono: logoRH360,
     demoUrl: 'https://zenitx.com/rh360/',
     destacado: true,
   },
   {
     id: 'carnicero-app',
     titulo: 'Carnicero de Bolsillo',
-    descripcion: 'Cree esta app pensando en los carniceros que necesitan calcular cortes y margenes rapidamente. La desarrolle con React Native y ya esta publicada en Play Store. Permite gestionar inventario, calcular precios por kilo y llevar el control del negocio.',
-    tecnologias: ['React Native', 'Expo', 'TypeScript', 'NativeWind'],
-    icono: 'https://cdn-icons-png.flaticon.com/512/3143/3143643.png',
+    descripcion: 'Convertí un recetario tradicional en un asistente inteligente. Integré la API de DeepSeek para que la app ofrezca consejos y respuestas personalizadas en tiempo real, aportando valor real al usuario.\n\nMe enfoqué en la usabilidad práctica: implementé un sistema "manos libres" con Expo Speech que narra las recetas, solucionando el problema de usar el celular mientras cocinas. Desarrollada con React Native y NativeWind, la app es rápida, cuenta con videos integrados y funciona perfectamente sin conexión.',
+    tecnologias: ['React Native', 'Expo', 'TypeScript', 'NativeWind', 'Expo Router'],
+    libreriasML: ['DeepSeek API', 'Expo Speech', 'AsyncStorage', 'YouTube Iframe', 'Reanimated'],
+    icono: logoCarnicero,
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carnicerodebolsillo.app&hl=es_CL',
     destacado: true,
   },

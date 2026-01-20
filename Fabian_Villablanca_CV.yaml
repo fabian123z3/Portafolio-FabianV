@@ -47,11 +47,12 @@ cv:
         url: https://zenitx.com/rh360/
 
       - name: Carnicero de Bolsillo
-        date: 2023
+        date: 2024
         highlights:
-          - App móvil publicada en Play Store para el rubro cárnico
-          - Cálculos de cortes, márgenes de ganancia y gestión de inventario
-          - "Tecnologías: React Native, Expo, TypeScript, NativeWind"
+          - Diseñé y desarrollé una app enciclopedia de cortes de carne y recetas con +1000 descargas.
+          - Implementé funciones de texto a voz (Expo Speech) para asistencia de cocina manos libres.
+          - Integré reproductor de video (YouTube API) y sistema de navegación optimizado.
+          - "Tecnologías: React Native, Expo, TypeScript, NativeWind, Async Storage"
         url: https://play.google.com/store/apps/details?id=com.carnicerodebolsillo.app
 
       - name: Fuerza Total
