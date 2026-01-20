@@ -34,9 +34,14 @@ const tecnologias = [
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
   },
   {
+    nombre: 'GitHub',
+    icono: 'https://cdn.simpleicons.org/github/white',
+  },
+  {
     nombre: 'Git',
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
   },
+  
   {
     nombre: 'MySQL',
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
@@ -53,10 +58,7 @@ const tecnologias = [
     nombre: 'shadcn/ui',
     icono: 'https://ui.shadcn.com/apple-touch-icon.png',
   },
-  {
-    nombre: 'GitHub',
-    icono: 'https://cdn.simpleicons.org/github/white',
-  },
+  
   {
     nombre: 'Cloudflare',
     icono: 'https://cdn.simpleicons.org/cloudflare/F38020',

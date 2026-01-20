@@ -36,14 +36,14 @@ cv:
           - Creación de e-commerce, apps móviles y sistemas de gestión
 
     proyectos:
-      - name: RH360 - Sistema RRHH con IA
+      - name: RH360 - Modulo Control Electrónico de Asistencia
         date: 2023 - Presente
         highlights:
-          - Plataforma empresarial de recursos humanos con reconocimiento facial biométrico
-          - Microservicio de IA con FastAPI y Milvus para búsqueda de embeddings faciales
-          - App móvil con React Native para marcaje en terreno
-          - Panel administrativo en React con TanStack Query
-          - "Tecnologías: React, React Native, Django, FastAPI, Milvus, PyTorch, OpenCV, PostgreSQL, Docker"
+          - Desarrollé una plataforma integral de RRHH cumpliendo la normativa chilena (Resolución Exenta N°38) para control de asistencia biométrico.
+          - Entrené modelos de IA en Google Colab (PyTorch, OpenCV) e implementé anti-spoofing con YOLO v8 para evitar fraudes.
+          - Diseñé una arquitectura de microservicios con Django (lógica de negocio) y FastAPI (procesamiento de imágenes con Milvus).
+          - Construí el panel administrativo en React y la app móvil nativa en React Native.
+          - "Tecnologías: React, React Native, Django, FastAPI, Milvus, YOLO v8, Docker, Railway"
         url: https://zenitx.com/rh360/
 
       - name: Carnicero de Bolsillo

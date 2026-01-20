@@ -26,10 +26,10 @@ export const habilidades: Habilidad[] = [
 export const proyectos: Proyecto[] = [
   {
     id: 'rh360',
-    titulo: 'RH360 - Sistema RRHH con IA',
-    descripcion: 'Desarrolle un sistema completo de recursos humanos con reconocimiento facial biometrico para control de asistencia.\n\nRealice el entrenamiento de modelos de IA en Google Colab utilizando PyTorch y OpenCV. Los embeddings faciales se almacenan en Milvus para busquedas de alta velocidad.\n\nImplemente deteccion anti-spoofing con YOLO para verificar que la persona sea real y no una fotografia, garantizando la integridad del sistema.\n\nEl backend combina Django para la logica de negocio y FastAPI para el microservicio de reconocimiento facial. El frontend incluye una app movil en React Native y un panel administrativo en React con TanStack Query.\n\nInvestigue y aplique la Resolucion Exenta N°38 de la Direccion del Trabajo para cumplir con los requisitos legales chilenos de control de asistencia.\n\nEl sistema esta desplegado en Railway y utiliza MySQL como base de datos principal.',
-    tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'MySQL', 'Railway', 'TanStack'],
-    libreriasML: ['PyTorch', 'OpenCV', 'Milvus', 'YOLO', 'face-recognition', 'dlib', 'Google Colab'],
+    titulo: 'RH360 - Modulo Control Electrónico de Asistencia',
+    descripcion: 'Desarrolle una plataforma integral para la gestion de Recursos Humanos, enfocada en cumplir estrictamente con la normativa chilena (Resolucion Exenta N°38) para el control de asistencia biometrico.\n\nPara el nucleo de Inteligencia Artificial, entrene modelos propios en Google Colab utilizando PyTorch y OpenCV. Implemente un sistema de deteccion de "vida" (anti-spoofing) con YOLO v8 para evitar fraudes con fotografias, y utilice Milvus como base de datos vectorial para realizar busquedas faciales en milisegundos.\n\nLa arquitectura se divide en microservicios: un backend robusto en Django que maneja toda la logica de negocio, reportes legales y tareas asincronas; y una API de alto rendimiento en FastAPI dedicada exclusivamente al procesamiento de imagenes.\n\nEn el frontend, construi un panel administrativo moderno con React, TypeScript y Tailwind, y una aplicacion movil nativa con React Native para el marcaje en terreno. Todo el sistema esta contenerizado con Docker y desplegado en Railway.',
+    tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'MySQL', 'Railway', 'TanStack', 'Docker'],
+    libreriasML: ['PyTorch', 'OpenCV', 'Milvus', 'YOLO v8', 'face-recognition', 'dlib', 'Google Colab'],
     icono: 'https://cdn-icons-png.flaticon.com/512/4727/4727424.png',
     demoUrl: 'https://zenitx.com/rh360/',
     destacado: true,
