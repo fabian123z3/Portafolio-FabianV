@@ -1,23 +1,7 @@
 import { Flame, Target, Video } from 'lucide-react';
 import { Contenedor, TituloSeccion } from '../ui';
 
-const rasgos = [
-  {
-    icono: Flame,
-    titulo: 'Apasionado',
-    descripcion: 'Disfruto cada linea de codigo',
-  },
-  {
-    icono: Target,
-    titulo: 'Perseverante',
-    descripcion: 'No paro hasta lograr el objetivo',
-  },
-  {
-    icono: Video,
-    titulo: 'Creador',
-    descripcion: 'Comparto en TikTok lo que aprendo',
-  },
-];
+
 
 export function SeccionSobreMi() {
   return (
