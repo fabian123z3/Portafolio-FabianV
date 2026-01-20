@@ -1,0 +1,133 @@
+cv:
+  name: Fabián Alexis Villablanca Vega
+  location: Chile
+  email: fabianvillablanca97@gmail.com
+  social_networks:
+    - network: LinkedIn
+      username: fabian-villablanca-29717b38a
+    - network: GitHub
+      username: fabian123z3
+
+  sections:
+    resumen:
+      - Desarrollador Full Stack con experiencia en React, React Native, Django y FastAPI. Apasionado por crear soluciones tecnológicas que realmente funcionen. Me especializo en desarrollo web y móvil, inteligencia artificial aplicada y automatización de procesos. Creador de contenido sobre programación en TikTok.
+
+    experiencia:
+      - company: Zenitx Soluciones Informáticas
+        position: Desarrollador Full Stack
+        location: Chile
+        start_date: 2023
+        end_date: present
+        highlights:
+          - Desarrollo de RH360, plataforma de RRHH con reconocimiento facial biométrico usando FastAPI, Milvus, PyTorch y OpenCV
+          - Liderazgo técnico en proyectos web y móviles para diversos clientes
+          - Implementación de microservicios de IA para procesamiento de embeddings faciales en tiempo real
+          - Desarrollo de aplicaciones móviles con React Native y Expo
+          - Cumplimiento de normativa legal chilena (Artículo 27) en sistemas de control de asistencia
+
+      - company: Independiente
+        position: Desarrollador Freelance
+        location: Chile
+        start_date: 2021
+        end_date: 2023
+        highlights:
+          - Desarrollo de sitios web y aplicaciones para pequeñas y medianas empresas
+          - Gestión directa con clientes desde levantamiento de requerimientos hasta entrega
+          - Creación de e-commerce, apps móviles y sistemas de gestión
+
+    proyectos:
+      - name: RH360 - Sistema RRHH con IA
+        date: 2023 - Presente
+        highlights:
+          - Plataforma empresarial de recursos humanos con reconocimiento facial biométrico
+          - Microservicio de IA con FastAPI y Milvus para búsqueda de embeddings faciales
+          - App móvil con React Native para marcaje en terreno
+          - Panel administrativo en React con TanStack Query
+          - "Tecnologías: React, React Native, Django, FastAPI, Milvus, PyTorch, OpenCV, PostgreSQL, Docker"
+        url: https://zenitx.com/rh360/
+
+      - name: Carnicero de Bolsillo
+        date: 2023
+        highlights:
+          - App móvil publicada en Play Store para el rubro cárnico
+          - Cálculos de cortes, márgenes de ganancia y gestión de inventario
+          - "Tecnologías: React Native, Expo, TypeScript, NativeWind"
+        url: https://play.google.com/store/apps/details?id=com.carnicerodebolsillo.app
+
+      - name: Fuerza Total
+        date: 2024
+        highlights:
+          - Plataforma de entrenamiento personal y fitness
+          - Seguimiento de rutinas, progreso con gráficos y planes nutricionales
+          - "Tecnologías: React Native, Expo, Node.js, Express"
+
+      - name: Auto Seguro
+        date: 2024
+        highlights:
+          - Plataforma web para cotización de seguros automotrices
+          - Comparador de precios entre aseguradoras y contratación online
+          - "Tecnologías: React, Vite, Tailwind CSS"
+
+    habilidades:
+      - label: Frontend
+        details: React, React Native, TypeScript, JavaScript, Tailwind CSS, NativeWind, TanStack Query, shadcn/ui
+      - label: Backend
+        details: Django, FastAPI, Python, Node.js, Express, PostgreSQL, MySQL, SQLite
+      - label: IA / ML
+        details: PyTorch, OpenCV, Milvus, face-recognition, Ultralytics (YOLO)
+      - label: DevOps / Herramientas
+        details: Docker, Git, GitHub, n8n, Make, Notion
+
+    tecnologias:
+      - React
+      - React Native
+      - TypeScript
+      - Python
+      - Django
+      - FastAPI
+      - Milvus
+      - PyTorch
+      - OpenCV
+      - Docker
+      - PostgreSQL
+      - Git
+      - TanStack
+      - Tailwind CSS
+
+design:
+  theme: classic
+  color: "#6D28D9"
+
+locale:
+  abbreviations_for_months:
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Sep
+    - Oct
+    - Nov
+    - Dic
+  full_names_of_months:
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+  month: mes
+  months: meses
+  year: año
+  years: años
+  present: Presente
+  to: "-"

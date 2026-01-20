@@ -6,6 +6,10 @@ const tecnologias = [
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
   },
   {
+    nombre: 'Tailwind / NativeWind',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
+  },
+  {
     nombre: 'TypeScript',
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
   },
@@ -54,12 +58,20 @@ const tecnologias = [
     icono: 'https://cdn.simpleicons.org/github/white',
   },
   {
+    nombre: 'Cloudflare',
+    icono: 'https://cdn.simpleicons.org/cloudflare/F38020',
+  },
+  {
     nombre: 'n8n',
     icono: 'https://cdn.simpleicons.org/n8n/EA4B71',
   },
   {
     nombre: 'TanStack',
     icono: 'https://avatars.githubusercontent.com/u/72518640?s=200&v=4',
+  },
+  {
+    nombre: 'Google Colab',
+    icono: 'https://cdn.simpleicons.org/googlecolab/F9AB00',
   },
 ];
 

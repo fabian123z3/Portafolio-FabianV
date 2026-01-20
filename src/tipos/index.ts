@@ -4,6 +4,7 @@ export interface Proyecto {
   titulo: string;
   descripcion: string;
   tecnologias: string[];
+  libreriasML?: string[];
   icono?: string;
   imagenUrl?: string;
   demoUrl?: string;

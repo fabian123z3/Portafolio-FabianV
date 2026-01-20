@@ -27,8 +27,9 @@ export const proyectos: Proyecto[] = [
   {
     id: 'rh360',
     titulo: 'RH360 - Sistema RRHH con IA',
-    descripcion: 'Desarrolle una plataforma completa de recursos humanos integrando reconocimiento facial para control de asistencia. Construi un microservicio con FastAPI y Milvus para procesar embeddings faciales en tiempo real, una app movil con React Native para que los trabajadores marquen desde terreno, y un panel web en React con TanStack Query. Todo cumpliendo normativa legal chilena.',
-    tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'Milvus', 'PyTorch', 'OpenCV', 'PostgreSQL', 'Docker', 'TanStack'],
+    descripcion: 'Desarrolle un sistema completo de recursos humanos con reconocimiento facial biometrico para control de asistencia.\n\nRealice el entrenamiento de modelos de IA en Google Colab utilizando PyTorch y OpenCV. Los embeddings faciales se almacenan en Milvus para busquedas de alta velocidad.\n\nImplemente deteccion anti-spoofing con YOLO para verificar que la persona sea real y no una fotografia, garantizando la integridad del sistema.\n\nEl backend combina Django para la logica de negocio y FastAPI para el microservicio de reconocimiento facial. El frontend incluye una app movil en React Native y un panel administrativo en React con TanStack Query.\n\nInvestigue y aplique la Resolucion Exenta N°38 de la Direccion del Trabajo para cumplir con los requisitos legales chilenos de control de asistencia.\n\nEl sistema esta desplegado en Railway y utiliza MySQL como base de datos principal.',
+    tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'MySQL', 'Railway', 'TanStack'],
+    libreriasML: ['PyTorch', 'OpenCV', 'Milvus', 'YOLO', 'face-recognition', 'dlib', 'Google Colab'],
     icono: 'https://cdn-icons-png.flaticon.com/512/4727/4727424.png',
     demoUrl: 'https://zenitx.com/rh360/',
     destacado: true,

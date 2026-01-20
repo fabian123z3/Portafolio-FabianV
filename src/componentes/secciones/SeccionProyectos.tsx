@@ -157,9 +157,9 @@ export function SeccionProyectos() {
 
             {/* Contenido del modal */}
             <div className="p-6">
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <div className="text-gray-300 text-lg leading-relaxed mb-6 whitespace-pre-line">
                 {proyectoSeleccionado.descripcion}
-              </p>
+              </div>
 
               {/* Tecnologias completas */}
               <div className="mb-6">
@@ -175,6 +175,25 @@ export function SeccionProyectos() {
                   ))}
                 </div>
               </div>
+
+              {/* Librerias ML */}
+              {proyectoSeleccionado.libreriasML && proyectoSeleccionado.libreriasML.length > 0 && (
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                    <span className="text-orange-400">ML</span> Machine Learning
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {proyectoSeleccionado.libreriasML.map((lib) => (
+                      <span
+                        key={lib}
+                        className="px-3 py-1.5 text-sm font-medium bg-orange-500/10 text-orange-400 rounded-lg border border-orange-500/20"
+                      >
+                        {lib}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Links */}
               {(proyectoSeleccionado.playStoreUrl || proyectoSeleccionado.demoUrl) && (
