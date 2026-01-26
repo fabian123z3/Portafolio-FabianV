@@ -12,8 +12,8 @@ export function SeccionProyectos() {
   return (
     <section id="proyectos" className="py-16 md:py-24">
       <Contenedor className="max-w-3xl">
-        {/* Título con icono como midudev */}
-        <div className="flex items-center gap-3 mb-10">
+        {/* Título con icono */}
+        <div className="flex items-center gap-3 mb-8">
           <div className="p-2 bg-[#161b22] rounded-lg">
             <Code2 className="text-yellow-400" size={24} />
           </div>
@@ -22,69 +22,62 @@ export function SeccionProyectos() {
           </h2>
         </div>
 
-        {/* Grid de proyectos estilo midudev */}
+        {/* Grid compacto 2 columnas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {proyectosDestacados.map((proyecto) => (
             <article
               key={proyecto.id}
-              className="group flex flex-col"
+              className="group bg-[#161b22]/50 border border-white/5 rounded-xl p-4 hover:border-white/15 transition-all cursor-pointer"
+              onClick={() => setProyectoActivo(proyecto.id)}
             >
-              {/* Imagen/Preview del proyecto */}
-              <div 
-                className="relative aspect-video bg-[#161b22] rounded-xl overflow-hidden border border-white/5 mb-4 cursor-pointer"
-                onClick={() => setProyectoActivo(proyecto.id)}
-              >
-                {proyecto.icono ? (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
+              {/* Header con icono y título */}
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg overflow-hidden bg-[#21262d] border border-white/5 flex-shrink-0 flex items-center justify-center">
+                  {proyecto.icono ? (
                     <img 
                       src={proyecto.icono} 
                       alt={proyecto.titulo}
-                      className="w-16 h-16 object-cover rounded-xl"
+                      className="w-full h-full object-cover"
                     />
-                  </div>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-                    <span className="text-4xl font-bold text-gray-600">
+                  ) : (
+                    <span className="text-sm font-bold text-gray-500">
                       {proyecto.titulo.charAt(0)}
                     </span>
-                  </div>
-                )}
-                {/* Overlay hover */}
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="text-white text-sm font-medium">Ver detalles</span>
+                  )}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-semibold text-white group-hover:text-yellow-400 transition-colors truncate">
+                    {proyecto.titulo}
+                  </h3>
+                  <p className="text-xs text-gray-500 line-clamp-1">
+                    {proyecto.descripcion}
+                  </p>
                 </div>
               </div>
 
-              {/* Título del proyecto */}
-              <h3 
-                className="text-lg font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors cursor-pointer"
-                onClick={() => setProyectoActivo(proyecto.id)}
-              >
-                {proyecto.titulo}
-              </h3>
-
-              {/* Tecnologías como badges inline */}
-              <div className="flex flex-wrap gap-2 mb-3">
+              {/* Tecnologías compactas */}
+              <div className="flex flex-wrap gap-1.5 mb-3">
                 {proyecto.tecnologias.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-0.5 text-xs font-medium bg-white/5 text-gray-400 rounded border border-white/5"
+                    className="px-2 py-0.5 text-[10px] font-medium bg-white/5 text-gray-400 rounded"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              {/* Links de acción estilo midudev */}
-              <div className="flex items-center gap-4">
+              {/* Links compactos */}
+              <div className="flex items-center gap-3 text-xs">
                 {proyecto.repoUrl && (
                   <a
                     href={proyecto.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1 text-gray-500 hover:text-white transition-colors"
                   >
-                    <Github size={16} />
+                    <Github size={12} />
                     Code
                   </a>
                 )}
@@ -93,10 +86,11 @@ export function SeccionProyectos() {
                     href={proyecto.playStoreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1 text-gray-500 hover:text-white transition-colors"
                   >
-                    <Smartphone size={16} />
-                    Google Play
+                    <Smartphone size={12} />
+                    Play
                   </a>
                 )}
                 {proyecto.demoUrl && (
@@ -104,9 +98,10 @@ export function SeccionProyectos() {
                     href={proyecto.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1 text-gray-500 hover:text-white transition-colors"
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink size={12} />
                     Preview
                   </a>
                 )}
@@ -116,22 +111,17 @@ export function SeccionProyectos() {
         </div>
       </Contenedor>
 
-      {/* Modal / Dialogo de Detalle */}
+      {/* Modal de Detalle */}
       {proyectoSeleccionado && (
         <div 
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-sm"
           onClick={() => setProyectoActivo(null)}
         >
           <div 
-            className="
-              relative w-full max-w-2xl bg-[#161b22] sm:rounded-xl 
-              max-h-[90vh] flex flex-col shadow-2xl overflow-hidden
-              border-t sm:border border-white/10
-              animate-in slide-in-from-bottom-10 sm:zoom-in-95 duration-300
-            "
+            className="relative w-full max-w-2xl bg-[#161b22] sm:rounded-xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden border-t sm:border border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header del Modal */}
+            {/* Header */}
             <div className="flex items-center justify-between p-5 border-b border-white/10">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-[#21262d] rounded-lg flex items-center justify-center overflow-hidden border border-white/5">
@@ -143,11 +133,9 @@ export function SeccionProyectos() {
                     />
                   )}
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">
-                    {proyectoSeleccionado.titulo}
-                  </h3>
-                </div>
+                <h3 className="text-lg font-bold text-white">
+                  {proyectoSeleccionado.titulo}
+                </h3>
               </div>
               <button 
                 onClick={() => setProyectoActivo(null)}
@@ -157,14 +145,13 @@ export function SeccionProyectos() {
               </button>
             </div>
 
-            {/* Contenido Scrollable */}
+            {/* Contenido */}
             <div className="p-5 overflow-y-auto">
-              
               <p className="text-gray-300 leading-relaxed mb-6">
                 {proyectoSeleccionado.descripcion}
               </p>
 
-              {/* Sección Case Study si existen los datos */}
+              {/* Case Study */}
               {(proyectoSeleccionado.desafio || proyectoSeleccionado.solucion || proyectoSeleccionado.impacto) && (
                 <div className="space-y-4 mb-6">
                   {proyectoSeleccionado.desafio && (
@@ -196,9 +183,8 @@ export function SeccionProyectos() {
                 </div>
               )}
 
-              {/* Grid de secciones Tecnicas */}
+              {/* Tecnologías */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                {/* Tecnologías */}
                 <div>
                   <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
                     Tecnologías
@@ -215,7 +201,6 @@ export function SeccionProyectos() {
                   </div>
                 </div>
 
-                {/* Librerias/ML */}
                 {proyectoSeleccionado.libreriasML && (
                   <div>
                     <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
@@ -251,7 +236,7 @@ export function SeccionProyectos() {
                 </div>
               )}
 
-              {/* Botones de acción */}
+              {/* Botones */}
               <div className="flex flex-wrap gap-3 pt-4 border-t border-white/5">
                 {proyectoSeleccionado.playStoreUrl && (
                   <a

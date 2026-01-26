@@ -47,11 +47,11 @@ export function SeccionHero() {
           <div className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
               Hey, soy{' '}
-              <span className="text-yellow-400">Fabian</span>
+              <span className="text-yellow-400">Fabian Villablanca</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl">
-              <span className="text-white font-medium">Desarrollador Full Stack</span> de Chile 🇨🇱. 
+              <span className="text-white font-medium">Desarrollador Full Stack</span>. 
               Especializado en{' '}
               <span className="text-yellow-400/90">React, React Native, Django y FastAPI</span>. 
               Creo soluciones digitales que funcionan y escalan.

@@ -4,6 +4,7 @@ import {
   SeccionExperiencia,
   SeccionProyectos,
   SeccionSobreMi,
+  SeccionContacto,
   PiePagina,
 } from './componentes/secciones';
 import { Toaster } from '@/components/ui/sonner';
@@ -17,6 +18,7 @@ function App() {
         <SeccionExperiencia />
         <SeccionProyectos />
         <SeccionSobreMi />
+        <SeccionContacto />
       </main>
       <PiePagina />
       <Toaster position="bottom-right" richColors />

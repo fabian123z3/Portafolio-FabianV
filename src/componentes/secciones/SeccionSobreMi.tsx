@@ -1,12 +1,14 @@
-import { User } from 'lucide-react';
+import { User, Star, ExternalLink, FileText } from 'lucide-react';
 import { Contenedor } from '../ui';
 import fotoPerfil from '../../assets/fotoperfil.png';
+import logoZenitx from '../../assets/zenitx.png';
+import logoSantoTomas from '../../assets/st.jpg';
 
 export function SeccionSobreMi() {
   return (
     <section id="sobre-mi" className="py-16 md:py-24 bg-[#0a0e13]">
       <Contenedor className="max-w-3xl">
-        {/* Título con icono como midudev */}
+        {/* Título con icono */}
         <div className="flex items-center gap-3 mb-10">
           <div className="p-2 bg-[#161b22] rounded-lg">
             <User className="text-yellow-400" size={24} />
@@ -16,7 +18,7 @@ export function SeccionSobreMi() {
           </h2>
         </div>
 
-        {/* Contenido estilo midudev - foto pequeña + texto narrativo */}
+        {/* Contenido - foto + texto */}
         <div className="flex flex-col md:flex-row gap-8">
           {/* Foto de perfil */}
           <div className="flex-shrink-0">
@@ -27,50 +29,60 @@ export function SeccionSobreMi() {
             />
           </div>
 
-          {/* Texto narrativo */}
+          {/* Texto narrativo corto y natural */}
           <div className="flex-1 space-y-4 text-gray-300 leading-relaxed">
             <p>
-              Me llamo <span className="text-white">Fabian</span> y soy desarrollador porque me gusta crear cosas que la gente realmente use. Empecé programando sitios sencillos y hoy lidero proyectos completos con tecnologías modernas.
+              Soy <span className="text-white">Fabian Villablanca</span>, desarrollador full stack de Chile. Me gusta construir cosas que funcionen y que la gente realmente use.
             </p>
 
             <p>
-              Actualmente trabajo en <span className="text-yellow-400">Zenitx Soluciones Informáticas</span>, donde desarrollo aplicaciones web y móviles para diversos clientes. Además, superviso y mentoreo a estudiantes en práctica, ayudándoles en su desarrollo profesional.
-            </p>
-
-            <p>
-              Uno de mis proyectos más desafiantes fue crear un <span className="text-white">sistema de control de asistencia con reconocimiento facial</span> que cumple con la normativa laboral chilena. Esto me permitió profundizar en IA aplicada con PyTorch, OpenCV y Milvus.
-            </p>
-
-            <p>
-              Como <span className="text-white">creador de contenido</span>, comparto lo que aprendo sobre programación en TikTok. Mi objetivo es hacer el desarrollo de software más accesible y ayudar a otros a mejorar sus habilidades técnicas.
+              Trabajo en <span className="text-yellow-400">Zenitx</span> donde empecé como practicante y hoy lidero proyectos y superviso a nuevos talentos. También creo contenido sobre programación en TikTok.
             </p>
           </div>
         </div>
 
-        {/* Link estilo midudev */}
-        <div className="mt-8 pt-6 border-t border-white/5 flex items-center gap-4">
-          <a
-            href="https://github.com/fabian123z3"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-yellow-400 hover:text-yellow-300 font-medium transition-colors"
-          >
-            fabian123z3
-          </a>
-          <span className="text-gray-600">·</span>
-          <a
-            href="#sobre-mi"
-            className="text-gray-500 hover:text-white text-sm transition-colors"
-          >
-            Sobre mí
-          </a>
-          <span className="text-gray-600">·</span>
-          <a
-            href="mailto:fabianvillablanca97@gmail.com"
-            className="text-gray-500 hover:text-white text-sm transition-colors"
-          >
-            Contacto
-          </a>
+        {/* Respaldos - integrado de forma sutil */}
+        <div className="mt-8 pt-6 border-t border-white/5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <Star className="text-yellow-400 fill-yellow-400" size={14} />
+              <span>Respaldado por</span>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              {/* Zenitx */}
+              <a 
+                href="https://zenitx.com/nuestra-empresa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <img
+                  src={logoZenitx}
+                  alt="Zenitx"
+                  className="h-4 w-auto object-contain"
+                />
+                <span className="text-xs text-gray-400 group-hover:text-white transition-colors">Zenitx</span>
+                <ExternalLink size={10} className="text-gray-500" />
+              </a>
+
+              {/* Santo Tomas */}
+              <a 
+                href="/RespaldoST.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <img
+                  src={logoSantoTomas}
+                  alt="Santo Tomas"
+                  className="h-4 w-auto object-contain"
+                />
+                <span className="text-xs text-gray-400 group-hover:text-white transition-colors">Santo Tomás</span>
+                <FileText size={10} className="text-gray-500" />
+              </a>
+            </div>
+          </div>
         </div>
       </Contenedor>
     </section>

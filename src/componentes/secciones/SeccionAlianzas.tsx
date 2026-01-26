@@ -5,71 +5,56 @@ import logoSantoTomas from '../../assets/st.jpg';
 
 export function SeccionAlianzas() {
   return (
-    <section className="py-12 sm:py-16 relative overflow-hidden">
-      {/* Fondo con gradiente sutil */}
-      <div className="absolute inset-0 bg-gradient-to-r from-violet-950/10 via-transparent to-indigo-950/10" />
-      
-      <Contenedor className="relative z-10 w-full">
-        <div className="max-w-3xl mx-auto">
-          <div className="
-            relative bg-white/5 backdrop-blur-sm 
-            rounded-2xl border border-white/10 
-            p-6 sm:p-8 
-            flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10
-            hover:bg-white/10 transition-colors duration-300
-          ">
-            
-            {/* Etiqueta */}
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-yellow-400/10 rounded-full">
-                <Star className="text-yellow-400 fill-yellow-400" size={20} />
+    <section className="py-8 md:py-12">
+      <Contenedor className="max-w-3xl">
+        <div className="bg-[#161b22] border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
+          
+          {/* Etiqueta */}
+          <div className="flex items-center gap-2">
+            <Star className="text-yellow-400 fill-yellow-400" size={18} />
+            <span className="text-gray-400 font-medium text-sm">
+              Respaldado por
+            </span>
+          </div>
+
+          {/* Separador */}
+          <div className="hidden sm:block w-px h-8 bg-white/10" />
+
+          {/* Logos */}
+          <div className="flex items-center gap-4">
+            {/* Zenitx */}
+            <a 
+              href="https://zenitx.com/nuestra-empresa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-lg p-2.5 hover:scale-105 transition-all duration-300 block overflow-hidden"
+            >
+              <img
+                src={logoZenitx}
+                alt="Zenitx"
+                className="h-7 w-auto object-contain"
+              />
+              <div className="absolute inset-0 bg-gray-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
+                <ExternalLink className="text-white" size={14} />
               </div>
-              <span className="text-gray-300 font-medium text-lg">
-                Respaldado por
-              </span>
-            </div>
+            </a>
 
-            {/* Separador (solo desktop) */}
-            <div className="hidden sm:block w-px h-12 bg-white/10" />
-
-            {/* Logos */}
-            <div className="flex items-center gap-6">
-              {/* Zenitx */}
-              <a 
-                href="https://zenitx.com/nuestra-empresa/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/link relative bg-white rounded-lg p-3 shadow-lg hover:scale-105 transition-all duration-300 block overflow-hidden"
-              >
-                <img
-                  src={logoZenitx}
-                  alt="Zenitx"
-                  className="h-8 sm:h-10 w-auto object-contain"
-                />
-                <div className="absolute inset-0 bg-violet-900/90 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
-                  <ExternalLink className="text-white mb-0.5" size={14} />
-                  <span className="text-white text-[10px] font-bold uppercase tracking-wider">Web</span>
-                </div>
-              </a>
-
-              {/* Santo Tomas */}
-              <a 
-                href="/RespaldoST.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/link relative bg-white rounded-lg p-3 shadow-lg hover:scale-105 transition-all duration-300 block overflow-hidden"
-              >
-                <img
-                  src={logoSantoTomas}
-                  alt="Santo Tomas"
-                  className="h-8 sm:h-10 w-auto object-contain"
-                />
-                 <div className="absolute inset-0 bg-violet-900/90 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
-                  <FileText className="text-white mb-0.5" size={14} />
-                  <span className="text-white text-[10px] font-bold uppercase tracking-wider">Carta</span>
-                </div>
-              </a>
-            </div>
+            {/* Santo Tomas */}
+            <a 
+              href="/RespaldoST.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-lg p-2.5 hover:scale-105 transition-all duration-300 block overflow-hidden"
+            >
+              <img
+                src={logoSantoTomas}
+                alt="Santo Tomas"
+                className="h-7 w-auto object-contain"
+              />
+              <div className="absolute inset-0 bg-gray-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
+                <FileText className="text-white" size={14} />
+              </div>
+            </a>
           </div>
         </div>
       </Contenedor>
