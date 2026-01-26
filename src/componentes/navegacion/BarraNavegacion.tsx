@@ -2,64 +2,66 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const enlaces = [
-  { nombre: 'Inicio', href: '#inicio' },
-  { nombre: 'Sobre Mi', href: '#sobre-mi' },
-  { nombre: 'Habilidades', href: '#habilidades' },
-  { nombre: 'Proyectos', href: '#proyectos' },
   { nombre: 'Experiencia', href: '#experiencia' },
-  { nombre: 'Contacto', href: '#contacto' },
+  { nombre: 'Proyectos', href: '#proyectos' },
+  { nombre: 'Sobre mí', href: '#sobre-mi' },
+  { nombre: 'Contacto', href: 'mailto:fabianvillablanca97@gmail.com' },
 ];
 
 export function BarraNavegacion() {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-lg border-b border-white/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <a href="#inicio" className="text-xl font-bold text-white">
-            <span className="text-violet-400">F</span>V
-          </a>
+    <header className="fixed top-0 left-0 right-0 z-50 py-4 px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-3xl mx-auto flex items-center justify-between bg-[#161b22]/80 backdrop-blur-xl rounded-full px-4 py-2 border border-white/10">
+        {/* Logo/Nombre */}
+        <a 
+          href="#inicio" 
+          className="text-white font-semibold text-lg hover:text-yellow-400 transition-colors"
+        >
+          fabian<span className="text-yellow-400">.</span>dev
+        </a>
 
-          {/* Menu Desktop */}
-          <div className="hidden md:flex items-center gap-8">
-            {enlaces.map((enlace) => (
-              <a
-                key={enlace.nombre}
-                href={enlace.href}
-                className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium"
-              >
-                {enlace.nombre}
-              </a>
-            ))}
-          </div>
-
-          {/* Boton Menu Movil */}
-          <button
-            className="md:hidden text-white p-2"
-            onClick={() => setMenuAbierto(!menuAbierto)}
-            aria-label="Menu"
-          >
-            {menuAbierto ? <X size={24} /> : <Menu size={24} />}
-          </button>
+        {/* Menu Desktop */}
+        <div className="hidden md:flex items-center gap-1">
+          {enlaces.map((enlace) => (
+            <a
+              key={enlace.nombre}
+              href={enlace.href}
+              className="px-3 py-1.5 text-gray-400 hover:text-white hover:bg-white/5 rounded-full transition-all duration-200 text-sm"
+            >
+              {enlace.nombre}
+            </a>
+          ))}
         </div>
 
-        {/* Menu Movil */}
-        {menuAbierto && (
-          <div className="md:hidden py-4 border-t border-white/10">
+        {/* Boton Menu Movil */}
+        <button
+          className="md:hidden text-gray-400 hover:text-white p-2"
+          onClick={() => setMenuAbierto(!menuAbierto)}
+          aria-label="Menu"
+        >
+          {menuAbierto ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </nav>
+
+      {/* Menu Movil Dropdown */}
+      {menuAbierto && (
+        <div className="md:hidden max-w-3xl mx-auto mt-2">
+          <div className="bg-[#161b22]/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4">
             {enlaces.map((enlace) => (
               <a
                 key={enlace.nombre}
                 href={enlace.href}
-                className="block py-3 text-gray-300 hover:text-white transition-colors"
+                className="block py-3 text-gray-400 hover:text-white transition-colors border-b border-white/5 last:border-0"
                 onClick={() => setMenuAbierto(false)}
               >
                 {enlace.nombre}
               </a>
             ))}
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      )}
+    </header>
   );
 }

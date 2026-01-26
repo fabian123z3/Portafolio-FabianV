@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ExternalLink, Smartphone, X, ChevronRight, Star, Cpu, Target, Lightbulb, TrendingUp, MessageSquare } from 'lucide-react';
-import { Contenedor, TituloSeccion } from '../ui';
+import { Code2, ExternalLink, Smartphone, X, Target, Lightbulb, TrendingUp, MessageSquare, Cpu } from 'lucide-react';
+import { Contenedor } from '../ui';
 import { proyectos } from '../../datos/datosPersonales';
 
 export function SeccionProyectos() {
@@ -10,105 +10,98 @@ export function SeccionProyectos() {
   const proyectoSeleccionado = proyectos.find(p => p.id === proyectoActivo);
 
   return (
-    <section id="proyectos" className="py-20 relative overflow-hidden">
-      {/* Fondo de ruido/textura opcional */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
-      
-      <Contenedor className="relative z-10">
-        <TituloSeccion
-          titulo="Mis Proyectos"
-          subtitulo="Soluciones desarrolladas con código y creatividad"
-        />
+    <section id="proyectos" className="py-16 md:py-24 bg-[#0a0e13]">
+      <Contenedor className="max-w-3xl">
+        {/* Título con icono como midudev */}
+        <div className="flex items-center gap-3 mb-10">
+          <div className="p-2 bg-[#161b22] rounded-lg">
+            <Code2 className="text-yellow-400" size={24} />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
+            Proyectos
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {proyectosDestacados.map((proyecto, index) => {
-            // El primer proyecto (RH360) tendrá un estilo un poco diferente pero mismo tamaño
-            const esPrincipal = index === 0;
-
-            return (
-              <article
-                key={proyecto.id}
-                onClick={() => setProyectoActivo(proyecto.id)}
-                className={`
-                  group relative flex flex-col h-full
-                  bg-gray-900/40 backdrop-blur-md 
-                  border border-white/5 
-                  rounded-2xl overflow-hidden 
-                  cursor-pointer 
-                  transition-all duration-500
-                  hover:shadow-2xl hover:shadow-violet-900/20
-                  hover:border-violet-500/30
-                  hover:-translate-y-2
-                `}
-              >
-                {/* Gradiente sutil para el proyecto principal */}
-                {esPrincipal && (
-                  <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 via-transparent to-transparent opacity-50" />
-                )}
-
-                <div className="p-6 flex flex-col h-full relative z-10">
-                  {/* Header de la tarjeta */}
-                  <div className="flex justify-between items-start mb-4 gap-4">
-                    <div className={`
-                      w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden shadow-lg
-                      ${esPrincipal ? 'bg-violet-600 shadow-violet-900/30' : 'bg-gray-800 border border-white/10'}
-                    `}>
-                      {proyecto.icono ? (
-                        <img 
-                          src={proyecto.icono} 
-                          alt={proyecto.titulo}
-                          className="w-full h-full object-cover rounded-xl"
-                        />
-                      ) : (
-                        <span className="text-xl font-bold text-white">
-                          {proyecto.titulo.charAt(0)}
-                        </span>
-                      )}
-                    </div>
-                    {esPrincipal ? (
-                      <span className="px-3 py-1 bg-violet-500/20 text-violet-300 text-[10px] font-bold uppercase tracking-wider rounded-full border border-violet-500/20 flex items-center gap-1">
-                        <Star size={10} className="fill-current" />
-                        Destacado
-                      </span>
-                    ) : (
-                      <div className="p-2 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity -mr-2 -mt-2">
-                        <ChevronRight size={16} className="text-gray-400" />
-                      </div>
+        {/* Grid de proyectos */}
+        <div className="space-y-8">
+          {proyectosDestacados.map((proyecto) => (
+            <article
+              key={proyecto.id}
+              className="group bg-[#161b22] border border-white/5 rounded-xl overflow-hidden hover:border-white/10 transition-colors cursor-pointer"
+              onClick={() => setProyectoActivo(proyecto.id)}
+            >
+              <div className="p-5 md:p-6">
+                {/* Header con icono y título */}
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden bg-[#21262d] border border-white/5">
+                    {proyecto.icono && (
+                      <img 
+                        src={proyecto.icono} 
+                        alt={proyecto.titulo}
+                        className="w-full h-full object-cover"
+                      />
                     )}
                   </div>
-
-                  {/* Título y descripción */}
-                  <div className="mb-auto">
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors line-clamp-1">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-semibold text-white group-hover:text-yellow-400 transition-colors truncate">
                       {proyecto.titulo}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 mb-4">
+                    <p className="text-gray-400 text-sm line-clamp-2 mt-1">
                       {proyecto.descripcion}
                     </p>
                   </div>
-
-                  {/* Footer de la tarjeta: Tecnologías */}
-                  <div className="pt-4 mt-2 border-t border-white/5">
-                    <div className="flex flex-wrap gap-1.5">
-                      {proyecto.tecnologias.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 text-[11px] font-medium bg-white/5 text-gray-300 rounded-md group-hover:bg-white/10 transition-colors"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {proyecto.tecnologias.length > 3 && (
-                        <span className="px-2 py-1 text-[11px] font-medium text-gray-500">
-                          +{proyecto.tecnologias.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </div>
                 </div>
-              </article>
-            );
-          })}
+
+                {/* Tecnologías como badges */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {proyecto.tecnologias.slice(0, 4).map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 text-xs font-medium bg-white/5 text-gray-300 rounded-md border border-white/5"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {proyecto.tecnologias.length > 4 && (
+                    <span className="px-2 py-1 text-xs text-gray-500">
+                      +{proyecto.tecnologias.length - 4}
+                    </span>
+                  )}
+                </div>
+
+                {/* Links de acción */}
+                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
+                  {proyecto.playStoreUrl && (
+                    <a
+                      href={proyecto.playStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      <Smartphone size={16} />
+                      Google Play
+                    </a>
+                  )}
+                  {proyecto.demoUrl && (
+                    <a
+                      href={proyecto.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      <ExternalLink size={16} />
+                      Preview
+                    </a>
+                  )}
+                  <span className="ml-auto text-xs text-gray-500 group-hover:text-yellow-400/60 transition-colors">
+                    Click para ver más →
+                  </span>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </Contenedor>
 
@@ -120,7 +113,7 @@ export function SeccionProyectos() {
         >
           <div 
             className="
-              relative w-full max-w-2xl bg-gray-900 sm:rounded-2xl 
+              relative w-full max-w-2xl bg-[#161b22] sm:rounded-xl 
               max-h-[90vh] flex flex-col shadow-2xl overflow-hidden
               border-t sm:border border-white/10
               animate-in slide-in-from-bottom-10 sm:zoom-in-95 duration-300
@@ -128,9 +121,9 @@ export function SeccionProyectos() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header del Modal */}
-            <div className="flex items-center justify-between p-6 border-b border-white/10 bg-gray-900/50">
+            <div className="flex items-center justify-between p-5 border-b border-white/10">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center overflow-hidden border border-white/5">
+                <div className="w-12 h-12 bg-[#21262d] rounded-lg flex items-center justify-center overflow-hidden border border-white/5">
                   {proyectoSeleccionado.icono && (
                     <img 
                       src={proyectoSeleccionado.icono} 
@@ -140,75 +133,70 @@ export function SeccionProyectos() {
                   )}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white leading-tight">
+                  <h3 className="text-lg font-bold text-white">
                     {proyectoSeleccionado.titulo}
                   </h3>
-                  <div className="flex gap-2 text-xs text-gray-400 mt-1">
-                     {proyectoSeleccionado.destacado && (
-                       <span className="text-violet-400 font-medium">Proyecto Destacado</span>
-                     )}
-                  </div>
                 </div>
               </div>
               <button 
                 onClick={() => setProyectoActivo(null)}
-                className="p-2 hover:bg-white/10 rounded-full transition-colors text-gray-400 hover:text-white"
+                className="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 hover:text-white"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
             </div>
 
             {/* Contenido Scrollable */}
-            <div className="p-6 overflow-y-auto custom-scrollbar">
+            <div className="p-5 overflow-y-auto">
               
-              <div className="text-gray-300 leading-relaxed mb-8 whitespace-pre-line text-lg">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 {proyectoSeleccionado.descripcion}
-              </div>
+              </p>
 
               {/* Sección Case Study si existen los datos */}
               {(proyectoSeleccionado.desafio || proyectoSeleccionado.solucion || proyectoSeleccionado.impacto) && (
-                <div className="space-y-6 mb-8">
+                <div className="space-y-4 mb-6">
                   {proyectoSeleccionado.desafio && (
-                    <div className="bg-white/5 p-4 rounded-xl border-l-4 border-red-500">
-                      <h4 className="flex items-center gap-2 text-red-400 font-bold mb-2">
-                        <Target size={20} /> El Desafío
+                    <div className="bg-white/5 p-4 rounded-lg border-l-2 border-red-500">
+                      <h4 className="flex items-center gap-2 text-red-400 font-semibold text-sm mb-2">
+                        <Target size={16} /> El Desafío
                       </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">{proyectoSeleccionado.desafio}</p>
+                      <p className="text-gray-400 text-sm leading-relaxed">{proyectoSeleccionado.desafio}</p>
                     </div>
                   )}
                   
                   {proyectoSeleccionado.solucion && (
-                    <div className="bg-white/5 p-4 rounded-xl border-l-4 border-yellow-500">
-                      <h4 className="flex items-center gap-2 text-yellow-400 font-bold mb-2">
-                        <Lightbulb size={20} /> La Solución
+                    <div className="bg-white/5 p-4 rounded-lg border-l-2 border-yellow-500">
+                      <h4 className="flex items-center gap-2 text-yellow-400 font-semibold text-sm mb-2">
+                        <Lightbulb size={16} /> La Solución
                       </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">{proyectoSeleccionado.solucion}</p>
+                      <p className="text-gray-400 text-sm leading-relaxed">{proyectoSeleccionado.solucion}</p>
                     </div>
                   )}
 
                   {proyectoSeleccionado.impacto && (
-                    <div className="bg-white/5 p-4 rounded-xl border-l-4 border-green-500">
-                      <h4 className="flex items-center gap-2 text-green-400 font-bold mb-2">
-                        <TrendingUp size={20} /> Impacto & Resultados
+                    <div className="bg-white/5 p-4 rounded-lg border-l-2 border-green-500">
+                      <h4 className="flex items-center gap-2 text-green-400 font-semibold text-sm mb-2">
+                        <TrendingUp size={16} /> Impacto
                       </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">{proyectoSeleccionado.impacto}</p>
+                      <p className="text-gray-400 text-sm leading-relaxed">{proyectoSeleccionado.impacto}</p>
                     </div>
                   )}
                 </div>
               )}
 
               {/* Grid de secciones Tecnicas */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 {/* Tecnologías */}
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
                     Tecnologías
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {proyectoSeleccionado.tecnologias.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+                        className="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 rounded"
                       >
                         {tech}
                       </span>
@@ -219,15 +207,14 @@ export function SeccionProyectos() {
                 {/* Librerias/ML */}
                 {proyectoSeleccionado.libreriasML && (
                   <div>
-                    <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                      <Cpu size={16} className="text-orange-400" />
-                      Librerías & APIs
+                    <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                      <Cpu size={12} /> Librerías & APIs
                     </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {proyectoSeleccionado.libreriasML.map((lib) => (
                         <span
                           key={lib}
-                          className="px-2.5 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+                          className="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 rounded"
                         >
                           {lib}
                         </span>
@@ -239,14 +226,13 @@ export function SeccionProyectos() {
 
               {/* Testimonios */}
               {proyectoSeleccionado.testimonios && proyectoSeleccionado.testimonios.length > 0 && (
-                <div className="mb-8">
-                  <h4 className="flex items-center gap-2 text-white font-bold mb-4">
-                    <MessageSquare size={18} className="text-violet-400" />
-                    Lo que dicen los usuarios
+                <div className="mb-6">
+                  <h4 className="flex items-center gap-2 text-gray-400 font-semibold text-sm mb-3">
+                    <MessageSquare size={14} /> Reseñas de usuarios
                   </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {proyectoSeleccionado.testimonios.map((img, idx) => (
-                      <div key={idx} className="rounded-lg overflow-hidden border border-white/10 shadow-lg cursor-pointer hover:scale-[1.02] transition-transform">
+                      <div key={idx} className="rounded-lg overflow-hidden border border-white/5">
                         <img src={img} alt={`Testimonio ${idx + 1}`} className="w-full h-auto" />
                       </div>
                     ))}
@@ -255,16 +241,16 @@ export function SeccionProyectos() {
               )}
 
               {/* Botones de acción */}
-              <div className="flex flex-wrap gap-3 pt-6 border-t border-white/5">
+              <div className="flex flex-wrap gap-3 pt-4 border-t border-white/5">
                 {proyectoSeleccionado.playStoreUrl && (
                   <a
                     href={proyectoSeleccionado.playStoreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-all hover:scale-105"
+                    className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-medium transition-colors"
                   >
-                    <Smartphone size={18} />
-                    <span>Google Play</span>
+                    <Smartphone size={16} />
+                    Google Play
                   </a>
                 )}
                 
@@ -273,10 +259,10 @@ export function SeccionProyectos() {
                     href={proyectoSeleccionado.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-lg font-medium transition-all hover:scale-105"
+                    className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2.5 bg-white text-gray-900 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
                   >
-                    <ExternalLink size={18} />
-                    <span>Ver informacion</span>
+                    <ExternalLink size={16} />
+                    Ver Preview
                   </a>
                 )}
               </div>

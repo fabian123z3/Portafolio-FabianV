@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react';
+import { Star, ExternalLink, FileText } from 'lucide-react';
 import { Contenedor } from '../ui';
 import logoZenitx from '../../assets/zenitx.png';
 import logoSantoTomas from '../../assets/st.jpg';
@@ -39,27 +39,35 @@ export function SeccionAlianzas() {
                 href="https://zenitx.com/nuestra-empresa/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-lg p-3 shadow-lg hover:scale-105 transition-transform duration-300 block"
+                className="group/link relative bg-white rounded-lg p-3 shadow-lg hover:scale-105 transition-all duration-300 block overflow-hidden"
               >
                 <img
                   src={logoZenitx}
                   alt="Zenitx"
                   className="h-8 sm:h-10 w-auto object-contain"
                 />
+                <div className="absolute inset-0 bg-violet-900/90 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
+                  <ExternalLink className="text-white mb-0.5" size={14} />
+                  <span className="text-white text-[10px] font-bold uppercase tracking-wider">Web</span>
+                </div>
               </a>
 
               {/* Santo Tomas */}
               <a 
-                href="https://www.santotomas.cl/"
+                href="/RespaldoST.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-lg p-3 shadow-lg hover:scale-105 transition-transform duration-300 block"
+                className="group/link relative bg-white rounded-lg p-3 shadow-lg hover:scale-105 transition-all duration-300 block overflow-hidden"
               >
                 <img
                   src={logoSantoTomas}
                   alt="Santo Tomas"
                   className="h-8 sm:h-10 w-auto object-contain"
                 />
+                 <div className="absolute inset-0 bg-violet-900/90 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
+                  <FileText className="text-white mb-0.5" size={14} />
+                  <span className="text-white text-[10px] font-bold uppercase tracking-wider">Carta</span>
+                </div>
               </a>
             </div>
           </div>

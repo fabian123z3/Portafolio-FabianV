@@ -1,26 +1,22 @@
 import { BarraNavegacion } from './componentes/navegacion';
 import {
   SeccionHero,
-  SeccionSobreMi,
-  SeccionAlianzas,
-  SeccionHabilidades,
+  SeccionExperiencia,
   SeccionProyectos,
-  SeccionContacto,
+  SeccionSobreMi,
   PiePagina,
 } from './componentes/secciones';
 import { Toaster } from '@/components/ui/sonner';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#0d1117] text-white">
       <BarraNavegacion />
       <main>
         <SeccionHero />
-        <SeccionSobreMi />
-        <SeccionAlianzas />
-        <SeccionHabilidades />
+        <SeccionExperiencia />
         <SeccionProyectos />
-        <SeccionContacto />
+        <SeccionSobreMi />
       </main>
       <PiePagina />
       <Toaster position="bottom-right" richColors />
