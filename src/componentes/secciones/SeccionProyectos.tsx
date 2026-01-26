@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import { Code2, ExternalLink, Smartphone, X, Target, Lightbulb, TrendingUp, MessageSquare, Cpu } from 'lucide-react';
+import { Code2, ExternalLink, Smartphone, Github, X, Target, Lightbulb, TrendingUp, MessageSquare, Cpu } from 'lucide-react';
 import { Contenedor } from '../ui';
 import { proyectos } from '../../datos/datosPersonales';
 
 export function SeccionProyectos() {
-  const proyectosDestacados = proyectos.filter((p) => p.destacado);
+  const proyectosDestacados = proyectos.filter((p) => p.destacado).slice(0, 4);
   const [proyectoActivo, setProyectoActivo] = useState<string | number | null>(null);
 
   const proyectoSeleccionado = proyectos.find(p => p.id === proyectoActivo);
 
   return (
-    <section id="proyectos" className="py-16 md:py-24 bg-[#0a0e13]">
+    <section id="proyectos" className="py-16 md:py-24">
       <Contenedor className="max-w-3xl">
         {/* Título con icono como midudev */}
         <div className="flex items-center gap-3 mb-10">
@@ -22,83 +22,94 @@ export function SeccionProyectos() {
           </h2>
         </div>
 
-        {/* Grid de proyectos */}
-        <div className="space-y-8">
+        {/* Grid de proyectos estilo midudev */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {proyectosDestacados.map((proyecto) => (
             <article
               key={proyecto.id}
-              className="group bg-[#161b22] border border-white/5 rounded-xl overflow-hidden hover:border-white/10 transition-colors cursor-pointer"
-              onClick={() => setProyectoActivo(proyecto.id)}
+              className="group flex flex-col"
             >
-              <div className="p-5 md:p-6">
-                {/* Header con icono y título */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden bg-[#21262d] border border-white/5">
-                    {proyecto.icono && (
-                      <img 
-                        src={proyecto.icono} 
-                        alt={proyecto.titulo}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
+              {/* Imagen/Preview del proyecto */}
+              <div 
+                className="relative aspect-video bg-[#161b22] rounded-xl overflow-hidden border border-white/5 mb-4 cursor-pointer"
+                onClick={() => setProyectoActivo(proyecto.id)}
+              >
+                {proyecto.icono ? (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
+                    <img 
+                      src={proyecto.icono} 
+                      alt={proyecto.titulo}
+                      className="w-16 h-16 object-cover rounded-xl"
+                    />
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-semibold text-white group-hover:text-yellow-400 transition-colors truncate">
-                      {proyecto.titulo}
-                    </h3>
-                    <p className="text-gray-400 text-sm line-clamp-2 mt-1">
-                      {proyecto.descripcion}
-                    </p>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
+                    <span className="text-4xl font-bold text-gray-600">
+                      {proyecto.titulo.charAt(0)}
+                    </span>
                   </div>
+                )}
+                {/* Overlay hover */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="text-white text-sm font-medium">Ver detalles</span>
                 </div>
+              </div>
 
-                {/* Tecnologías como badges */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {proyecto.tecnologias.slice(0, 4).map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-1 text-xs font-medium bg-white/5 text-gray-300 rounded-md border border-white/5"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {proyecto.tecnologias.length > 4 && (
-                    <span className="px-2 py-1 text-xs text-gray-500">
-                      +{proyecto.tecnologias.length - 4}
-                    </span>
-                  )}
-                </div>
+              {/* Título del proyecto */}
+              <h3 
+                className="text-lg font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors cursor-pointer"
+                onClick={() => setProyectoActivo(proyecto.id)}
+              >
+                {proyecto.titulo}
+              </h3>
 
-                {/* Links de acción */}
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                  {proyecto.playStoreUrl && (
-                    <a
-                      href={proyecto.playStoreUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
-                    >
-                      <Smartphone size={16} />
-                      Google Play
-                    </a>
-                  )}
-                  {proyecto.demoUrl && (
-                    <a
-                      href={proyecto.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      Preview
-                    </a>
-                  )}
-                  <span className="ml-auto text-xs text-gray-500 group-hover:text-yellow-400/60 transition-colors">
-                    Click para ver más →
+              {/* Tecnologías como badges inline */}
+              <div className="flex flex-wrap gap-2 mb-3">
+                {proyecto.tecnologias.slice(0, 3).map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-0.5 text-xs font-medium bg-white/5 text-gray-400 rounded border border-white/5"
+                  >
+                    {tech}
                   </span>
-                </div>
+                ))}
+              </div>
+
+              {/* Links de acción estilo midudev */}
+              <div className="flex items-center gap-4">
+                {proyecto.repoUrl && (
+                  <a
+                    href={proyecto.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                  >
+                    <Github size={16} />
+                    Code
+                  </a>
+                )}
+                {proyecto.playStoreUrl && (
+                  <a
+                    href={proyecto.playStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                  >
+                    <Smartphone size={16} />
+                    Google Play
+                  </a>
+                )}
+                {proyecto.demoUrl && (
+                  <a
+                    href={proyecto.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+                  >
+                    <ExternalLink size={16} />
+                    Preview
+                  </a>
+                )}
               </div>
             </article>
           ))}

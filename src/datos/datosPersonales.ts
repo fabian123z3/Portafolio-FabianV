@@ -93,20 +93,29 @@ export const proyectos: Proyecto[] = [
 export const experiencias: Experiencia[] = [
   {
     id: '1',
+    cargo: 'Supervisor de Practicantes',
+    empresa: 'Zenitx Soluciones Informaticas',
+    fechaInicio: '2024',
+    fechaFin: 'Presente',
+    actual: true,
+    descripcion: 'Supervisión y mentoría de estudiantes en práctica. Guía en proyectos reales, revisión de código y apoyo en su desarrollo profesional.',
+  },
+  {
+    id: '2',
     cargo: 'Desarrollador Full Stack',
     empresa: 'Zenitx Soluciones Informaticas',
     fechaInicio: '2023',
     fechaFin: 'Presente',
     actual: true,
-    descripcion: 'Liderazgo tecnico en proyectos web y moviles. Desarrollo de solucones a medida para clientes de diversos rubros.',
+    descripcion: 'Liderazgo técnico en proyectos web y móviles. Desarrollo de soluciones a medida para clientes de diversos rubros.',
   },
   {
-    id: '2',
+    id: '3',
     cargo: 'Desarrollador Freelance',
     empresa: 'Independiente',
     fechaInicio: '2021',
     fechaFin: '2023',
     actual: false,
-    descripcion: 'Desarrollo de sitios web y aplicaciones para pequeñas y medianas empresas. Gestion directa con clientes.',
+    descripcion: 'Desarrollo de sitios web y aplicaciones para pequeñas y medianas empresas. Gestión directa con clientes.',
   },
 ];
