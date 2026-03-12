@@ -1,4 +1,4 @@
-import { Star, ExternalLink, FileText } from 'lucide-react';
+import { Star, FileText } from 'lucide-react';
 import { Contenedor } from '../ui';
 import logoZenitx from '../../assets/zenitx.png';
 import logoSantoTomas from '../../assets/st.jpg';

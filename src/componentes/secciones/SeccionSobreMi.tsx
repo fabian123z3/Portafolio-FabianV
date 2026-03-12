@@ -1,4 +1,4 @@
-import { User, Star, ExternalLink, FileText } from 'lucide-react';
+import { User, Star, FileText } from 'lucide-react';
 import { Contenedor } from '../ui';
 import fotoPerfil from '../../assets/fotoperfil.png';
 import logoZenitx from '../../assets/zenitx.png';
