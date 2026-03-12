@@ -23,11 +23,12 @@ export function SeccionAlianzas() {
           {/* Logos */}
           <div className="flex items-center gap-4">
             {/* Zenitx */}
-            <a 
-              href="https://zenitx.com/nuestra-empresa/"
+            <a
+              href="/cartazenitx.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative bg-white rounded-lg p-2.5 hover:scale-105 transition-all duration-300 block overflow-hidden"
+              title="Ver carta de respaldo Zenitx"
             >
               <img
                 src={logoZenitx}
@@ -35,7 +36,7 @@ export function SeccionAlianzas() {
                 className="h-7 w-auto object-contain"
               />
               <div className="absolute inset-0 bg-gray-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
-                <ExternalLink className="text-white" size={14} />
+                <FileText className="text-white" size={14} />
               </div>
             </a>
 

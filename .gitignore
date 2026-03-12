@@ -13,6 +13,11 @@ dist-ssr
 *.local
 .env
 
+# Archivos personales / CV
+*.yaml
+*.yml
+*.pdf
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

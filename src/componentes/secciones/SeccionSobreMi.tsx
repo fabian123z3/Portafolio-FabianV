@@ -52,7 +52,7 @@ export function SeccionSobreMi() {
             <div className="flex items-center gap-3">
               {/* Zenitx */}
               <a 
-                href="https://zenitx.com/nuestra-empresa/"
+                href="/cartazenitx.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
@@ -65,7 +65,7 @@ export function SeccionSobreMi() {
                   />
                 </div>
                 <span className="text-xs text-gray-400 group-hover:text-white transition-colors">Zenitx</span>
-                <ExternalLink size={10} className="text-gray-500" />
+                <FileText size={10} className="text-gray-500" />
               </a>
 
               {/* Santo Tomas */}

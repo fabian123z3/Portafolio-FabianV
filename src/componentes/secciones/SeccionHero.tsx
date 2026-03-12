@@ -51,9 +51,9 @@ export function SeccionHero() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl">
-              <span className="text-white font-medium">Desarrollador Full Stack</span>. 
+              <span className="text-white font-medium">Desarrollador Full Stack & Aplicaciones Móviles</span>. 
               Especializado en{' '}
-              <span className="text-yellow-400/90">React, React Native, Django y FastAPI</span>. 
+              <span className="text-yellow-400/90">React, React Native, Flutter, Django y FastAPI</span>. 
               Creo soluciones digitales que funcionan y escalan.
             </p>
           </div>
