@@ -8,7 +8,7 @@ export function SeccionHero() {
   const { nombre, contacto } = datosPersonales;
 
   return (
-    <section id="inicio" className="pt-32 pb-20 md:pt-40 md:pb-28">
+    <section id="inicio" className="pt-24 pb-16 md:pt-28 md:pb-20">
       <Contenedor className="max-w-3xl">
         {/* Badge "Disponible para trabajar" */}
         <div className="flex justify-center md:justify-start mb-8">

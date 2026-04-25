@@ -2,10 +2,10 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const enlaces = [
+  { nombre: 'Sobre mí', href: '#sobre-mi' },
   { nombre: 'Experiencia', href: '#experiencia' },
   { nombre: 'Proyectos', href: '#proyectos' },
   { nombre: 'Skills', href: '#habilidades' },
-  { nombre: 'Sobre mí', href: '#sobre-mi' },
   { nombre: 'Contacto', href: 'mailto:fabianvillablanca97@gmail.com' },
 ];
 

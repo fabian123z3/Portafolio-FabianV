@@ -16,10 +16,10 @@ function App() {
       <BarraNavegacion />
       <main>
         <SeccionHero />
+        <SeccionSobreMi />
         <SeccionExperiencia />
         <SeccionProyectos />
         <SeccionHabilidades />
-        <SeccionSobreMi />
         <SeccionContacto />
       </main>
       <PiePagina />
