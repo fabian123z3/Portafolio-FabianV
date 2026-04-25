@@ -3,6 +3,7 @@ import {
   SeccionHero,
   SeccionExperiencia,
   SeccionProyectos,
+  SeccionHabilidades,
   SeccionSobreMi,
   SeccionContacto,
   PiePagina,
@@ -17,6 +18,7 @@ function App() {
         <SeccionHero />
         <SeccionExperiencia />
         <SeccionProyectos />
+        <SeccionHabilidades />
         <SeccionSobreMi />
         <SeccionContacto />
       </main>
