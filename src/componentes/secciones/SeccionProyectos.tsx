@@ -11,6 +11,7 @@ const tipoBadge = {
 
 export function SeccionProyectos() {
   const proyectosDestacados = proyectos.filter((p) => p.destacado).slice(0, 4);
+  const otrosProyectos = proyectos.filter((p) => !p.destacado);
   const [proyectoActivo, setProyectoActivo] = useState<string | number | null>(null);
   const [imagenActiva, setImagenActiva] = useState(0);
 
@@ -70,6 +71,12 @@ export function SeccionProyectos() {
                     {tipoBadge[proyecto.tipo].label}
                   </span>
                 )}
+                
+                {proyecto.destacado && (
+                  <span className="absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-full bg-yellow-500/20 text-yellow-400">
+                    ⭐ Destacado
+                  </span>
+                )}
               </div>
 
               {/* Contenido */}
@@ -98,6 +105,40 @@ export function SeccionProyectos() {
             </article>
           ))}
         </div>
+
+        {/* Otros Proyectos */}
+        {otrosProyectos.length > 0 && (
+          <>
+            <h3 className="text-xl font-semibold text-white mt-12 mb-6">Proyectos</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {otrosProyectos.map((proyecto) => (
+                <article
+                  key={proyecto.id}
+                  onClick={() => { setProyectoActivo(proyecto.id); setImagenActiva(0); }}
+                  className="group bg-[#161b22] border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    {proyecto.icono ? (
+                      <img src={proyecto.icono} alt={proyecto.titulo} className="w-10 h-10 object-contain" />
+                    ) : (
+                      <Code2 className="w-10 h-10 text-gray-600" />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-medium text-white truncate">{proyecto.titulo}</h4>
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {proyecto.tecnologias.slice(0, 2).map((tech) => (
+                          <span key={tech} className="px-1.5 py-0.5 text-[10px] bg-white/5 text-gray-400 rounded">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </>
+        )}
       </Contenedor>
 
       {/* Modal centrado */}
@@ -122,11 +163,18 @@ export function SeccionProyectos() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">{proyectoSeleccionado.titulo}</h3>
-                  {proyectoSeleccionado.tipo && (
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${tipoBadge[proyectoSeleccionado.tipo].color}`}>
-                      {tipoBadge[proyectoSeleccionado.tipo].label}
-                    </span>
-                  )}
+                  <div className="flex items-center gap-2 mt-1">
+                    {proyectoSeleccionado.tipo && (
+                      <span className={`text-xs px-2 py-0.5 rounded-full ${tipoBadge[proyectoSeleccionado.tipo].color}`}>
+                        {tipoBadge[proyectoSeleccionado.tipo].label}
+                      </span>
+                    )}
+                    {proyectoSeleccionado.destacado && (
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-400">
+                        ⭐ Destacado
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
               <button 

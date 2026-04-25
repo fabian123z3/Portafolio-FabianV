@@ -27,9 +27,16 @@ export const habilidades: Habilidad[] = [
   { nombre: 'React', nivel: 90, categoria: 'frontend' },
   { nombre: 'TypeScript', nivel: 85, categoria: 'frontend' },
   { nombre: 'Tailwind CSS', nivel: 90, categoria: 'frontend' },
+  { nombre: 'Flutter', nivel: 75, categoria: 'frontend' },
+  { nombre: 'React Native', nivel: 85, categoria: 'frontend' },
   { nombre: 'Node.js', nivel: 80, categoria: 'backend' },
   { nombre: 'Python', nivel: 75, categoria: 'backend' },
+  { nombre: 'Django', nivel: 80, categoria: 'backend' },
+  { nombre: 'FastAPI', nivel: 75, categoria: 'backend' },
+  { nombre: 'Milvus', nivel: 70, categoria: 'backend' },
   { nombre: 'Git', nivel: 85, categoria: 'herramientas' },
+  { nombre: 'Docker', nivel: 75, categoria: 'herramientas' },
+  { nombre: 'Android Studio', nivel: 70, categoria: 'herramientas' },
 ];
 
 export const proyectos: Proyecto[] = [
@@ -40,7 +47,13 @@ export const proyectos: Proyecto[] = [
     desafio: 'Crear un sistema de asistencia infalible que cumpliera las leyes laborales chilenas, evitando fraudes como suplantación con fotos.',
     solucion: 'Arquitectura de microservicios: Django para lógica legal + FastAPI para IA. Implementé detección de vida (Anti-Spoofing) con YOLO v8 y búsquedas faciales con Milvus.',
     impacto: 'Sistema 100% compliant con Dirección del Trabajo. Fraude reducido a cero, tiempos de marcaje < 1 segundo.',
-    tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'MySQL', 'TanStack', 'Docker'],
+    tecnologias: [
+      'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'TanStack Query',
+      'React Router', 'Zod', 'Radix UI',
+      'React Native', 'Expo', 'NativeWind', 'Reanimated', 'Expo Location',
+      'Django', 'DRF', 'MySQL', 'AWS S3', 'Google Auth',
+      'FastAPI', 'Milvus', 'PyTorch', 'YOLO', 'OpenCV', 'face-recognition',
+    ],
     libreriasML: ['PyTorch', 'OpenCV', 'Milvus', 'YOLO v8', 'face-recognition', 'dlib'],
     icono: logoRH360,
     imagenes: [serca1, serca2, serca3, serca4],
@@ -63,7 +76,7 @@ export const proyectos: Proyecto[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carnicerodebolsillo.app&hl=es_CL',
     tipo: 'mobile',
     stats: { descargas: '10K+', rating: '4.6' },
-    destacado: true,
+    destacado: false,
   },
   {
     id: 'fuerza-total',
@@ -72,7 +85,7 @@ export const proyectos: Proyecto[] = [
     tecnologias: ['React Native', 'Expo', 'Node.js', 'Express'],
     icono: 'https://cdn-icons-png.flaticon.com/512/2964/2964514.png',
     tipo: 'mobile',
-    destacado: true,
+    destacado: false,
   },
   {
     id: 'auto-seguro',
@@ -82,7 +95,7 @@ export const proyectos: Proyecto[] = [
     icono: 'https://cdn-icons-png.flaticon.com/512/741/741407.png',
     tipo: 'web',
     stats: { usuarios: '200+' },
-    destacado: true,
+    destacado: false,
   },
   {
     id: 'gestor-ventas',
@@ -91,7 +104,7 @@ export const proyectos: Proyecto[] = [
     tecnologias: ['React Native', 'Expo', 'SQLite'],
     icono: 'https://cdn-icons-png.flaticon.com/512/3135/3135706.png',
     tipo: 'mobile',
-    destacado: true,
+    destacado: false,
   },
   {
     id: 'venta-consolas',
@@ -99,7 +112,7 @@ export const proyectos: Proyecto[] = [
     descripcion: 'Desarrolle este e-commerce especializado en consolas y videojuegos. Tiene carrito de compras, catalogo con filtros avanzados, sistema de busqueda y pasarela de pagos integrada.',
     tecnologias: ['React', 'Vite', 'CSS Modules'],
     icono: 'https://cdn-icons-png.flaticon.com/512/686/686589.png',
-    destacado: true,
+    destacado: false,
   },
 ];
 

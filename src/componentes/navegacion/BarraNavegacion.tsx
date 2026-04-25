@@ -4,6 +4,7 @@ import { useState } from 'react';
 const enlaces = [
   { nombre: 'Skills', href: '#habilidades' },
   { nombre: 'Proyectos', href: '#proyectos' },
+  { nombre: 'Conocimientos', href: '#certificaciones' },
   { nombre: 'Experiencia', href: '#experiencia' },
   { nombre: 'Contacto', href: 'mailto:fabianvillablanca97@gmail.com' },
 ];

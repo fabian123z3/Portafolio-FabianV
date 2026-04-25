@@ -3,6 +3,7 @@ import {
   SeccionHero,
   SeccionHabilidades,
   SeccionProyectos,
+  SeccionCertificaciones,
   SeccionExperiencia,
   SeccionAlianzas,
   SeccionContacto,
@@ -18,6 +19,7 @@ function App() {
         <SeccionHero />
         <SeccionHabilidades />
         <SeccionProyectos />
+        <SeccionCertificaciones />
         <SeccionExperiencia />
         <SeccionAlianzas />
         <SeccionContacto />

@@ -18,6 +18,10 @@ const tecnologias = [
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
   },
   {
+    nombre: 'Flutter',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+  },
+  {
     nombre: 'Python',
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
   },
@@ -28,6 +32,10 @@ const tecnologias = [
   {
     nombre: 'FastAPI',
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+  },
+  {
+    nombre: 'Milvus',
+    icono: 'https://milvus.io/favicon.ico',
   },
   {
     nombre: 'Docker',
@@ -41,7 +49,10 @@ const tecnologias = [
     nombre: 'Git',
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
   },
-  
+  {
+    nombre: 'Android Studio',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg',
+  },
   {
     nombre: 'MySQL',
     icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
@@ -62,6 +73,10 @@ const tecnologias = [
   {
     nombre: 'Cloudflare',
     icono: 'https://cdn.simpleicons.org/cloudflare/F38020',
+  },
+  {
+    nombre: 'Slack',
+    icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
   },
   {
     nombre: 'n8n',
