@@ -16,7 +16,8 @@ dist-ssr
 # Archivos personales / CV
 *.yaml
 *.yml
-*.pdf
+# Permitir CV en producción
+!public/*.pdf
 
 # Editor directories and files
 .vscode/*
