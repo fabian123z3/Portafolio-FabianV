@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, Award, Zap } from 'lucide-react';
 import { Contenedor } from '../ui';
 import { datosPersonales } from '../../datos/datosPersonales';
 import { IconoTiktok } from '../iconos';
@@ -8,10 +8,10 @@ export function SeccionHero() {
   const { nombre, contacto } = datosPersonales;
 
   return (
-    <section id="inicio" className="pt-24 pb-16 md:pt-28 md:pb-20">
+    <section id="inicio" className="pt-20 pb-12 md:pt-24 md:pb-16">
       <Contenedor className="max-w-3xl">
         {/* Badge "Disponible para trabajar" */}
-        <div className="flex justify-center md:justify-start mb-8">
+        <div className="flex justify-center md:justify-start mb-6">
           <a
             href={contacto.linkedin}
             target="_blank"
@@ -29,7 +29,7 @@ export function SeccionHero() {
         </div>
 
         {/* Contenedor principal con foto y texto */}
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-8">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-6">
           {/* Foto de perfil */}
           <div className="relative flex-shrink-0">
             <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-yellow-400/20 ring-offset-2 ring-offset-[#0d1117]">
@@ -39,48 +39,72 @@ export function SeccionHero() {
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Indicador online */}
             <span className="absolute bottom-1 right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-[#0d1117]"></span>
           </div>
 
           {/* Texto */}
           <div className="text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3 leading-tight">
               Hey, soy{' '}
               <span className="text-yellow-400">Fabian Villablanca</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl">
-              <span className="text-white font-medium">Desarrollador Full Stack & Aplicaciones Móviles</span>. 
-              Especializado en{' '}
-              <span className="text-yellow-400/90">React, React Native, Flutter, Django y FastAPI</span>. 
-              Creo soluciones digitales que funcionan y escalan.
+            <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mb-4">
+              <span className="text-white font-medium">Desarrollador Full Stack</span> con experiencia en{' '}
+              <span className="text-yellow-400">ERP</span> y soluciones integrales.
+              <br />
+              Creo soluciones digitales que <span className="text-yellow-400/90">funcionan y escalan</span>.
             </p>
+
+            {/* Badges de habilidades clave */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-2">
+              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">
+                <Zap size={12} className="inline mr-1" />ERP
+              </span>
+              <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">
+                React / React Native
+              </span>
+              <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full">
+                Python / Django
+              </span>
+              <span className="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs rounded-full">
+                IA / ML
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Botones de acción */}
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-6">
           <a
-            href="mailto:fabianvillablanca97@gmail.com"
+            href="#contacto"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
           >
             <Mail size={18} />
             Contáctame
           </a>
           <a
-            href={contacto.linkedin}
+            href="/cartazenitx.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-colors"
           >
-            <Linkedin size={18} />
-            LinkedIn
+            <FileText size={18} />
+            Descargar CV
+          </a>
+          <a
+            href="/certificadoegreso.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500/20 border border-yellow-500/30 text-yellow-400 font-medium rounded-lg hover:bg-yellow-500/30 transition-colors"
+          >
+            <Award size={18} />
+            Certificado
           </a>
         </div>
 
         {/* Redes sociales */}
-        <div className="flex items-center justify-center md:justify-start gap-3 mt-8">
+        <div className="flex items-center justify-center md:justify-start gap-3 mt-6">
           {contacto.github && (
             <a
               href={contacto.github}

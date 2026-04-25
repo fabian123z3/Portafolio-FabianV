@@ -3,59 +3,50 @@ import { Contenedor } from '../ui';
 import logoZenitx from '../../assets/zenitx.png';
 import logoSantoTomas from '../../assets/st.jpg';
 
+const patrocinadores = [
+  { nombre: 'Zenitx', logo: logoZenitx, pdf: '/cartazenitx.pdf' },
+  { nombre: 'Santo Tomás', logo: logoSantoTomas, pdf: '/RespaldoST.pdf' },
+];
+
+const items = [...patrocinadores, ...patrocinadores, ...patrocinadores, ...patrocinadores, ...patrocinadores, ...patrocinadores];
+
 export function SeccionAlianzas() {
   return (
-    <section className="py-8 md:py-12">
-      <Contenedor className="max-w-3xl">
-        <div className="bg-[#161b22] border border-white/10 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8">
-          
-          {/* Etiqueta */}
-          <div className="flex items-center gap-2">
-            <Star className="text-yellow-400 fill-yellow-400" size={18} />
-            <span className="text-gray-400 font-medium text-sm">
-              Respaldado por
-            </span>
-          </div>
+    <section className="py-8 md:py-12 overflow-hidden">
+      <Contenedor>
+        <div className="flex items-center gap-3 mb-6 justify-center">
+          <Star className="text-yellow-400 fill-yellow-400" size={16} />
+          <span className="text-gray-500 font-medium text-xs uppercase tracking-widest">
+            Respaldado por
+          </span>
+        </div>
 
-          {/* Separador */}
-          <div className="hidden sm:block w-px h-8 bg-white/10" />
-
-          {/* Logos */}
-          <div className="flex items-center gap-4">
-            {/* Zenitx */}
-            <a
-              href="/cartazenitx.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-white rounded-lg p-2.5 hover:scale-105 transition-all duration-300 block overflow-hidden"
-              title="Ver carta de respaldo Zenitx"
-            >
-              <img
-                src={logoZenitx}
-                alt="Zenitx"
-                className="h-7 w-auto object-contain"
-              />
-              <div className="absolute inset-0 bg-gray-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
-                <FileText className="text-white" size={14} />
-              </div>
-            </a>
-
-            {/* Santo Tomas */}
-            <a 
-              href="/RespaldoST.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-white rounded-lg p-2.5 hover:scale-105 transition-all duration-300 block overflow-hidden"
-            >
-              <img
-                src={logoSantoTomas}
-                alt="Santo Tomas"
-                className="h-7 w-auto object-contain"
-              />
-              <div className="absolute inset-0 bg-gray-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center rounded-lg">
-                <FileText className="text-white" size={14} />
-              </div>
-            </a>
+        <div className="flex justify-center items-center overflow-x-auto pb-4 scrollbar-hide">
+          <div className="flex gap-6 md:gap-10 animate-ticker">
+            {items.map((item, index) => (
+              <a
+                key={index}
+                href={item.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex-shrink-0 flex flex-col items-center gap-2"
+                title={`Ver carta de ${item.nombre}`}
+              >
+                <div className="relative bg-white rounded-xl p-3 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300">
+                  <img
+                    src={item.logo}
+                    alt={item.nombre}
+                    className="h-8 w-auto object-contain"
+                  />
+                  <div className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center">
+                    <FileText className="text-white" size={16} />
+                  </div>
+                </div>
+                <span className="text-xs text-gray-500 group-hover:text-yellow-400 transition-colors">
+                  {item.nombre}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </Contenedor>

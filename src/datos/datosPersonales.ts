@@ -4,6 +4,10 @@ import logoCarnicero from '../assets/icononuevo.png';
 import resena1 from '../assets/reseña1.png';
 import resena2 from '../assets/reseña2.png';
 import resena3 from '../assets/reseña3.png';
+import serca1 from '../assets/Serca/1.png';
+import serca2 from '../assets/Serca/2.png';
+import serca3 from '../assets/Serca/3.png';
+import serca4 from '../assets/Serca/4.png';
 
 export const datosPersonales: DatosPersonales = {
   nombre: 'Fabian Alexis Villablanca Vega',
@@ -31,53 +35,62 @@ export const habilidades: Habilidad[] = [
 export const proyectos: Proyecto[] = [
   {
     id: 'rh360',
-    titulo: 'RH360 - Modulo Control Electrónico de Asistencia',
-    descripcion: 'Plataforma integral de RRHH que cumple con la estricta normativa chilena (Resolución Exenta N°38).',
-    desafio: 'El reto principal fue crear un sistema de asistencia infalible que cumpliera con las exigentes leyes laborales chilenas, evitando fraudes comunes como la suplantación de identidad con fotos.',
-    solucion: 'Diseñé una arquitectura de microservicios: Django para la lógica legal y de negocio, y FastAPI dedicado a la IA. Implementé detección de "vida" (Anti-Spoofing) con YOLO v8 para rechazar intentos de fraude con fotos, y Milvus para búsquedas faciales instantáneas.',
-    impacto: 'Logramos un sistema 100% compliant con la Dirección del Trabajo. El fraude por suplantación se redujo a cero y los tiempos de marcaje son menores a 1 segundo.',
-    tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'MySQL', 'Railway', 'TanStack', 'Docker'],
-    libreriasML: ['PyTorch', 'OpenCV', 'Milvus', 'YOLO v8', 'face-recognition', 'dlib', 'Google Colab'],
+    titulo: 'RH360 - Control de Asistencia',
+    descripcion: 'Sistema integral de RRHH con reconocimiento facial y anti-spoofing. Cumple con normativa chilena DT.',
+    desafio: 'Crear un sistema de asistencia infalible que cumpliera las leyes laborales chilenas, evitando fraudes como suplantación con fotos.',
+    solucion: 'Arquitectura de microservicios: Django para lógica legal + FastAPI para IA. Implementé detección de vida (Anti-Spoofing) con YOLO v8 y búsquedas faciales con Milvus.',
+    impacto: 'Sistema 100% compliant con Dirección del Trabajo. Fraude reducido a cero, tiempos de marcaje < 1 segundo.',
+    tecnologias: ['React', 'React Native', 'Django', 'FastAPI', 'MySQL', 'TanStack', 'Docker'],
+    libreriasML: ['PyTorch', 'OpenCV', 'Milvus', 'YOLO v8', 'face-recognition', 'dlib'],
     icono: logoRH360,
+    imagenes: [serca1, serca2, serca3, serca4],
     demoUrl: 'https://zenitx.com/rh360/',
+    tipo: 'fullstack',
+    stats: { usuarios: '500+', rating: '4.8' },
     destacado: true,
   },
   {
     id: 'carnicero-app',
     titulo: 'Carnicero de Bolsillo',
-    descripcion: 'Asistente culinario inteligente que transforma la manera de cocinar con IA y funciones manos libres.',
-    desafio: 'Los usuarios encontraban difícil seguir recetas en el celular con las manos ocupadas o sucias. Además, necesitaban respuestas inmediatas y personalizadas que un recetario estático no podía dar.',
-    solucion: 'Integré la API de DeepSeek para ofrecer un asistente gastronómico contextual en tiempo real. Desarrollé una función "Manos Libres" con Expo Speech que narra las recetas paso a paso, permitiendo cocinar sin tocar la pantalla.',
-    impacto: 'La retención de usuarios aumentó significativamente gracias a la función de voz. Las reseñas destacan la utilidad del asistente IA para resolver dudas específicas sobre cortes de carne.',
+    descripcion: 'Asistente culinario inteligente con IA y funciones manos libres para Cooking.',
+    desafio: 'Usuarios no podían seguir recetas con manos ocupadas o sucias. Necesitaban respuestas inmediatas y personalizadas.',
+    solucion: 'Integré DeepSeek API para asistente gastronómico contextual en tiempo real. Desarrollé función "Manos Libres" con Expo Speech que narra recetas paso a paso.',
+    impacto: 'La retención de usuarios aumentó significativamente. Reseñas destacan la utilidad del asistente IA para dudas sobre cortes de carne.',
     testimonios: [resena1, resena2, resena3],
     tecnologias: ['React Native', 'Expo', 'TypeScript', 'NativeWind', 'Expo Router'],
     libreriasML: ['DeepSeek API', 'Expo Speech', 'AsyncStorage', 'YouTube Iframe', 'Reanimated'],
     icono: logoCarnicero,
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carnicerodebolsillo.app&hl=es_CL',
+    tipo: 'mobile',
+    stats: { descargas: '10K+', rating: '4.6' },
     destacado: true,
   },
   {
     id: 'fuerza-total',
     titulo: 'Fuerza Total',
-    descripcion: 'Construi esta app de fitness porque me apasiona el entrenamiento. Permite crear rutinas personalizadas, hacer seguimiento del progreso con graficos y gestionar planes nutricionales. La desarrolle con React Native y Expo.',
+    descripcion: 'App de fitness para crear rutinas personalizadas, seguimiento de progreso con gráficos y gestión de planes nutricionales.',
     tecnologias: ['React Native', 'Expo', 'Node.js', 'Express'],
     icono: 'https://cdn-icons-png.flaticon.com/512/2964/2964514.png',
+    tipo: 'mobile',
     destacado: true,
   },
   {
     id: 'auto-seguro',
     titulo: 'Auto Seguro',
-    descripcion: 'Desarrolle esta plataforma web para cotizar y contratar seguros de auto. Integre un comparador de precios entre distintas aseguradoras y un flujo de contratacion online completo.',
+    descripcion: 'Plataforma web para cotizar y contratar seguros de auto con comparador de precios entre aseguradoras.',
     tecnologias: ['React', 'Vite', 'Tailwind CSS', 'JavaScript'],
     icono: 'https://cdn-icons-png.flaticon.com/512/741/741407.png',
+    tipo: 'web',
+    stats: { usuarios: '200+' },
     destacado: true,
   },
   {
     id: 'gestor-ventas',
     titulo: 'Gestor Ventas App',
-    descripcion: 'Cree esta app para negocios que necesitan controlar sus ventas desde el celular. Incluye escaner de codigos de barra, control de inventario en tiempo real y reportes diarios automaticos.',
+    descripcion: 'App para controlar ventas desde celular. Incluye escáner de códigos, inventario en tiempo real y reportes automáticos.',
     tecnologias: ['React Native', 'Expo', 'SQLite'],
     icono: 'https://cdn-icons-png.flaticon.com/512/3135/3135706.png',
+    tipo: 'mobile',
     destacado: true,
   },
   {

@@ -1,10 +1,10 @@
 import { BarraNavegacion } from './componentes/navegacion';
 import {
   SeccionHero,
-  SeccionExperiencia,
-  SeccionProyectos,
   SeccionHabilidades,
-  SeccionSobreMi,
+  SeccionProyectos,
+  SeccionExperiencia,
+  SeccionAlianzas,
   SeccionContacto,
   PiePagina,
 } from './componentes/secciones';
@@ -16,10 +16,10 @@ function App() {
       <BarraNavegacion />
       <main>
         <SeccionHero />
-        <SeccionSobreMi />
-        <SeccionExperiencia />
-        <SeccionProyectos />
         <SeccionHabilidades />
+        <SeccionProyectos />
+        <SeccionExperiencia />
+        <SeccionAlianzas />
         <SeccionContacto />
       </main>
       <PiePagina />

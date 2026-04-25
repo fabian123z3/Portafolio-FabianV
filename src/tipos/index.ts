@@ -6,11 +6,18 @@ export interface Proyecto {
   tecnologias: string[];
   libreriasML?: string[];
   icono?: string;
+  imagenes?: string[];
   imagenUrl?: string;
   demoUrl?: string;
   repoUrl?: string;
   playStoreUrl?: string;
   destacado?: boolean;
+  tipo?: 'web' | 'mobile' | 'fullstack';
+  stats?: {
+    descargas?: string;
+    usuarios?: string;
+    rating?: string;
+  };
   // Campos para Case Study
   desafio?: string;
   solucion?: string;

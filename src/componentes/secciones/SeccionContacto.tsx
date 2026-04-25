@@ -69,7 +69,7 @@ export function SeccionContacto() {
   };
 
   return (
-    <section className="py-10 md:py-14">
+    <section id="contacto" className="py-10 md:py-14">
       <Contenedor className="max-w-3xl">
         {/* Header desplegable */}
         <button
