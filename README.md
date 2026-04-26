@@ -6,7 +6,7 @@
 
 Este repositorio contiene el código fuente de mi portafolio personal. Es una Single Page Application (SPA) diseñada para mostrar mis proyectos, experiencia y enlaces de contacto de manera rápida y eficiente.
 
-🚀 **Demo en vivo:** [https://tu-proyecto.vercel.app](https://tu-proyecto.vercel.app)
+🚀 **Demo en vivo:** [https://tu-proyecto.vercel.app](https://portafoliofabian.vercel.app/))
 
 ## 🛠️ Tecnologías Usadas
 
