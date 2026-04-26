@@ -5,7 +5,11 @@
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
+<<<<<<< HEAD
 Este repositorio contiene el codigo fuente de mi portafolio personal. Es una Single Page Application (SPA) construida para presentar quien soy, mis proyectos, mis habilidades y mis formas de contacto de manera clara, rapida y visual.
+=======
+Este repositorio contiene el codigo fuente de mi portafolio personal.Construida para presentar quien soy, mis proyectos, mis habilidades y mis formas de contacto de manera clara, rapida y visual.
+>>>>>>> 56fa462916e7d86c2e6065c43c49fe14a7af12da
 
 🚀 **Demo en vivo:** https://portafoliofabian.vercel.app/
 
