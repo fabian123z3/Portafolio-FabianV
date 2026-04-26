@@ -16,7 +16,7 @@ export function SeccionHero() {
             href={contacto.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-[#161b22] border border-white/10 rounded-full hover:border-green-500/50 transition-colors group"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full hover:border-white/20 transition-colors group"
           >
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -32,7 +32,7 @@ export function SeccionHero() {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-6">
           {/* Foto de perfil */}
           <div className="relative flex-shrink-0">
-            <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-yellow-400/20 ring-offset-2 ring-offset-[#0d1117]">
+            <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-yellow-400/30 ring-offset-2 ring-offset-[#0d1117]">
               <img
                 src={fotoPerfil}
                 alt={`Foto de ${nombre}`}
@@ -54,25 +54,23 @@ export function SeccionHero() {
               plataformas web y{' '}
               <span className="text-yellow-400">microservicios de Inteligencia Artificial</span>.
               <br />
-              Creo soluciones digitales que <span className="text-yellow-400/90">funcionan, escalan y llegan a producción</span>.
+              Creo soluciones digitales que <span className="text-yellow-400/90">funcionan, escalan y llegan a producción</span>.{' '}
+              <span className="text-gray-400">Con experiencia en ERP y soluciones integrales.</span>
             </p>
 
-            {/* Badges de habilidades clave */}
+{/* Badges de habilidades clave */}
             <div className="flex flex-wrap justify-center md:justify-start gap-2">
-              <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">
+              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
                 <Zap size={12} className="inline mr-1" />React / React Native
               </span>
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full">
-                Python / Django / FastAPI
+              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
+                <Zap size={12} className="inline mr-1" />Python / Django / FastAPI
               </span>
-              <span className="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs rounded-full">
-                IA · Visión Computacional
+              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
+                <Zap size={12} className="inline mr-1" />IA · Visión Computacional
               </span>
-              <span className="px-3 py-1 bg-sky-500/20 text-sky-400 text-xs rounded-full">
-                CI/CD · Docker · Railway
-              </span>
-              <span className="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded-full">
-                PyTest · Testing
+              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
+                <Zap size={12} className="inline mr-1" />Docker · Railway · Vercel
               </span>
             </div>
           </div>
@@ -80,18 +78,20 @@ export function SeccionHero() {
 
         {/* Botones de acción */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-6">
+          {/* Botón primario */}
           <a
             href="#contacto"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-300 transition-colors"
           >
             <Mail size={18} />
             Contáctame
           </a>
+          {/* Botones secundarios */}
           <a
             href="/cartazenitx.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 text-gray-300 font-medium rounded-lg hover:bg-white/10 hover:text-white transition-colors"
           >
             <FileText size={18} />
             Descargar CV
@@ -100,7 +100,7 @@ export function SeccionHero() {
             href="/certificadoegreso.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500/20 border border-yellow-500/30 text-yellow-400 font-medium rounded-lg hover:bg-yellow-500/30 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 text-gray-300 font-medium rounded-lg hover:bg-white/10 hover:text-white transition-colors"
           >
             <Award size={18} />
             Certificado de título
@@ -130,16 +130,16 @@ export function SeccionHero() {
         </div>
 
         {/* Redes sociales */}
-        <div className="flex items-center justify-center md:justify-start gap-3 mt-6">
+        <div className="flex items-center justify-center md:justify-start gap-4 mt-6">
           {contacto.github && (
             <a
               href={contacto.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+              className="p-3 bg-white/10 border border-white/20 text-white hover:bg-yellow-500 hover:text-gray-900 hover:border-yellow-500 rounded-lg transition-all"
               aria-label="GitHub"
             >
-              <Github size={20} />
+              <Github size={22} />
             </a>
           )}
           {contacto.linkedin && (
@@ -147,10 +147,10 @@ export function SeccionHero() {
               href={contacto.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+              className="p-3 bg-white/10 border border-white/20 text-white hover:bg-blue-600 hover:text-white hover:border-blue-600 rounded-lg transition-all"
               aria-label="LinkedIn"
             >
-              <Linkedin size={20} />
+              <Linkedin size={22} />
             </a>
           )}
           {contacto.tiktok && (
@@ -158,10 +158,10 @@ export function SeccionHero() {
               href={contacto.tiktok}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+              className="p-3 bg-white/10 border border-white/20 text-white hover:bg-black hover:text-pink-500 hover:border-pink-500 rounded-lg transition-all"
               aria-label="TikTok"
             >
-              <IconoTiktok size={20} />
+              <IconoTiktok size={22} />
             </a>
           )}
         </div>

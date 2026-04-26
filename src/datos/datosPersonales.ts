@@ -19,9 +19,9 @@ import carnicero8 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.3
 
 export const datosPersonales: DatosPersonales = {
   nombre: 'Fabian Alexis Villablanca Vega',
-  titulo: 'Full Stack & AI Engineer',
+  titulo: 'Full Stack & AI Engineer especializado en apps móviles, plataformas web y microservicios de Inteligencia Artificial.',
   subtitulo: 'Transformo ideas en soluciones digitales que funcionan',
-  descripcion: 'Desarrollador Full Stack y Mobile especializado en crear aplicaciones de alto impacto. Combino tecnologías como React Native y Django con integraciones de Inteligencia Artificial (Visión Computacional) para resolver problemas complejos del mundo real, siempre enfocado en código limpio, escalabilidad y una excelente experiencia de usuario.',
+  descripcion: 'Creo soluciones digitales que funcionan, escalan y llegan a producción. Experiencia en ERP y soluciones integrales.',
   contacto: {
     email: 'fabianvillablanca97@gmail.com',
     ubicacion: 'Chile',
