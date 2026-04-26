@@ -41,6 +41,7 @@ export interface Experiencia {
   fechaFin?: string;
   descripcion: string;
   actual?: boolean;
+  url?: string;
 }
 
 // Tipos para informacion de contacto

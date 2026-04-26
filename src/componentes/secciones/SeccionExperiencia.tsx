@@ -1,4 +1,4 @@
-import { Briefcase } from 'lucide-react';
+import { Briefcase, ExternalLink } from 'lucide-react';
 import { Contenedor } from '../ui';
 import { experiencias } from '../../datos/datosPersonales';
 
@@ -43,8 +43,20 @@ export function SeccionExperiencia() {
                   {exp.cargo}
                 </h3>
 
-                <p className="text-yellow-400/90 font-medium text-sm mb-2">
-                  {exp.empresa}
+                <p className="text-sm mb-2">
+                  {exp.url ? (
+                    <a
+                      href={exp.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-yellow-400/90 font-medium hover:text-yellow-400 transition-colors group/link"
+                    >
+                      {exp.empresa}
+                      <ExternalLink size={12} className="opacity-60 group-hover/link:opacity-100 transition-opacity" />
+                    </a>
+                  ) : (
+                    <span className="text-yellow-400/90 font-medium">{exp.empresa}</span>
+                  )}
                   <span className="text-gray-500 ml-2">
                     {exp.fechaInicio} - {exp.fechaFin}
                   </span>
