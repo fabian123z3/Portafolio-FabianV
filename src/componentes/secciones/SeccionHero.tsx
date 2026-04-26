@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, FileText, Award, Zap } from 'lucide-react';
+import { Github, Linkedin, Mail, Award, Zap } from 'lucide-react';
 import { Contenedor } from '../ui';
 import { datosPersonales } from '../../datos/datosPersonales';
 import { IconoTiktok } from '../iconos';
@@ -86,16 +86,6 @@ export function SeccionHero() {
           >
             <Mail size={18} />
             Contáctame
-          </a>
-          {/* Botones secundarios */}
-          <a
-            href="/cartazenitx.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 text-gray-300 font-medium rounded-lg hover:bg-white/10 hover:text-white transition-colors"
-          >
-            <FileText size={18} />
-            Descargar CV
           </a>
           <a
             href="/certificadoegreso.pdf"
