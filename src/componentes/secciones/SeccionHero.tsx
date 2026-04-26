@@ -50,9 +50,7 @@ export function SeccionHero() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mb-4">
-              <span className="text-white font-medium">Full Stack & AI Engineer</span> especializado en apps móviles,{' '}
-              plataformas web y{' '}
-              <span className="text-yellow-400">microservicios de Inteligencia Artificial</span>.
+              <span className="text-white font-medium">Desarrollador Full Stack</span> con manejo en Inteligencia Artificial.
               <br />
               Creo soluciones digitales que <span className="text-yellow-400/90">funcionan, escalan y llegan a producción</span>.{' '}
               <span className="text-gray-400">Con experiencia en ERP y soluciones integrales.</span>
