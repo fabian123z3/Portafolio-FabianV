@@ -30,15 +30,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Imágenes
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-*.webp
-*.ico
-
 # Carpetas temporales y de caché
 .cache/
 .temp/
