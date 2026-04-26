@@ -46,7 +46,8 @@ export const habilidades: Habilidad[] = [
   { nombre: 'Docker', nivel: 75, categoria: 'herramientas' },
   { nombre: 'GitHub Actions', nivel: 75, categoria: 'herramientas' },
   { nombre: 'Railway', nivel: 80, categoria: 'herramientas' },
-  { nombre: 'AWS S3', nivel: 70, categoria: 'herramientas' },
+  { nombre: 'Vercel', nivel: 85, categoria: 'herramientas' },
+  { nombre: 'Netlify', nivel: 80, categoria: 'herramientas' },
   { nombre: 'PyTest', nivel: 75, categoria: 'backend' },
   { nombre: 'Android Studio', nivel: 70, categoria: 'herramientas' },
 ];
