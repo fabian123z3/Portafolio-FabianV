@@ -1,38 +1,60 @@
 # Portafolio Personal - Fabian Villablanca 👨‍💻
 
-![Vercel](https://vercelbadge.vercel.app/api/[tu-usuario-vercel]/[nombre-repo])
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+[![Vercel](https://vercelbadge.vercel.app/api/portafoliofabian/portafoliofabianv)](https://portafoliofabian.vercel.app/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-Este repositorio contiene el código fuente de mi portafolio personal. Es una Single Page Application (SPA) diseñada para mostrar mis proyectos, experiencia y enlaces de contacto de manera rápida y eficiente.
+Este repositorio contiene el codigo fuente de mi portafolio personal. Es una Single Page Application (SPA) construida para presentar quien soy, mis proyectos, mis habilidades y mis formas de contacto de manera clara, rapida y visual.
 
-🚀 **Demo en vivo:** [https://tu-proyecto.vercel.app](https://portafoliofabian.vercel.app/))
+🚀 **Demo en vivo:** https://portafoliofabian.vercel.app/
 
-## 🛠️ Tecnologías Usadas
+## Tecnologias usadas
 
-* **React:** Biblioteca principal para la interfaz de usuario.
-* **Vite:** Entorno de desarrollo y empaquetador (Build tool) para una carga ultrarrápida.
-* **CSS / Tailwind / Sass:** [Especifica aquí qué usaste para los estilos].
-* **Vercel:** Plataforma de despliegue y hosting.
+* **React:** Base principal de la interfaz.
+* **TypeScript:** Tipado para mantener el proyecto mas ordenado y mantenible.
+* **Vite:** Entorno de desarrollo y build rapido.
+* **Tailwind CSS:** Estilos utilitarios para una interfaz responsiva.
+* **shadcn/ui y Radix UI:** Componentes accesibles y consistentes.
+* **Lucide React:** Conjunto de iconos usado en la interfaz.
+* **next-themes:** Manejo del tema visual.
+* **Vercel:** Plataforma de despliegue del portafolio.
 
-## ✨ Características
+## Caracteristicas
 
-* ⚡ **Rendimiento optimizado:** Carga instantánea gracias a Vite.
-* 📱 **Diseño Responsivo:** Adaptado a móviles y escritorio.
-* 📄 **Descarga de CV:** Acceso directo a mi currículum en PDF.
-* 🔗 **Redes Sociales:** Integración con LinkedIn y GitHub.
+* **Presentacion visual por secciones:** Hero, habilidades, proyectos, experiencia, certificaciones y contacto.
+* **Diseño responsivo:** Adaptado para escritorio, tablet y movil.
+* **Bloque de habilidades organizado:** Muestra frontend, backend, mobile, IA y automatizacion.
+* **Formulario de contacto funcional:** Envio de mensajes desde el sitio.
+* **Contenido enfocado en mi perfil profesional:** Resume mi experiencia y enlaces clave.
 
-## 📂 Estructura del Proyecto
+## Estructura del proyecto
 
-El proyecto sigue la estructura estándar de Vite, con un detalle importante para los archivos estáticos:
+El proyecto sigue una estructura modular para mantener el portafolio ordenado y facil de escalar:
 
 ```text
 ├── public/
-│   ├── mi-cv.pdf      # Archivo del currículum (accesible desde la raíz)
-│   └── favicon.svg
 ├── src/
-│   ├── components/    # Componentes reutilizables
-│   ├── assets/        # Imágenes e iconos
-│   ├── App.jsx        # Componente principal
-│   └── main.jsx       # Punto de entrada
-└── index.html
+│   ├── componentes/
+│   │   ├── navegacion/
+│   │   ├── secciones/
+│   │   └── ui/
+│   ├── datos/
+│   ├── lib/
+│   ├── tipos/
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── vite.config.ts
+└── README.md
+```
+
+## Secciones principales
+
+* **Hero:** Presentacion inicial con acceso rapido a mis enlaces.
+* **Sobre mi:** Resumen corto de mi perfil y enfoque de trabajo.
+* **Habilidades:** Tecnologias y herramientas que manejo.
+* **Proyectos:** Muestra trabajos destacados con su descripcion.
+* **Experiencia:** Proyectos y experiencia profesional relevante.
+* **Certificaciones y alianzas:** Credenciales y colaboraciones.
+* **Contacto:** Formulario y enlaces directos para comunicarte conmigo.
