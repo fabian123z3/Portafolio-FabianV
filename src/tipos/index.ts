@@ -12,7 +12,7 @@ export interface Proyecto {
   repoUrl?: string;
   playStoreUrl?: string;
   destacado?: boolean;
-  tipo?: 'web' | 'mobile' | 'fullstack';
+  tipo?: 'web' | 'mobile' | 'fullstack' | 'appMovil';
   stats?: {
     descargas?: string;
     usuarios?: string;
@@ -29,7 +29,7 @@ export interface Proyecto {
 export interface Habilidad {
   nombre: string;
   nivel: number;
-  categoria: 'frontend' | 'backend' | 'herramientas' | 'otros';
+  categoria: 'frontend' | 'backend' | 'herramientas' | 'otros' | 'testing';
 }
 
 // Tipos para experiencia laboral

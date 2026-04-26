@@ -7,6 +7,7 @@ const tipoBadge = {
   web: { label: 'Web App', color: 'bg-blue-500/20 text-blue-400' },
   mobile: { label: 'Mobile App', color: 'bg-green-500/20 text-green-400' },
   fullstack: { label: 'Full Stack', color: 'bg-purple-500/20 text-purple-400' },
+  appMovil: { label: 'App Móvil', color: 'bg-green-500/20 text-green-400' },
 };
 
 export function SeccionProyectos() {

@@ -58,17 +58,20 @@ export function SeccionHero() {
 
 {/* Badges de habilidades clave */}
             <div className="flex flex-wrap justify-center md:justify-start gap-2">
-              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
+              <span className="px-3 py-1 bg-gray-500/20 text-gray-300 text-xs rounded-full">
                 <Zap size={12} className="inline mr-1" />React / React Native
               </span>
-              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
+              <span className="px-3 py-1 bg-gray-500/20 text-gray-300 text-xs rounded-full">
                 <Zap size={12} className="inline mr-1" />Python / Django / FastAPI
               </span>
-              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
+              <span className="px-3 py-1 bg-gray-500/20 text-gray-300 text-xs rounded-full">
                 <Zap size={12} className="inline mr-1" />IA · Visión Computacional
               </span>
-              <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded-full">
+              <span className="px-3 py-1 bg-gray-500/20 text-gray-300 text-xs rounded-full">
                 <Zap size={12} className="inline mr-1" />Docker · Railway · Vercel
+              </span>
+              <span className="px-3 py-1 bg-gray-500/20 text-gray-300 text-xs rounded-full">
+                <Zap size={12} className="inline mr-1" />Testing
               </span>
             </div>
           </div>

@@ -20,7 +20,15 @@ const categoriasHabilidades = [
       { nombre: 'FastAPI', icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
       { nombre: 'MySQL', icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
       { nombre: 'Milvus', icono: 'https://milvus.io/favicon.ico' },
+    ],
+  },
+  {
+    titulo: 'Testing & Calidad',
+    tecnologias: [
       { nombre: 'PyTest', icono: 'https://cdn.simpleicons.org/pytest/009FE3' },
+      { nombre: 'Ruff', icono: 'https://cdn.simpleicons.org/ruff/fff044' },
+      { nombre: 'Jest', icono: 'https://cdn.simpleicons.org/jest/c15d1e' },
+      { nombre: 'Vitest', icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitest/vitest-original.svg' },
     ],
   },
   {
