@@ -94,43 +94,7 @@ export const proyectos: Proyecto[] = [
     stats: { descargas: '100+', rating: '4.6' },
     destacado: true,
   },
-  {
-    id: 'fuerza-total',
-    titulo: 'Fuerza Total',
-    descripcion: 'App de fitness para crear rutinas personalizadas, seguimiento de progreso con gráficos y gestión de planes nutricionales.',
-    tecnologias: ['React Native', 'Expo', 'Node.js', 'Express'],
-    icono: 'https://cdn-icons-png.flaticon.com/512/2964/2964514.png',
-    tipo: 'mobile',
-    destacado: false,
-  },
-  {
-    id: 'auto-seguro',
-    titulo: 'Auto Seguro',
-    descripcion: 'Plataforma web para cotizar y contratar seguros de auto con comparador de precios entre aseguradoras.',
-    tecnologias: ['React', 'Vite', 'Tailwind CSS', 'JavaScript'],
-    icono: 'https://cdn-icons-png.flaticon.com/512/741/741407.png',
-    tipo: 'web',
-    stats: { usuarios: '200+' },
-    destacado: false,
-  },
-  {
-    id: 'gestor-ventas',
-    titulo: 'Gestor Ventas App',
-    descripcion: 'App para controlar ventas desde celular. Incluye escáner de códigos, inventario en tiempo real y reportes automáticos.',
-    tecnologias: ['React Native', 'Expo', 'SQLite'],
-    icono: 'https://cdn-icons-png.flaticon.com/512/3135/3135706.png',
-    tipo: 'mobile',
-    destacado: false,
-  },
-  {
-    id: 'venta-consolas',
-    titulo: 'Venta Consolas',
-    descripcion: 'Desarrolle este e-commerce especializado en consolas y videojuegos. Tiene carrito de compras, catalogo con filtros avanzados, sistema de busqueda y pasarela de pagos integrada.',
-    tecnologias: ['React', 'Vite', 'CSS Modules'],
-    icono: 'https://cdn-icons-png.flaticon.com/512/686/686589.png',
-    destacado: false,
-  },
-];
+  ];
 
 export const experiencias: Experiencia[] = [
   {
