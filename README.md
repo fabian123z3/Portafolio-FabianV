@@ -1,6 +1,6 @@
 # Portafolio Personal - Fabian Villablanca 👨‍💻
 
-[![Vercel](https://vercelbadge.vercel.app/api/portafoliofabian/portafoliofabianv)](https://portafoliofabian.vercel.app/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://portafoliofabian.vercel.app/)
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
