@@ -62,9 +62,22 @@ export function SeccionExperiencia() {
                   </span>
                 </p>
 
-                <p className="text-gray-400 leading-relaxed text-sm">
-                  {exp.descripcion}
-                </p>
+                {exp.descripcion && (
+                  <p className="text-gray-400 leading-relaxed text-sm">
+                    {exp.descripcion}
+                  </p>
+                )}
+
+                {exp.responsabilidades && (
+                  <ul className="mt-2 space-y-1">
+                    {exp.responsabilidades.map((resp, i) => (
+                      <li key={i} className="text-gray-400 text-sm flex items-start gap-2">
+                        <span className="text-yellow-400 mt-1">•</span>
+                        {resp}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           ))}

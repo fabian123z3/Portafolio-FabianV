@@ -39,7 +39,8 @@ export interface Experiencia {
   cargo: string;
   fechaInicio: string;
   fechaFin?: string;
-  descripcion: string;
+  descripcion?: string;
+  responsabilidades?: string[];
   actual?: boolean;
   url?: string;
 }
