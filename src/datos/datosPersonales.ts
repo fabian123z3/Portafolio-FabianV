@@ -8,12 +8,20 @@ import serca1 from '../assets/Serca/1.png';
 import serca2 from '../assets/Serca/2.png';
 import serca3 from '../assets/Serca/3.png';
 import serca4 from '../assets/Serca/4.png';
+import carnicero1 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.36.jpeg';
+import carnicero2 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.36 (1).jpeg';
+import carnicero3 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.36 (2).jpeg';
+import carnicero4 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.36 (3).jpeg';
+import carnicero5 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.36 (4).jpeg';
+import carnicero6 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.37.jpeg';
+import carnicero7 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.37 (1).jpeg';
+import carnicero8 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.37 (2).jpeg';
 
 export const datosPersonales: DatosPersonales = {
   nombre: 'Fabian Alexis Villablanca Vega',
-  titulo: 'Desarrollador Full Stack',
+  titulo: 'Full Stack & AI Engineer',
   subtitulo: 'Transformo ideas en soluciones digitales que funcionan',
-  descripcion: 'Desarrollador con pasion por crear cosas que realmente sirvan. Me gusta el codigo limpio y los proyectos desafiantes.',
+  descripcion: 'Desarrollador Full Stack y Mobile especializado en crear aplicaciones de alto impacto. Combino tecnologías como React Native y Django con integraciones de Inteligencia Artificial (Visión Computacional) para resolver problemas complejos del mundo real, siempre enfocado en código limpio, escalabilidad y una excelente experiencia de usuario.',
   contacto: {
     email: 'fabianvillablanca97@gmail.com',
     ubicacion: 'Chile',
@@ -36,6 +44,10 @@ export const habilidades: Habilidad[] = [
   { nombre: 'Milvus', nivel: 70, categoria: 'backend' },
   { nombre: 'Git', nivel: 85, categoria: 'herramientas' },
   { nombre: 'Docker', nivel: 75, categoria: 'herramientas' },
+  { nombre: 'GitHub Actions', nivel: 75, categoria: 'herramientas' },
+  { nombre: 'Railway', nivel: 80, categoria: 'herramientas' },
+  { nombre: 'AWS S3', nivel: 70, categoria: 'herramientas' },
+  { nombre: 'PyTest', nivel: 75, categoria: 'backend' },
   { nombre: 'Android Studio', nivel: 70, categoria: 'herramientas' },
 ];
 
@@ -43,9 +55,9 @@ export const proyectos: Proyecto[] = [
   {
     id: 'rh360',
     titulo: 'RH360 - Control de Asistencia',
-    descripcion: 'Sistema integral de RRHH con reconocimiento facial y anti-spoofing. Cumple con normativa chilena DT.',
+    descripcion: 'Sistema integral de RRHH con reconocimiento facial y anti-suplantación. Cumple con normativa chilena DT.',
     desafio: 'Crear un sistema de asistencia infalible que cumpliera las leyes laborales chilenas, evitando fraudes como suplantación con fotos.',
-    solucion: 'Arquitectura de microservicios: Django para lógica legal + FastAPI para IA. Implementé detección de vida (Anti-Spoofing) con YOLO v8 y búsquedas faciales con Milvus.',
+    solucion: 'Arquitectura de microservicios: Django para lógica legal + FastAPI para IA. Implementé detección de vida (Anti-suplantación) con YOLO v8 y búsquedas faciales con Milvus.',
     impacto: 'Sistema 100% compliant con Dirección del Trabajo. Fraude reducido a cero, tiempos de marcaje < 1 segundo.',
     tecnologias: [
       'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'TanStack Query',
@@ -73,10 +85,11 @@ export const proyectos: Proyecto[] = [
     tecnologias: ['React Native', 'Expo', 'TypeScript', 'NativeWind', 'Expo Router'],
     libreriasML: ['DeepSeek API', 'Expo Speech', 'AsyncStorage', 'YouTube Iframe', 'Reanimated'],
     icono: logoCarnicero,
+    imagenes: [carnicero1, carnicero2, carnicero3, carnicero4, carnicero5, carnicero6, carnicero7, carnicero8],
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carnicerodebolsillo.app&hl=es_CL',
     tipo: 'mobile',
-    stats: { descargas: '10K+', rating: '4.6' },
-    destacado: false,
+    stats: { descargas: '100+', rating: '4.6' },
+    destacado: true,
   },
   {
     id: 'fuerza-total',
@@ -122,7 +135,7 @@ export const experiencias: Experiencia[] = [
     cargo: 'Supervisor de Practicantes',
     empresa: 'Zenitx Soluciones Informaticas',
     fechaInicio: '13 de agosto de 2025',
-    fechaFin: '11 de marzo de 2026',
+    fechaFin: '23 de abril de 2026',
     actual: false,
     descripcion: 'Supervisión y mentoría de estudiantes en práctica. Guía en proyectos reales, revisión de código y apoyo en su desarrollo profesional.',
   },
@@ -131,7 +144,7 @@ export const experiencias: Experiencia[] = [
     cargo: 'Desarrollador Full Stack',
     empresa: 'Zenitx Soluciones Informaticas',
     fechaInicio: '13 de agosto de 2025',
-    fechaFin: '11 de marzo de 2026',
+    fechaFin: '23 de abril de 2026',
     actual: false,
     descripcion: 'Liderazgo técnico en proyectos web y móviles. Desarrollo de soluciones a medida para clientes de diversos rubros.',
   },
@@ -139,8 +152,8 @@ export const experiencias: Experiencia[] = [
     id: '3',
     cargo: 'Practicante',
     empresa: 'Zenitx Soluciones Informaticas',
-    fechaInicio: '13 de agosto de 2025',
-    fechaFin: '11 de marzo de 2026',
+    fechaInicio: '14 de agosto de 2025',
+    fechaFin: '14 de noviembre de 2025',
     actual: false,
     descripcion: 'Práctica profesional desarrollando módulos web y aprendiendo buenas prácticas de desarrollo.',
   },

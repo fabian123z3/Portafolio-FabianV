@@ -90,6 +90,22 @@ const tecnologias = [
     nombre: 'Google Colab',
     icono: 'https://cdn.simpleicons.org/googlecolab/F9AB00',
   },
+  {
+    nombre: 'GitHub Actions',
+    icono: 'https://cdn.simpleicons.org/githubactions/2088FF',
+  },
+  {
+    nombre: 'Railway',
+    icono: 'https://cdn.simpleicons.org/railway/FFFFFF',
+  },
+  {
+    nombre: 'PyTest',
+    icono: 'https://cdn.simpleicons.org/pytest/009FE3',
+  },
+  {
+    nombre: 'AWS S3',
+    icono: 'https://cdn.simpleicons.org/amazons3/569A31',
+  },
 ];
 
 export function SeccionHabilidades() {

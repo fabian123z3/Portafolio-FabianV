@@ -29,3 +29,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Imágenes
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.ico
+
+# Carpetas temporales y de caché
+.cache/
+.temp/
+.tmp/
+coverage/
+.vercel

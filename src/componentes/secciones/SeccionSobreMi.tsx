@@ -20,11 +20,15 @@ export function SeccionSobreMi() {
         {/* Texto narrativo corto y natural */}
         <div className="space-y-4 text-gray-300 leading-relaxed max-w-2xl">
           <p>
-            Soy <span className="text-white">Fabian Villablanca</span>, desarrollador full stack de Chile. Me gusta construir cosas que funcionen y que la gente realmente use.
+            Soy <span className="text-white">Fabian Villablanca</span>, desarrollador Full Stack y Mobile de Chile. Me especializo en construir soluciones digitales completas que van desde la interfaz hasta el servidor, integrando <span className="text-yellow-400">Inteligencia Artificial</span> cuando el problema lo requiere.
           </p>
 
           <p>
-            Trabajo en <span className="text-yellow-400">Zenitx</span> donde empecé como practicante y hoy lidero proyectos y superviso a nuevos talentos. También creo contenido sobre programación en TikTok.
+            Tengo experiencia en el desarrollo e implementación de <span className="text-yellow-400">sistemas ERP y soluciones integrales</span> para empresas, cubriendo módulos de RRHH, control de asistencia biométrico y gestión de personal, siempre asegurando el cumplimiento de la normativa legal vigente.
+          </p>
+
+          <p>
+            Trabajo en <span className="text-yellow-400">Zenitx</span> donde empecé como practicante y hoy participo activamente en proyectos para diversos clientes. También creo contenido sobre programación en TikTok.
           </p>
         </div>
 

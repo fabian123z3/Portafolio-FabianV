@@ -50,25 +50,29 @@ export function SeccionHero() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mb-4">
-              <span className="text-white font-medium">Desarrollador Full Stack</span> con experiencia en{' '}
-              <span className="text-yellow-400">ERP</span> y soluciones integrales.
+              <span className="text-white font-medium">Full Stack & AI Engineer</span> especializado en apps móviles,{' '}
+              plataformas web y{' '}
+              <span className="text-yellow-400">microservicios de Inteligencia Artificial</span>.
               <br />
-              Creo soluciones digitales que <span className="text-yellow-400/90">funcionan y escalan</span>.
+              Creo soluciones digitales que <span className="text-yellow-400/90">funcionan, escalan y llegan a producción</span>.
             </p>
 
             {/* Badges de habilidades clave */}
             <div className="flex flex-wrap justify-center md:justify-start gap-2">
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">
-                <Zap size={12} className="inline mr-1" />ERP
-              </span>
               <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">
-                React / React Native
+                <Zap size={12} className="inline mr-1" />React / React Native
               </span>
               <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full">
-                Python / Django
+                Python / Django / FastAPI
               </span>
               <span className="px-3 py-1 bg-orange-500/20 text-orange-400 text-xs rounded-full">
-                IA / ML
+                IA · Visión Computacional
+              </span>
+              <span className="px-3 py-1 bg-sky-500/20 text-sky-400 text-xs rounded-full">
+                CI/CD · Docker · Railway
+              </span>
+              <span className="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded-full">
+                PyTest · Testing
               </span>
             </div>
           </div>
@@ -99,8 +103,30 @@ export function SeccionHero() {
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500/20 border border-yellow-500/30 text-yellow-400 font-medium rounded-lg hover:bg-yellow-500/30 transition-colors"
           >
             <Award size={18} />
-            Certificado
+            Certificado de título
           </a>
+        </div>
+
+        {/* Franja de métricas de impacto */}
+        <div className="mt-10 pt-8 border-t border-white/10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <span className="text-2xl sm:text-3xl font-bold text-yellow-400">100+</span>
+              <span className="text-xs text-gray-500 text-center md:text-left">Descargas en Play Store</span>
+            </div>
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <span className="text-2xl sm:text-3xl font-bold text-yellow-400">1+</span>
+              <span className="text-xs text-gray-500 text-center md:text-left">Año de experiencia</span>
+            </div>
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <span className="text-2xl sm:text-3xl font-bold text-yellow-400">1</span>
+              <span className="text-xs text-gray-500 text-center md:text-left">Proyecto en producción</span>
+            </div>
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <span className="text-2xl sm:text-3xl font-bold text-yellow-400">1</span>
+              <span className="text-xs text-gray-500 text-center md:text-left">App publicada en Google Play</span>
+            </div>
+          </div>
         </div>
 
         {/* Redes sociales */}
