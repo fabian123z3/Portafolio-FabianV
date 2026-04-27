@@ -19,7 +19,6 @@ import carnicero8 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.3
 import autoCorreo from '../assets/Automatizacion/correo.png';
 import autoFlujo from '../assets/Automatizacion/flujo.png';
 import autoSheets from '../assets/Automatizacion/sheets.png';
-import logoMake from '../assets/make-logo.svg';
 
 export const datosPersonales: DatosPersonales = {
   nombre: 'Fabian Alexis Villablanca Vega',
@@ -64,11 +63,11 @@ export const proyectos: Proyecto[] = [
     titulo: 'Automatización de Gastos con Make.com',
     descripcion: 'Diseñé un flujo automatizado con Make AI Agent que monitorea Gmail, extrae datos de transacciones del banco usando IA, registra automáticamente los gastos en Google Sheets y envía correo de confirmación.',
     desafio: 'Registrar manualmente cada gasto del banco tomaba tiempo y era propenso a errores, dificultando el control del flujo de efectivo.',
-    solucion: 'Diseñé un flujo en Make.com con Make AI Agent que: (1)Monitorea Gmail y detecta correos del banco, (2)Usa IA para extraer monto, categoría y fecha, (3)Registra automáticamente en Google Sheets, (4)Envía email de confirmación.',
-    impacto: 'Eliminación del registro manual, actualizaciones en tiempo real y notificaciones inmediatas de cada transacción.',
+    solucion: 'Diseñé un flujo en Make.com con Make AI Agent que (1)Monitorea Gmail y detecta correos del banco (2)Usa IA para extraer monto, categoría y fecha (3)Registra automáticamente en Google Sheets (4)Envía email de confirmación.',
+impacto: 'Eliminación del registro manual, actualizaciones en tiempo real y notificaciones inmediatas de cada transacción.',
     tecnologias: ['Make AI Agent', 'Make.com', 'Gmail', 'Google Sheets', 'Email Automation', 'No-code'],
+    icono: 'https://cdn.simpleicons.org/make/6D00CC',
     imagenes: [autoFlujo, autoCorreo, autoSheets],
-    icono: logoMake,
     tipo: 'web',
     destacado: false,
   },
@@ -77,7 +76,7 @@ export const proyectos: Proyecto[] = [
     titulo: 'RH360 - Control de Asistencia',
     descripcion: 'Sistema integral de RRHH multi-tenant con reconocimiento facial, anti-suplantación y control de asistencia. Cumple 100% con normativa chilena DT. Incluye panel admin, gestión de usuarios, roles y permisos (RBAC), reportes, documentos, firmas electrónicas, sync con relojes biométricos y alertas.',
     desafio: 'Crear un sistema de asistencia infalible que cumpliera las leyes laborales chilenas, evitando fraudes como suplantación con fotos. Necesidad de gestión multi-tenant con seguridad por roles y permisos granulares.',
-    solucion: 'Arquitectura de microservicios: Django para lógica legal + FastAPI para IA. Implementé detección de vida (Anti-suplantación) con YOLO v8 y búsquedas faciales con Milvus. Sistema RBAC completo con roles personalizados, permisos granulares por categoría, historial de contraseñas (útimas 3), bloqueo por intentos fallidos, multi-tenant con middleware de aislamiento.',
+    solucion: '(1)Arquitectura de microservicios con Django para lógica legal y FastAPI para IA (2)Detección de vida Anti-suplantación con YOLO v8 (3)Búsquedas faciales con Milvus (4)Sistema RBAC completo con roles personalizados y permisos granulares (5)Multi-tenant con middleware de aislamiento.',
     impacto: 'Sistema 100% compliant con Dirección del Trabajo. Fraude reducido a cero, tiempos de marcaje < 1 segundo. Más de 500 usuarios activos.',
     tecnologias: [
       'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'TanStack Query', 'React Router', 'Zod', 'Radix UI', 'CMDK', 'React Hook Form',
@@ -99,7 +98,7 @@ export const proyectos: Proyecto[] = [
     titulo: 'Carnicero de Bolsillo',
     descripcion: 'Tu guía de consulta para aprender sobre cortes de carne. Desarrollada con un experto carnicero para que sepas qué corte elegir y cómo prepararlo perfectamente.',
     desafio: 'Las personas no sabían identificar los cortes, sus diferencias, usos culinarios ni cómo cocinarlos correctamente. Necesitaban una guía experta y práctica.',
-    solucion: 'Creé una guía integral de cortes de carne con descripciones detalladas, recetas asociadas y consejos de un experto carnicero. Agregué modo "Manos Libres" con síntesis de voz para seguir recetas sin usar las manos.',
+    solucion: '(1)Guía integral de cortes de carne con descripciones detalladas (2)Recetas asociadas y consejos de experto carnicero (3)Modo Manos Libres con síntesis de voz para seguir recetas sin usar las manos.',
     impacto: 'Usuarios aprenden a distinguir cortes, elegir la pieza correcta para cada preparación y cocinarlos óptimamente. Las reseñas destacan la utilidad educativa y práctica.',
     testimonios: [resena1, resena2, resena3],
     tecnologias: ['React Native', 'Expo', 'TypeScript', 'NativeWind', 'Expo Router'],

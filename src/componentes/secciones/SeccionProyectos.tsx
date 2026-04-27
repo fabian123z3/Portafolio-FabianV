@@ -98,27 +98,32 @@ export function SeccionProyectos() {
         {otrosProyectos.length > 0 && (
           <>
             <h3 className="text-xl font-semibold text-white mt-12 mb-6">Proyectos</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {otrosProyectos.map((proyecto) => (
                 <article
                   key={proyecto.id}
                   onClick={() => { setProyectoActivo(proyecto.id); setImagenActiva(0); }}
                   className="group bg-[#161b22] border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all cursor-pointer"
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-start gap-3">
                     {proyecto.icono ? (
-                      <img src={proyecto.icono} alt={proyecto.titulo} className="w-10 h-10 object-contain" />
+                      <img src={proyecto.icono} alt={proyecto.titulo} className="w-12 h-12 object-contain flex-shrink-0" />
                     ) : (
-                      <Code2 className="w-10 h-10 text-gray-600" />
+                      <Code2 className="w-12 h-12 text-gray-600 flex-shrink-0" />
                     )}
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-white truncate">{proyecto.titulo}</h4>
-                      <div className="flex flex-wrap gap-1 mt-1">
-                        {proyecto.tecnologias.slice(0, 2).map((tech) => (
-                          <span key={tech} className="px-1.5 py-0.5 text-[10px] bg-white/5 text-gray-400 rounded">
+                      <h4 className="font-medium text-white truncate text-sm md:text-base">{proyecto.titulo}</h4>
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {proyecto.tecnologias.slice(0, 3).map((tech) => (
+                          <span key={tech} className="px-2 py-0.5 text-xs bg-white/5 text-gray-400 rounded">
                             {tech}
                           </span>
                         ))}
+                        {proyecto.tecnologias.length > 3 && (
+                          <span className="px-2 py-0.5 text-xs bg-white/5 text-gray-500 rounded">
+                            +{proyecto.tecnologias.length - 3}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -131,33 +136,33 @@ export function SeccionProyectos() {
 
       {proyectoSeleccionado && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4 bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center p-2 md:p-4 bg-black/80 backdrop-blur-sm overflow-y-auto"
           onClick={() => { setProyectoActivo(null); setImagenActiva(0); }}
         >
           <div 
-            className="relative w-full max-w-lg bg-[#161b22] rounded-xl max-h-[80vh] overflow-y-auto shadow-2xl"
+            className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl bg-[#161b22] rounded-xl shadow-2xl my-4 sm:my-8 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="sticky top-0 bg-[#161b22]/95 backdrop-blur p-3 md:p-4 border-b border-white/10 flex items-center justify-between z-10">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#21262d] rounded-lg flex items-center justify-center overflow-hidden border border-white/10">
+            <div className="sticky top-0 bg-[#161b22]/95 backdrop-blur p-3 sm:p-4 border-b border-white/10 flex items-center justify-between z-20 gap-2">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                <div className="w-10 h-10 sm:w-12 bg-[#21262d] rounded-lg flex items-center justify-center overflow-hidden border border-white/10 flex-shrink-0">
                   {proyectoSeleccionado.icono ? (
                     <img src={proyectoSeleccionado.icono} alt={proyectoSeleccionado.titulo} className="w-full h-full object-cover" />
                   ) : (
-                    <Code2 className="text-gray-500" />
+                    <Code2 className="text-gray-500 w-6 h-6 sm:w-8 sm:h-8" />
                   )}
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">{proyectoSeleccionado.titulo}</h3>
-                  <div className="flex items-center gap-2 mt-1">
+                <div className="min-w-0">
+                  <h3 className="text-sm sm:text-base font-bold text-white truncate">{proyectoSeleccionado.titulo}</h3>
+                  <div className="flex items-center gap-1 sm:gap-2 mt-0.5 flex-wrap">
                     {proyectoSeleccionado.tipo && (
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${tipoBadge[proyectoSeleccionado.tipo].color}`}>
+                      <span className={`text-xs px-1.5 py-0.5 rounded-full ${tipoBadge[proyectoSeleccionado.tipo].color}`}>
                         {tipoBadge[proyectoSeleccionado.tipo].label}
                       </span>
                     )}
                     {proyectoSeleccionado.destacado && (
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-400">
-                        ⭐ Destacado
+                      <span className="text-xs px-1.5 py-0.5 rounded-full bg-yellow-500/20 text-yellow-400">
+                        ⭐
                       </span>
                     )}
                   </div>
@@ -165,9 +170,9 @@ export function SeccionProyectos() {
               </div>
               <button 
                 onClick={() => { setProyectoActivo(null); setImagenActiva(0); }}
-                className="p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 hover:text-white"
+                className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg transition-colors text-gray-400 hover:text-white flex-shrink-0"
               >
-                <X size={20} />
+                <X size={18} />
               </button>
             </div>
 
@@ -236,7 +241,17 @@ export function SeccionProyectos() {
                       <h5 className="flex items-center gap-1 text-yellow-400 font-medium text-xs mb-1">
                         <Lightbulb size={12} /> Solución
                       </h5>
-                      <p className="text-gray-400 text-xs">{proyectoSeleccionado.solucion}</p>
+                      <ul className="text-gray-400 text-xs space-y-1 list-none">
+                        {proyectoSeleccionado.solucion.split(/\(\d+\)/).filter(Boolean).map((step, idx) => {
+                          const match = proyectoSeleccionado.solucion?.match(/\(\d+\)/)?.[idx] || `(${idx + 1})`;
+                          return (
+                            <li key={idx} className="flex items-start gap-2 pl-1">
+                              <span className="text-yellow-400 font-medium">{match}</span>
+                              <span>{step.trim()}</span>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </div>
                   )}
 
@@ -332,7 +347,6 @@ export function SeccionProyectos() {
             onClick={(e) => e.stopPropagation()}
           />
           
-          {/* Botón cerrar - fijo arriba derecha */}
           <button 
             onClick={() => setImagenAmpliada(null)}
             className="fixed top-6 right-6 p-3 bg-red-600 rounded-full text-white hover:bg-red-700 shadow-lg z-50"
@@ -340,7 +354,6 @@ export function SeccionProyectos() {
             <X size={28} />
           </button>
 
-          {/* Navegación - fija a los lados */}
           {imagenes.length > 1 && (
             <>
               <button
@@ -356,7 +369,6 @@ export function SeccionProyectos() {
                 <ChevronRight size={36} />
               </button>
               
-              {/* Indicadores - fijo abajo centro */}
               <div className="fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-3 bg-black/70 px-4 py-2 rounded-full z-50">
                 {imagenes.map((_, idx) => (
                   <button
