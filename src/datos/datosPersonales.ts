@@ -16,6 +16,10 @@ import carnicero5 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.3
 import carnicero6 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.37.jpeg';
 import carnicero7 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.37 (1).jpeg';
 import carnicero8 from '../assets/Carnicero/WhatsApp Image 2026-04-25 at 19.58.37 (2).jpeg';
+import autoCorreo from '../assets/Automatizacion/correo.png';
+import autoFlujo from '../assets/Automatizacion/flujo.png';
+import autoSheets from '../assets/Automatizacion/sheets.png';
+import logoMake from '../assets/make-logo.svg';
 
 export const datosPersonales: DatosPersonales = {
   nombre: 'Fabian Alexis Villablanca Vega',
@@ -55,6 +59,19 @@ export const habilidades: Habilidad[] = [
 ];
 
 export const proyectos: Proyecto[] = [
+  {
+    id: 'automatizacion',
+    titulo: 'Automatización de Gastos con Make.com',
+    descripcion: 'Diseñé un flujo automatizado con Make AI Agent que monitorea Gmail, extrae datos de transacciones del banco usando IA, registra automáticamente los gastos en Google Sheets y envía correo de confirmación.',
+    desafio: 'Registrar manualmente cada gasto del banco tomaba tiempo y era propenso a errores, dificultando el control del flujo de efectivo.',
+    solucion: 'Diseñé un flujo en Make.com con Make AI Agent que: (1)Monitorea Gmail y detecta correos del banco, (2)Usa IA para extraer monto, categoría y fecha, (3)Registra automáticamente en Google Sheets, (4)Envía email de confirmación.',
+    impacto: 'Eliminación del registro manual, actualizaciones en tiempo real y notificaciones inmediatas de cada transacción.',
+    tecnologias: ['Make AI Agent', 'Make.com', 'Gmail', 'Google Sheets', 'Email Automation', 'No-code'],
+    imagenes: [autoFlujo, autoCorreo, autoSheets],
+    icono: logoMake,
+    tipo: 'web',
+    destacado: false,
+  },
   {
     id: 'rh360',
     titulo: 'RH360 - Control de Asistencia',

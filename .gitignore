@@ -17,6 +17,8 @@ dist-ssr
 # CV personal y variantes
 Fabian_Villablanca_CV.yaml
 Fabian_Villablanca_CV.yml
+cv.yaml
+renderCV/
 *.yaml
 *.yml
 # Permitir CV en producción
@@ -39,3 +41,4 @@ Fabian_Villablanca_CV.yml
 .tmp/
 coverage/
 .vercel
+renderCV/
