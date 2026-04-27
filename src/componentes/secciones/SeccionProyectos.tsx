@@ -45,8 +45,7 @@ export function SeccionProyectos() {
           {proyectosDestacados.map((proyecto) => (
             <article
               key={proyecto.id}
-              onClick={() => { setProyectoActivo(proyecto.id); setImagenActiva(0); }}
-              className="group bg-[#161b22] border border-white/5 rounded-xl overflow-hidden hover:border-yellow-400/50 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] transition-all cursor-pointer"
+              className="group bg-[#161b22] border border-white/5 rounded-xl overflow-hidden hover:border-yellow-400/50 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] transition-all"
             >
               <div className="p-4 flex items-center gap-3 border-b border-white/5">
                 {proyecto.icono ? (
@@ -78,7 +77,7 @@ export function SeccionProyectos() {
                   {proyecto.descripcion}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 mb-3">
                   {proyecto.tecnologias.slice(0, 3).map((tech) => (
                     <span key={tech} className="px-2 py-0.5 text-[10px] font-medium bg-white/5 text-gray-400 rounded">
                       {tech}
@@ -90,6 +89,13 @@ export function SeccionProyectos() {
                     </span>
                   )}
                 </div>
+
+                <button 
+                  onClick={() => { setProyectoActivo(proyecto.id); setImagenActiva(0); }}
+                  className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 text-white text-sm rounded-lg transition-colors"
+                >
+                  {proyecto.id === 'rh360' ? 'Ver Proyecto' : 'Ver Información'}
+                </button>
               </div>
             </article>
           ))}
@@ -102,8 +108,7 @@ export function SeccionProyectos() {
               {otrosProyectos.map((proyecto) => (
                 <article
                   key={proyecto.id}
-                  onClick={() => { setProyectoActivo(proyecto.id); setImagenActiva(0); }}
-                  className="group bg-[#161b22] border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all cursor-pointer"
+                  className="group bg-[#161b22] border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all"
                 >
                   <div className="flex items-start gap-3">
                     {proyecto.icono ? (
@@ -127,6 +132,12 @@ export function SeccionProyectos() {
                       </div>
                     </div>
                   </div>
+                  <button 
+                    onClick={() => { setProyectoActivo(proyecto.id); setImagenActiva(0); }}
+                    className="w-full mt-3 flex items-center justify-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 text-white text-sm rounded-lg transition-colors"
+                  >
+                    Ver Información
+                  </button>
                 </article>
               ))}
             </div>
