@@ -143,6 +143,21 @@ export const experiencias: Experiencia[] = [
       'Colaboración en proyectos del sistema RH360',
     ],
   },
+  {
+    id: '3',
+    cargo: 'Desarrollador Móvil',
+    empresa: 'Freelance / Proyectos Personales',
+    fechaInicio: '1 de enero de 2025',
+    fechaFin: '31 de julio de 2025',
+    actual: false,
+    descripcion: 'Desarrollo de aplicaciones móviles híbridas.',
+    responsabilidades: [
+      'Desarrollo de aplicaciones móviles con React Native y Expo',
+      'Aprendizaje de Flutter para crear apps híbridas',
+      'Implementación de funcionalidades como texto a voz, navegación y almacenamiento local',
+      'Publicación de app en Google Play con +100 descargas',
+    ],
+  },
 ];
 
 // Carta de respaldo Zenitx

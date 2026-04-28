@@ -47,6 +47,7 @@ const categoriasHabilidades = [
       { nombre: 'GitHub Actions', icono: 'https://cdn.simpleicons.org/githubactions/2088FF' },
       { nombre: 'Railway', icono: 'https://cdn.simpleicons.org/railway/FFFFFF' },
       { nombre: 'Cloudflare', icono: 'https://cdn.simpleicons.org/cloudflare/F38020' },
+      { nombre: 'Google Cloud', icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
       { nombre: 'Vercel', icono: 'https://cdn.simpleicons.org/vercel/white' },
       { nombre: 'Netlify', icono: 'https://cdn.simpleicons.org/netlify/00ADBB' },
       { nombre: 'Git', icono: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
